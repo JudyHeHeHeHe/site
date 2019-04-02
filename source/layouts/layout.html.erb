@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <title><%=current_page.data.title || "Judy He" %></title>
+
+  <% if current_page.data.description %>
+  <meta name="description" content="<%=current_page.data.description %>">
+  <% else %>
+  <meta name="description" content="">
+  <% end %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta property="og:url" content="https://judythewebdeveloper.com<%=current_page.url %>" />
+  <meta property="og:site_name" content="Judythewebdeveloper"/>
+  <meta property="og:type" content="website"/>
+
+  <% if current_page.data.meta_title %>
+  <meta property="og:title" content="<%=current_page.data.meta_title %>">
+  <% elsif current_page.data.title %>
+  <meta property="og:title" content="<%=current_page.data.title %>">
+  <% else %>
+  <meta property="og:title" content=""/>
+  <% end %>
+
+  <% if current_page.data.description %>
+  <meta property="og:description" content="<%=current_page.data.description %>">
+  <% else %>
+  <meta property="og:description" content=""/>
+  <% end %>
+
+  <% if current_page.data.image %>
+  <meta property="og:image" content="https://judythewebdeveloper.com<%=current_page.data.image %>">
+  <% else %>
+  <meta property="og:image" content="https://judythewebdeveloper.com<%=image_path " 2015-sanky-linkshare.jpg" %>" />
+  <% end %>
+
+  <%= favicon_tag "favicon.ico" %>
+  <%= stylesheet_link_tag "all.bundle" %>
+</head>
+<body class="<%= page_classes %>">
+  <%= yield %>
+  <%= javascript_include_tag "all.bundle" %>
+</body>
+</html>

@@ -1,0 +1,101 @@
+@import '~breakpoint-sass/stylesheets/breakpoint';
+
+$color-light-gray: #796E65;
+$color-dark-gray: #666666;
+$color-white: #ffffff;
+$color-red: #D92026;
+$color-yellow: #F4B420;
+$color-yellow-hover: #F2A900;
+$color-footer: #C8C1BC;
+$color-border: #D8D8D8;
+
+$color-social-icon: #796E65;
+$color-facebook-hover: #546EBE;
+$color-twitter-hover: #1F8FCF;
+
+
+// breakpoints
+$bp-xs: 380px;
+$bp-sm: 600px;
+$bp-md: 1024px;
+$bp-lg: 1400px;
+
+$bp-front-xs: 460px;
+$bp-sm-md: $bp-sm ($bp-md - 1);
+$bp-sm-lg: $bp-sm ($bp-lg - 1);
+$bp-md-lg: $bp-md ($bp-lg - 1);
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Bitter:400,400i|Open+Sans:300,400,600,600i,700");
+$font-bitter: 'Bitter', serif;
+$font-open: 'Open Sans', sans-serif;
+
+
+// Centering: NOTE - requires absolute or relative positioning
+@mixin vertical-align($position: relative, $offset: 50%) {
+  position: $position;
+  top: $offset;
+  @include transform(translateY(-50%));
+}
+
+// for use with absolute or relatively positioned elements
+@mixin horizontal-align($position: relative, $offset: 50%) {
+  position: $position;
+  left: $offset;
+  @include transform(translateX(-50%));
+}
+
+@mixin both-align($position: relative, $offset-left: 50%, $offset-top: 50%) {
+  position: $position;
+  left: $offset-left;
+  top: $offset-top;
+  @include transform(translate(-50%, -50%));
+}
+
+@mixin transition($property: all, $duration: 0.3s, $ease: ease-in, $delay: 0s) {
+  -webkit-transition: $property $duration $ease $delay;
+  -moz-transition: $property $duration $ease $delay;
+  -o-transition: $property $duration $ease $delay;
+  transition: $property $duration $ease $delay;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -moz-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+
+@mixin flex-grow($int: 1) {
+  -webkit-box-flex: $int;
+  -moz-box-flex: $int;
+  -webkit-flex-grow: $int;
+  -ms-flex: $int;
+  flex-grow: $int;
+}
