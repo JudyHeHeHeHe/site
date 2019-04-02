@@ -6,8 +6,10 @@ $color-white: #ffffff;
 $color-red: #D92026;
 $color-yellow: #F4B420;
 $color-yellow-hover: #F2A900;
+$color-white: #ffffff;
 $color-footer: #C8C1BC;
 $color-border: #D8D8D8;
+
 
 $color-social-icon: #796E65;
 $color-facebook-hover: #546EBE;
@@ -98,4 +100,15 @@ $font-open: 'Open Sans', sans-serif;
   -webkit-flex-grow: $int;
   -ms-flex: $int;
   flex-grow: $int;
+}
+
+@mixin vert-center-parent {
+  /* The ghost, nudged to maintain perfect centering */
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+  }
 }
