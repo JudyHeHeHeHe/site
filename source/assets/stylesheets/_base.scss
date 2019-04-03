@@ -1,18 +1,21 @@
-@import '~breakpoint-sass/stylesheets/breakpoint';
+@import "~reset-css";
+@import "~breakpoint-sass/stylesheets/breakpoint";
 
-$color-light-gray: #796E65;
+$color-light-gray: #e0dfde;
 $color-dark-gray: #666666;
 $color-white: #ffffff;
-$color-red: #D92026;
-$color-yellow: #F4B420;
-$color-yellow-hover: #F2A900;
+$color-red: #fc4309;
+$color-red-hover: #ff6600;
+$color-grapefruit: #ff765c;
+$color-yellow: #ffb646;
+$color-yellow-hover: #ff9900;
+
 $color-footer: #C8C1BC;
 $color-border: #D8D8D8;
 
 $color-social-icon: #796E65;
 $color-facebook-hover: #546EBE;
 $color-twitter-hover: #1F8FCF;
-
 
 // breakpoints
 $bp-xs: 380px;
@@ -27,29 +30,41 @@ $bp-md-lg: $bp-md ($bp-lg - 1);
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Bitter:400,400i|Open+Sans:300,400,600,600i,700");
-$font-bitter: 'Bitter', serif;
-$font-open: 'Open Sans', sans-serif;
 
+$font-bitter: "Bitter", serif;
+$font-open: "Open Sans", sans-serif;
 
 // Centering: NOTE - requires absolute or relative positioning
-@mixin vertical-align($position: relative, $offset: 50%) {
+@mixin vertical-align($position: relative, $offset: 50%, $value: -50%) {
   position: $position;
   top: $offset;
-  @include transform(translateY(-50%));
+  -webkit-transform: translateY($value);
+  -moz-transform: translateY($value);
+  -ms-transform: translateY($value);
+  -o-transform: translateY($value);
+  transform: translateY($value);
 }
 
 // for use with absolute or relatively positioned elements
-@mixin horizontal-align($position: relative, $offset: 50%) {
+@mixin horizontal-align($position: relative, $offset: 50%, $value: -50%) {
   position: $position;
   left: $offset;
-  @include transform(translateX(-50%));
+  -webkit-transform: translateX($value);
+  -moz-transform: translateX($value);
+  -ms-transform: translateX($value);
+  -o-transform: translateX($value);
+  transform: translateX($value);
 }
 
-@mixin both-align($position: relative, $offset-left: 50%, $offset-top: 50%) {
+@mixin both-align($position: relative, $offset-left: 50%, $offset-top: 50%, $value: -50%) {
   position: $position;
   left: $offset-left;
   top: $offset-top;
-  @include transform(translate(-50%, -50%));
+  -webkit-transform: translate($value, $value);
+  -moz-transform: translate($value, $value);
+  -ms-transform: translate($value, $value);
+  -o-transform: translate($value, $value);
+  transform: translate($value, $value);
 }
 
 @mixin transition($property: all, $duration: 0.3s, $ease: ease-in, $delay: 0s) {
@@ -79,15 +94,18 @@ $font-open: 'Open Sans', sans-serif;
     -webkit-box-align: start;
     -moz-box-align: start;
     -ms-flex-align: start;
-  } @else if $value == flex-end {
+  }
+  @else if $value == flex-end {
     -webkit-box-align: end;
     -moz-box-align: end;
     -ms-flex-align: end;
-  } @else {
+  }
+  @else {
     -webkit-box-align: $value;
     -moz-box-align: $value;
     -ms-flex-align: $value;
   }
+
   -webkit-align-items: $value;
   align-items: $value;
 }
@@ -98,4 +116,17 @@ $font-open: 'Open Sans', sans-serif;
   -webkit-flex-grow: $int;
   -ms-flex: $int;
   flex-grow: $int;
+}
+
+@mixin vert-center-parent {
+  /* The ghost, nudged to maintain perfect centering */
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+
+    /* Adjusts for spacing */
+  }
 }

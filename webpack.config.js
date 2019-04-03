@@ -11,6 +11,7 @@ module.exports = {
     modules: [
       __dirname + '/source/assets/javascript',
       __dirname + '/source/assets/stylesheets',
+      __dirname + '/source/assets/images',
       __dirname + '/node_modules',
     ],
     extensions: ['.js', '.css', '.scss']
@@ -65,6 +66,22 @@ module.exports = {
             'sass-loader'
           ]
         }),
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              fallback: 'responsive-loader',
+              quality: 85
+            }
+          }
+        ]
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
       }
     ]
   },
@@ -77,6 +94,11 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
     }),
     new Clean(['.tmp']),
     new ExtractTextPlugin("assets/stylesheets/[name].bundle.css"),

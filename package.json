@@ -1,10 +1,10 @@
 {
-  "name": "middleman-boostrap",
+  "name": "JudyHe",
   "version": "1.0.0",
-  "description": "A middleman + webpack + bootstrap starter",
+  "description": "Judy He's portfolio site",
   "main": "index.js",
-  "repository": "https://github.com/tomrutgers/middleman-bootstrap.git",
-  "author": "Tom Rutgers",
+  "repository": "https://github.com/JudyHeHeHeHe/site.git",
+  "author": "Judy He",
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development ./node_modules/webpack/bin/webpack.js --watch -d --color",
@@ -24,11 +24,14 @@
     "postcss-loader": "^1.2.2",
     "sass-loader": "^5.0.1",
     "style-loader": "^0.13.1",
+    "svg-inline-loader": "^0.8.0",
+    "url-loader": "^1.1.2",
     "webpack": "^2.2.1"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "d3": "^4.5.0",
+    "ejs": "^2.6.1",
     "jquery": "^3.2.1",
     "reset-css": "^4.0.1",
     "sanitize.css": "^4.1.0"
