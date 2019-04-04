@@ -1,5 +1,7 @@
 import "all.scss";
 
+
+// Nav bar animation
 function openNav(){
   $('.nav-overlay').fadeIn().addClass('open');
   $('.nav-burger').addClass('active');
@@ -32,6 +34,39 @@ showNav();
 
 $(window).resize(function() {
   showNav()
+});
+
+// Show and hide hello
+function showHello() {
+    $('.greeting').addClass('fin');
+}
+function hideHello(){
+  $('.greeting').fadeOut();
+  $('.name').fadeIn();
+
+}
+setTimeout(showHello, 1500);
+setTimeout(hideHello, 8000);
+
+
+$(document).on('click', 'a[href^="#"]', function(e) {
+    // target element id
+    var id = $(this).attr('href');
+
+    // target element
+    var $id = $(id);
+    if ($id.length === 0) {
+        return;
+    }
+
+    // prevent standard hash navigation (avoid blinking in IE)
+    e.preventDefault();
+
+    // top position relative to the document
+    var pos = $id.offset().top - $('header').height();
+
+    // animated top scrolling
+    $('body, html').animate({scrollTop: pos});
 });
 
 
