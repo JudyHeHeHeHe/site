@@ -50,23 +50,24 @@
   <header>
     <a href="/" id="logo" class="logo top-logo">Judy He</a>
     <nav>
-      <a href="#" class="nav-button">
+      <a class="nav-button">
         <div class="nav-burger"></div>
       </a>
       <div class="nav-overlay">
         <ul>
-          <li class="about"><%= link_to 'about', '/about.html' %></li>
+          <li class="about"><a href="#about">About</a></li>
 
-          <li class="work"><%= link_to 'work', '/work.html' %></li>
+          <li class="work"><a href="#work">Work</a></li>
 
-          <li class="contact"><%= link_to 'contact', '/contact.html' %></li>
+          <li class="contact"><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
-
+  <main>
   <%= yield %>
+  </main>
   <%= javascript_include_tag "all.bundle" %>
 </body>
 </html>
