@@ -130,3 +130,21 @@ $font-open: "Open Sans", sans-serif;
     /* Adjusts for spacing */
   }
 }
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes $animationName {
+    @content;
+  }
+
+  @-moz-keyframes $animationName {
+    @content;
+  }
+
+  @-o-keyframes $animationName {
+    @content;
+  }
+
+  @keyframes $animationName {
+    @content;
+  }
+}

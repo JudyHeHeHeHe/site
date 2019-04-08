@@ -116,7 +116,6 @@ p {
   font: {
     family: $font-open;
     weight: 600;
-    style: italic;
   };
 
   @include breakpoint($bp-sm) {

@@ -13,7 +13,7 @@ header {
 .logo {
   width: 194px;
   height: 57px;
-  // background-image: url(../../assets/images/logo.png);
+  background-image: url(../../assets/images/logo.png);
   background-repeat: no-repeat;
   background-position: center center;
   text-indent: -999px;
@@ -256,11 +256,24 @@ nav {
   display: none;
 }
 
+.scroll {
+  padding-left: 20px;
+  padding-top: 90vh;
+  animation: blink 3s infinite;
+
+}
+
+@keyframes blink {
+  0% { opacity: 1}
+  50% { opacity: 0.3}
+  100% { opacity: 1}
+}
+
 .content-container {
   width: 100%;
   padding: 0 20px;
   z-index: 50;
-  top: 100vh;
+  top: 200px;
   position: relative;
   background-color: $color-white;
 
