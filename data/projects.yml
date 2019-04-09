@@ -1,0 +1,35 @@
+[
+  {
+    "time" : "September 29, 2015",
+    "name" : "African WildLife Foundation",
+    "project" : "Support African Elephants",
+    "image" : "awf_logo.png",
+    "url" : "https://campaign.awf.org/support-african-elephants"
+  },
+  {
+    "time" : "January 10, 2016",
+    "name" : "Habitat for Horses",
+    "project" : "2018 BLM",
+    "image" : "hfh_logo.png",
+    "url" : "https://www.habitatforhorses.org/support/petitions/2018-08-blm-petition"
+  },
+  {
+    "time" : "April 10, 2016",
+    "name" : "Habitat for Horses",
+    "project" : "Raise the Barn",
+    "image" : "hfh_logo.png",
+    "url" : "https://www.habitatforhorses.org/landing/raise_the_barn/#homepage"
+  },
+  {
+    "time" : "August 03, 2017",
+    "project" : "Stay Informed",
+    "image" : "php_logo.png",
+    "url" : "https://secure.phr.org/stay-informed"
+  },
+  {
+    "time" : "October 20, 2018",
+    "project" : "SEM Landing",
+    "image" : "ldf_logo.png",
+    "url" : "https://naacplegaldefensefund.org/campaigns/donate-naacp-ldf"
+  }
+]
