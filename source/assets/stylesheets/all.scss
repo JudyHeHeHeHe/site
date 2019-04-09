@@ -2,7 +2,7 @@
 @import "index";
 @import "about";
 @import "work";
-@import "portfolio";
+@import "contact";
 
 html {
   box-sizing: border-box;
@@ -42,7 +42,7 @@ strong {
 }
 
 ul {
-  display: inline-block;
+  display: block;
 }
 
 main {

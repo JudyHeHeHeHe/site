@@ -1,0 +1,39 @@
+#contact {
+  h1 {
+    padding-bottom: 30px;
+  }
+
+  ul {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+  }
+
+  li {
+    @include flex-grow;
+
+    svg {
+      &:hover {
+        #facebook-fill {
+          fill: $color-facebook-hover;
+        }
+
+        #instagram-fill {
+          fill: $color-ins-hover;
+        }
+
+        #twitter-fill {
+          fill: $color-twitter-hover;
+        }
+
+        #email-fill {
+          fill: $color-grapefruit;
+        }
+      }
+    }
+
+    #wechat-fill:hover {
+      fill: $color-wechat-hover;
+    }
+  }
+}

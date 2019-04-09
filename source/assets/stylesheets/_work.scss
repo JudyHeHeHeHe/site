@@ -1,194 +1,215 @@
 #work {
-    margin: 100px auto;
+  margin: 100px auto;
 }
 
 .timeline {
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .timeline-title {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 
-    @include breakpoint($bp-md) {
-        text-align: center;
-    }
+  @include breakpoint($bp-md) {
+    text-align: center;
+  }
 }
 
 .timeline-ul {
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    margin-left: 0.75em;
+    height: 100%;
+    width: .5em;
+    background: $color-light-gray;
+    z-index: -2;
+
+    @include breakpoint($bp-md) {
+      left: 50%;
+      margin-left: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  .timeline-li {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 2em;
+      width: 2em;
+      border-radius: 50%;
+      margin-top: 3em;
+      margin-left: 0;
+      background: $color-dark-gray;
+      z-index: -1;
+
+
+
+      @include breakpoint($bp-md) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &:after {
+      display: table;
+      content: "";
+      clear: both;
+    }
+
+    &:nth-child(2n+1) > div {
+      float: right;
+
+      @include breakpoint($bp-md) {
+        float: left;
+
+        &:before {
+          left: 45%;
+          border-right-color: transparent;
+          border-left: 1em solid $color-light-light-gray;
+          margin-left: 0;
+        }
+      }
+    }
+
+    &:nth-child(2n) > div {
+      float: right;
+
+      @include breakpoint($bp-md) {
+        &:before {
+          right: 45%;
+          left: auto;
+        }
+      }
+    }
+
+    &:hover {
+      &:before {
+        background: $color-grapefruit;
+      }
+    }
+
+      &:nth-last-child(-n+2) {
+        img {
+          max-width: 80px;
+        }
+        &:before {
+          background-color: $color-white;
+          border: 2px solid $color-dark-gray;
+        }
+
+      }
+  }
+
+  .timeline_content {
+    border-radius: 4px;
+    background: $color-light-light-gray;
+    margin: 2em 0;
+    padding: 1.25em;
+    width: 90%;
+    text-align: left;
 
     &:before {
-        content: "";
-        position: absolute;
+      content: '';
+      position: absolute;
+      left: 10%;
+      margin-top: -0.3125em;
+      margin-left: -1em;
+      width: 0;
+      height: 0;
+      border-top: 1em solid transparent;
+      border-bottom: 1em solid transparent;
+      border-right: 1em solid $color-light-light-gray;
+
+      @include breakpoint($bp-md) {
         left: 0;
-        margin-left: 0.75em;
-        height: 100%;
-        width: .5em;
-        background: $color-light-gray;
-        z-index: -2;
+      }
+    }
+
+    @include breakpoint($bp-md) {
+      width: 45%;
+    }
+
+
+    .description {
+      display: inline-block;
+      width: 66%;
+      vertical-align: middle;
+      float: none;
+      -webkit-transition: width 0.5s;
+      transition: width 0.5s;
+
+      @include breakpoint($bp-md) {
+        width: 53%;
+      }
+
+
+      a {
+        padding-right: 10px;
+        text-decoration: none;
+        cursor: pointer;
+        color: $color-dark-gray;
+        font: {
+          size: 0.8125em;
+          family: $font-open;
+          weight: 400;
+          line-height: 1.7;
+        };
 
         @include breakpoint($bp-md) {
-            left: 50%;
-            margin-left: 0;
-            transform: translateX(-50%);
-        }
-    }
-
-    .timeline-li {
-        &:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            height: 2em;
-            width: 2em;
-            border-radius: 50%;
-            margin-top: 3em;
-            margin-left: 0;
-            background: $color-dark-gray;
-            z-index: -1;
-
-            @include breakpoint($bp-md) {
-                left: 50%;
-                transform: translateX(-50%);
-            }
+          font-size: 1em;
         }
 
-        &:after {
-            display: table;
-            content: "";
-            clear: both;
-        }
-
-        &:nth-child(2n+1) > div {
-            float: right;
-
-            @include breakpoint($bp-md) {
-                float: left;
-
-                &:before {
-                    left: 45%;
-                    border-right-color: transparent;
-                    border-left: 1em solid $color-light-light-gray;
-                    margin-left: 0;
-                }
-            }
-        }
-
-        &:nth-child(2n) > div {
-            float: right;
-
-            @include breakpoint($bp-md) {
-                &:before {
-                    right: 45%;
-                    left: auto;
-                }
-            }
-        }
 
         &:hover {
-          &:before {
-            background: $color-grapefruit;
-          }
-
+          text-decoration: underline;
         }
+      }
     }
 
-    .timeline_content {
-        border-radius: 4px;
-        background: $color-light-light-gray;
-        margin: 2em 0;
-        padding: 1.25em;
-        width: 90%;
-        text-align: left;
+    img {
+      display: inline-block;
+      width: 31%;
+      vertical-align: middle;
+      -webkit-transition: width 0.5s;
 
-        &:before {
-            content: '';
-            position: absolute;
-            left: 10%;
-            margin-top: -0.3125em;
-            margin-left: -1em;
-            width: 0;
-            height: 0;
-            border-top: 1em solid transparent;
-            border-bottom: 1em solid transparent;
-            border-right: 1em solid $color-light-light-gray;
+      /* Safari */
+      transition: width 0.5s;
 
-            @include breakpoint($bp-md) {
-                left: 0;
-            }
-        }
+      @include breakpoint($bp-md) {
+        width: 45%;
+      }
+
+
+
+    }
+
+    &:hover {
+      .description {
+        width: 63%;
 
         @include breakpoint($bp-md) {
-            width: 45%;
+          width: 50%;
         }
+      }
 
+      .img {
+        width: 34%;
 
-        .description {
-            display: inline-block;
-            width: 66%;
-            vertical-align: middle;
-            float: none;
-            -webkit-transition: width 0.5s; 
-  transition: width 0.5s;
-
-            @include breakpoint($bp-md) {
-                width: 53%;
-            }
-
-
-            a {
-                padding-right: 10px;
-                text-decoration: none;
-                cursor: pointer;
-                color: $color-dark-gray;
-                font: {
-                    size: 0.8125em;
-                    family: $font-open;
-                    weight: 400;
-                    line-height: 1.7;
-                };
-
-                @include breakpoint($bp-md) {
-                    font-size: 1em;
-                }
-
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
+        @include breakpoint($bp-md) {
+          width: 48%;
         }
-
-        img {
-            display: inline-block;
-            width: 31%;
-            vertical-align: middle;
-            -webkit-transition: width 0.5s; /* Safari */
-  transition: width 0.5s;
-
-            @include breakpoint($bp-md) {
-                width: 45%;
-            }
-        }
-
-        &:hover {
-          .description {
-            width: 63%;
-             @include breakpoint($bp-md) {
-width: 50%;
-             }
-          }
-
-          .img{
-            width: 34%;
-            @include breakpoint($bp-md) {
-width: 48%;
-             }
-          }
-        }
+      }
     }
+
+
+  }
 }
