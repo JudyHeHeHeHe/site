@@ -1,6 +1,7 @@
 @import "~reset-css";
 @import "~breakpoint-sass/stylesheets/breakpoint";
 
+$color-light-light-gray: #f3f3f5;
 $color-light-gray: #e0dfde;
 $color-dark-gray: #666666;
 $color-white: #ffffff;
@@ -16,6 +17,8 @@ $color-border: #D8D8D8;
 $color-social-icon: #796E65;
 $color-facebook-hover: #546EBE;
 $color-twitter-hover: #1F8FCF;
+$color-ins-hover: #8a3ab9;
+$color-wechat-hover: #7cb22e;
 
 // breakpoints
 $bp-xs: 380px;
@@ -108,6 +111,30 @@ $font-open: "Open Sans", sans-serif;
 
   -webkit-align-items: $value;
   align-items: $value;
+}
+
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -moz-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  justify-content: $value;
 }
 
 @mixin flex-grow($int: 1) {

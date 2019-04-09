@@ -13,7 +13,7 @@ header {
 .logo {
   width: 194px;
   height: 57px;
-  background-image: url(../../assets/images/logo.png);
+  // background-image: url(../../assets/images/logo.png);
   background-repeat: no-repeat;
   background-position: center center;
   text-indent: -999px;
@@ -221,24 +221,24 @@ nav {
 .path-1 {
   stroke-dasharray: 1850 2000;
   stroke-dashoffset: 1851;
-  transition: 3s linear;
+  transition: 2.5s linear;
 }
 
 .path-2 {
   stroke-dasharray: 260 1000;
   stroke-dashoffset: 261;
-  transition: 0.7s linear 3.2s;
+  transition: 0.4s linear 2.7s;
 }
 
 .path-3 {
   stroke-dasharray: 100 1000;
   stroke-dashoffset: 101;
-  transition: 0.3s linear 4.3s;
+  transition: 0.35s linear 3.3s;
 }
 
 .path-4 {
   stroke-width: 0;
-  transition: 0.1s linear 5s;
+  transition: 0.25s linear 3.7s;
 }
 
 .jombo-container {
@@ -259,6 +259,7 @@ nav {
 .scroll {
   padding-left: 20px;
   padding-top: 90vh;
+  padding-bottom: 200px;
   animation: blink 3s infinite;
 
 }
@@ -273,7 +274,6 @@ nav {
   width: 100%;
   padding: 0 20px;
   z-index: 50;
-  top: 200px;
   position: relative;
   background-color: $color-white;
 
