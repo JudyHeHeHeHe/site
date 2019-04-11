@@ -81,7 +81,7 @@ $(function() {
       $('.name, .scroll').fadeIn();
     }
     setTimeout(showHello, 1500);
-    setTimeout(hideHello, 7000);
+    setTimeout(hideHello, 6000);
 
 
     $(document).on('click', 'a[href^="#"]', function(e) {
