@@ -74,11 +74,11 @@ $(function() {
 
     // Show and hide hello
     function showHello() {
-        $('.greeting').fadeIn().addClass('fin');
+        $('#hello-svg').fadeIn().addClass('fin');
     }
     function hideHello(){
-      $('.greeting').fadeOut();
-      $('.name').fadeIn();
+      $('#hello-svg').fadeOut();
+      $('.name, .scroll').fadeIn();
     }
     setTimeout(showHello, 1500);
     setTimeout(hideHello, 7000);
