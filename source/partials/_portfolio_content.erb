@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <%= image_tag logo %>
+  <h2 class="project-name"><%= project_name %></h2>
+</div>
+<div class="modal-body">
+  <%=image_tag screenshot, :class => 'screenshot'%>
+  <p class="modal-descitption"><%= description %></p>
+  <div class="modal-info">
+    <ul>
+      <li>
+        <%=image_tag 'calendar.svg', :class => 'modal-calendar'%>
+        <p class="modal-date"><%= date %></p>
+      </li>
+      <li>
+        <%=image_tag 'tag.svg', :class => 'modal-tag' %>
+        <p class="modal-tags"><%= tags %></p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="modal-social-share">
+  <ul>
+    <li>
+      <%= link_to 'Share on Facebook', 'facebook_share' %>
+      <%=image_tag 'social-icons/fb-share.svg' %>
+      <%= link_to 'Share on Twitter', 'twitter_share' %>
+      <%=image_tag 'social-icons/tw-share.svg' %>
+    </li>
+  </ul>
+</div>
+
+
