@@ -828,11 +828,50 @@ section {
 
     img {
       margin-right: 15px;
-      align-self: stretch;
+      align-self: flex-start;
       max-width: 20px;
       &.modal-tag {
         margin-top: 9px;
       }
     }
   }
+}
+
+.modal-social-share {
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+
+  ul {
+    text-align: left;
+
+  }
+
+  li {
+    width: 85px;
+    border: 1px solid $color-border;
+    text-align: left;
+    margin-right: 10px;
+    padding: 2px 5px;
+    display: inline-block;
+    text-align: center;
+    @include border-radius(5px);
+
+
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      width: 20px;
+      vertical-align: middle;
+    }
+
+    p {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
 }

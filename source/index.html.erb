@@ -31,10 +31,9 @@ page_title: Lore Ipsum
         <div class="timeline_content">
           <div class="description">
             <h3><%=project.time %></h3>
-            <a href="<%=project.url %>" target="_blank"><%=project.project %></a>
+            <%=project.project %>
           </div>
-          <a href="<%=project.url %>" target="_blank">
-          <img src="<%=image_path " projects/"+project.image %>" alt="<%=project.name %>"></a>
+          <img src="<%=image_path " projects/"+project.image %>" alt="<%=project.name %>">
         </div>
         <%= partial(:'partials/portfolio', :locals => {:id => project.id}) %>
         </li>

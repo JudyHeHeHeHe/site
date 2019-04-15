@@ -84,6 +84,16 @@ $(function() {
     setTimeout(hideHello, 6000);
 
 
+    // Show modal
+    var modals = document.querySelectorAll('.timeline-li');
+
+    function openModal(el){
+      el.find('.modal').addClass('modalIn');
+    }
+
+    modals.forEach(openModal($(this)));
+
+
     $(document).on('click', 'a[href^="#"]', function(e) {
         // target element id
         var id = $(this).attr('href');

@@ -29,7 +29,7 @@
     "time" : "September 18, 2018",
     "name" : "NAACP Legal Defense Fund",
     "project" : "SEM Landing",
-    "image" : "ldf_logo.png",
+    "image" : "ldf_logo.svg",
     "url" : "https://naacplegaldefensefund.org/campaigns/donate-naacp-ldf",
     'id' : '4'
   },
@@ -38,7 +38,7 @@
     "time" : "October 26, 2018",
     "name" : "NAACP Legal Defense Fund",
     "project" : "SMS Landing",
-    "image" : "ldf_logo.png",
+    "image" : "ldf_logo.svg",
     "url" : "https://naacplegaldefensefund.org/campaigns/sms/",
     'id' : '5'
   },
