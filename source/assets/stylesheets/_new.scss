@@ -6,8 +6,11 @@ header {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  background-color: $color-white;
-  opacity: 0.95;
+
+  @include breakpoint($bp-md) {
+    background-color: $color-white;
+    opacity: 0.95;
+  }
 }
 
 .logo {
@@ -72,7 +75,7 @@ nav {
 .nav-burger {
   width: 35px;
   height: 3px;
-  background-color: $color-grapefruit;
+  background-color: $color-light-light-gray;
 
   @include border-radius(5px);
   @include transition;
@@ -82,7 +85,7 @@ nav {
     display: block;
     width: 35px;
     height: 3px;
-    background-color: $color-grapefruit;
+    background-color: $color-light-light-gray;
     position: relative;
     top: -10px;
 
@@ -95,12 +98,20 @@ nav {
     display: block;
     width: 35px;
     height: 3px;
-    background-color: $color-grapefruit;
+    background-color: $color-light-light-gray;
     position: relative;
     top: 7px;
 
     @include border-radius(5px);
     @include transition;
+  }
+
+  &.color-white {
+    background-color: $color-grapefruit;
+
+    &:before, &:after {
+      background-color: $color-grapefruit;
+    }
   }
 }
 
@@ -250,6 +261,7 @@ nav {
   margin: 0 auto;
   overflow: hidden;
   max-width: 1200px;
+  background-color: $color-grapefruit;
 
   #hello-svg {
     width: 100%;
@@ -285,6 +297,21 @@ nav {
     opacity: 0;
     animation: blink 2s ease-in-out infinite;
   }
+
+  .half-background {
+    width: 0;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: $color-background-gray;
+    left: auto;
+    position: absolute;
+    animation: width 1s ease-in-out;
+
+    &.slide-left {
+      width: 50%;
+    }
+  }
 }
 
 @keyframes blink {
@@ -303,7 +330,7 @@ nav {
 
 .path {
   fill: none;
-  stroke: $color-light-gray;
+  stroke: $color-light-light-gray;
   stroke-width: 18px;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -475,6 +502,7 @@ section {
       padding: 1.25em;
       width: 90%;
       text-align: left;
+      cursor: pointer;
 
       &:before {
         content: '';
@@ -651,7 +679,7 @@ section {
   }
 }
 
-.modal {
+[id^='modal_'] {
   position: fixed;
   z-index: 200;
   left: 0;
@@ -752,7 +780,7 @@ section {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 
-  .close {
+  .modal-close {
     color: $color-grapefruit;
     float: right;
     border: 1px solid $color-border;
@@ -773,27 +801,26 @@ section {
 }
 
 .modal-header {
-
   width: 80%;
   padding: 0 20px 20px 20px;
   text-align: left;
 
   img {
     width: 100%;
-    max-width: 200px;
+    max-width: 130px;
     display: block;
+
     @include breakpoint($bp-md) {
       display: inline-block;
-
     }
   }
 
   .project-name {
     display: block;
     padding-top: 15px;
-    @include breakpoint($bp-md) {
-      display: inline-block;
 
+    @include breakpoint($bp-sm) {
+      font-size: 1.3em;
     }
   }
 }
@@ -819,10 +846,11 @@ section {
     li {
       text-align: left;
 
-      @include flexbox();
+      @include flexbox;
       @include align-items(flex-start);
+
       &:nth-child(2) {
-        margin-top: 10px
+        margin-top: 10px;
       }
     }
 
@@ -830,6 +858,7 @@ section {
       margin-right: 15px;
       align-self: flex-start;
       max-width: 20px;
+
       &.modal-tag {
         margin-top: 9px;
       }
@@ -844,20 +873,18 @@ section {
 
   ul {
     text-align: left;
-
   }
 
   li {
-    width: 85px;
+    width: 90px;
     border: 1px solid $color-border;
     text-align: left;
-    margin-right: 10px;
+    margin-right: 15px;
     padding: 2px 5px;
     display: inline-block;
     text-align: center;
+
     @include border-radius(5px);
-
-
 
     a {
       text-decoration: none;
@@ -871,7 +898,11 @@ section {
     p {
       display: inline-block;
       vertical-align: middle;
+      margin-right: 3px;
+
+      @include breakpoint($bp-sm) {
+        font-size: 0.8em;
+      }
     }
   }
-
 }

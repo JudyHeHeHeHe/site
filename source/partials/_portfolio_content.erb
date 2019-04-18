@@ -1,6 +1,6 @@
 <div class="modal-header">
   <%= image_tag logo %>
-  <a href=""><h2 class="project-name"><%= project_name %></h2></a>
+  <a href="<%= url %>" target="_blank"><h2 class="project-name"><%= project_name %></h2></a>
 </div>
 <div class="modal-body">
   <%=image_tag screenshot, :class => 'screenshot'%>
@@ -21,13 +21,13 @@
 <div class="modal-social-share">
   <ul>
     <li>
-     <a href="<%= facebook_share %>">
+     <a href="<%= facebook_share %>" target="_blank">
       <p>Share</p>
       <%= image_tag 'social-icons/fb-share.svg' %>
       </a>
     </li>
     <li>
-      <a href="<%= twitter_share %>">
+      <a href="<%= twitter_share %>" target="_blank">
       <p>Tweet</p>
       <%= image_tag 'social-icons/tw-share.svg' %>
       </a>

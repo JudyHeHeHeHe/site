@@ -1,7 +1,7 @@
-<div class="modal">
+<div id="modal_<%= id %>">
   <div class="backdrop"></div>
   <div class="modal-container">
-    <span class="close">&times;</span>
+    <span class="modal-close">&times;</span>
     <% if id == '1' %>
       <%= partial(:'partials/portfolio_content', :locals => {
         :logo => "projects/awf_logo.png",
