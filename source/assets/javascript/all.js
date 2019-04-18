@@ -5,16 +5,16 @@ import "vendor/ScrollMagic.min.js"
 $(function() {
   (function($) {
 
-    // var waypoint = new Waypoint({
-    //   element: document.getElementById('about'),
-    //   handler: function(direction) {
-    //     if (direction ==='down'){
-    //       $('.name').fadeOut();
-    //     } else if(direction === 'up')
-    //     $('.name').fadeIn();
-    //   },
-    //   offset: '50%'
-    // })
+    var waypoint = new Waypoint({
+      element: document.getElementById('about'),
+      handler: function(direction) {
+
+          $('.half-background').addClass('slide-left');
+
+
+      },
+      offset: '-100%'
+    })
 
 
     // Wipes
@@ -82,6 +82,27 @@ $(function() {
     }
     setTimeout(showHello, 1500);
     setTimeout(hideHello, 6000);
+
+
+    // Show and hide modals
+    var length = document.querySelectorAll('.timeline_content').length;
+
+    $('.timeline_content').each(function(el){
+      $(this).on('click', function(){
+        if ( el <= length - 3) {
+          $(this).parent().find('[id^="modal_"]').removeAttr('class').addClass('modalIn');
+        } else if ( el > length - 3) {
+          return;
+        }
+      })
+    })
+
+    $('.modal-close').each(function(){
+      $(this).on('click', function(){
+        $(this).closest('[id^="modal_"]').addClass('modalOut');
+      })
+    });
+
 
 
     $(document).on('click', 'a[href^="#"]', function(e) {
