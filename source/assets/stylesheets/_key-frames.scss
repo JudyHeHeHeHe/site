@@ -1,0 +1,39 @@
+@keyframes burgerslidedown {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 28px;
+    opacity: 1;
+  }
+}
+
+@keyframes logoslidedown {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 40px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideleft1 {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 50%;
+  }
+}
+
+@keyframes slideleft2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}

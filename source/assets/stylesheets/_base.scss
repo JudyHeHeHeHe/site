@@ -10,10 +10,7 @@ $color-red: #fc4309;
 $color-red-hover: #ff6600;
 // $color-grapefruit: #ff765c;
 $color-grapefruit: #ff5851;
-$color-yellow: #ffb646;
-$color-yellow-hover: #ff9900;
-$color-backdrop: rgba(155, 155, 155, 0.75);
-$color-black: #000;
+$color-black: #333;
 
 $color-footer: #C8C1BC;
 $color-border: #D8D8D8;
@@ -37,10 +34,9 @@ $bp-sm-lg: $bp-sm ($bp-lg - 1);
 $bp-md-lg: $bp-md ($bp-lg - 1);
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Bitter:400,400i|Open+Sans:300,400,600,600i,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900");
 
-$font-bitter: "Bitter", serif;
-$font-open: "Open Sans", sans-serif;
+$font-mon: 'Montserrat', sans-serif;
 
 // Centering: NOTE - requires absolute or relative positioning
 @mixin vertical-align($position: relative, $offset: 50%, $value: -50%) {

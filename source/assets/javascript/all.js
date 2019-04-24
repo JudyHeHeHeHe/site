@@ -5,16 +5,16 @@ import "vendor/ScrollMagic.min.js"
 $(function() {
   (function($) {
 
-    var waypoint = new Waypoint({
-      element: document.getElementById('about'),
-      handler: function(direction) {
+    // var waypoint = new Waypoint({
+    //   element: document.getElementById('about'),
+    //   handler: function(direction) {
 
-          $('.half-background').addClass('slide-left');
+    //       $('.half-background').addClass('slide-left');
 
 
-      },
-      offset: '-100%'
-    })
+    //   },
+    //   offset: '-100%'
+    // })
 
 
     // Wipes
@@ -74,14 +74,14 @@ $(function() {
 
     // Show and hide hello
     function showHello() {
-        $('#hello-svg').fadeIn().addClass('fin');
+        $('#hello').fadeIn().addClass('fin');
     }
-    function hideHello(){
-      $('#hello-svg').fadeOut();
-      $('.name, .scroll').fadeIn();
-    }
-    setTimeout(showHello, 1500);
-    setTimeout(hideHello, 6000);
+    // function hideHello(){
+    //   $('.hello').fadeOut();
+    //   $('.name, .scroll').fadeIn();
+    // }
+    setTimeout(showHello, 1000);
+    // setTimeout(hideHello, 6000);
 
 
     // Show and hide modals
