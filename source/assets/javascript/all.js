@@ -38,38 +38,75 @@ $(function() {
     // }
 
     // Nav bar animation
-    function openNav(){
-      $('.nav-overlay').fadeIn().addClass('open');
-      $('.nav-burger').addClass('active');
-    }
+    // function openNav(){
+    //   $('.nav-overlay').fadeIn().addClass('open');
+    //   $('.nav-burger').addClass('active');
+    // }
 
-    function closeNav(){
-      $('.nav-overlay').fadeOut().removeClass('open');
-      $('.nav-burger').removeClass('active');
-    }
+    // function closeNav(){
+    //   $('.nav-overlay').fadeOut().removeClass('open');
+    //   $('.nav-burger').removeClass('active');
+    // }
 
-    $('.nav-button').on('click', function(e){
-      e.preventDefault();
-      if ($('.nav-overlay').is(':hidden')){
-        openNav();
-      } else {
-        closeNav();
-      }
-    });
+    // $('.nav-button').on('click', function(e){
+    //   e.preventDefault();
+    //   if ($('.nav-overlay').is(':hidden')){
+    //     openNav();
+    //   } else {
+    //     closeNav();
+    //   }
+    // });
 
-    function showNav(){
-      if ($(window).width() >= 600) {
-        if ($('.nav-overlay').is(':hidden')) {
-          $('.nav-overlay').removeAttr('style');
-          $('.nav-overlay ul').removeAttr('style');
-        }
-      }
-    }
+    // function showNav(){
+    //   if ($(window).width() >= 600) {
+    //     if ($('.nav-overlay').is(':hidden')) {
+    //       $('.nav-overlay').removeAttr('style');
+    //       $('.nav-overlay ul').removeAttr('style');
+    //     }
+    //   }
+    // }
 
-    showNav();
+    // showNav();
 
-    $(window).resize(function() {
-      showNav();
+    // $(window).resize(function() {
+    //   showNav();
+    // });
+
+    // // Show and hide hello
+    // function showHello() {
+    //     $('#hello').fadeIn().addClass('fin');
+    // }
+    // // function hideHello(){
+    // //   $('.hello').fadeOut();
+    // //   $('.name, .scroll').fadeIn();
+    // // }
+    // setTimeout(showHello, 1000);
+    // // setTimeout(hideHello, 6000);
+
+
+    // // Show and hide modals
+    // var length = document.querySelectorAll('.timeline_content').length;
+
+    // $('.timeline_content').each(function(el){
+    //   $(this).on('click', function(){
+    //     if ( el <= length - 3) {
+    //       $(this).parent().find('[id^="modal_"]').removeAttr('class').addClass('modalIn');
+    //     } else if ( el > length - 3) {
+    //       return;
+    //     }
+    //   })
+    // })
+
+    // $('.modal-close').each(function(){
+    //   $(this).on('click', function(){
+    //     $(this).closest('[id^="modal_"]').addClass('modalOut');
+    //   })
+    // });
+
+
+    $('.nav-button').on('click', function(){
+      $('body').toggleClass('menueOpen');
+
     });
 
     // Show and hide hello
@@ -82,28 +119,6 @@ $(function() {
     // }
     setTimeout(showHello, 1000);
     // setTimeout(hideHello, 6000);
-
-
-    // Show and hide modals
-    var length = document.querySelectorAll('.timeline_content').length;
-
-    $('.timeline_content').each(function(el){
-      $(this).on('click', function(){
-        if ( el <= length - 3) {
-          $(this).parent().find('[id^="modal_"]').removeAttr('class').addClass('modalIn');
-        } else if ( el > length - 3) {
-          return;
-        }
-      })
-    })
-
-    $('.modal-close').each(function(){
-      $(this).on('click', function(){
-        $(this).closest('[id^="modal_"]').addClass('modalOut');
-      })
-    });
-
-
 
     $(document).on('click', 'a[href^="#"]', function(e) {
         // target element id

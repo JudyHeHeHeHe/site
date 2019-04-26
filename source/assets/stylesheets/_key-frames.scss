@@ -1,3 +1,5 @@
+@import "base";
+
 @keyframes burgerslidedown {
   from {
     top: 0;
@@ -37,3 +39,85 @@
     width: 50%;
   }
 }
+
+@keyframes scrollslideup {
+  from {
+    bottom: 3%;
+    opacity: 0;
+  }
+  to {
+    bottom: 5%;
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-12px);
+  }
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes swapcolor {
+ from {
+    background-color: $color-light-light-gray;
+  }
+  to {
+    background-color: $color-white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
