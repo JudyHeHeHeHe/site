@@ -2,7 +2,7 @@
 
 section {
   width: 100%;
-  margin: 0 atuo;
+  margin: 0 auto;
   padding: 0;
   overflow: hidden;
 }
@@ -15,6 +15,10 @@ section {
   -webkit-transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
   -moz-transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
   transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+
+  @include breakpoint($bp-md) {
+    padding: 40px;
+  }
 }
 
 #greeting {
@@ -28,22 +32,21 @@ section {
     background-color: $color-grapefruit;
     width: 50%;
     float: left;
-    animation: slideleft1 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0.2s;
+    animation: slideleft1 0.8s ease-in 0.2s;
   }
 
   .right-container {
     background-color: $color-light-light-gray;
     float: right;
     width: 50%;
-    animation: slideleft2 0.5s cubic-bezier(0.7, 0, 0.3, 1) 0.2s;
+    animation: slideleft2 0.5s ease-in 0.2s;
   }
 
   .logo {
     width: 89px;
     height: 23px;
     z-index: 10;
-
-    // background-image: url(../../assets/images/JudyHe.svg);
+    background-image: url(../../assets/images/JudyHe.svg);
     background-repeat: no-repeat;
     background-position: center center;
     text-indent: -999px;
@@ -52,15 +55,20 @@ section {
     text-transform: capitalize;
     position: absolute;
     top: 40px;
-    left: 30px;
+    left: 40px;
     animation: logoslidedown 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0s;
+
+    @include breakpoint($bp-md) {
+      top: 10px;
+      transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+    }
   }
 
   #hello {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 30px;
     display: none;
-    max-width: 1200px;
+    max-width: 700px;
     z-index: 10;
 
     @include both-align(absolute, 50%, 50%, -50%);
@@ -109,21 +117,30 @@ section {
   }
 
   .scroll {
+    display: block;
     color: $color-white;
     position: absolute;
     right: 30px;
     bottom: 6%;
-    writing-mode: vertical-rl;
+    transform: rotate(-90deg);
     text-orientation: mixed;
     animation: scrollslideup 0.8s cubic-bezier(0.7, 0, 0.3, 1) 4.7s forwards;
+    transition: color 0.3s cubic-bezier(0.7, 0, 0.3, 1);
     opacity: 0;
-    height: 70px;
+    line-height: 60px;
+    font-size: 0.675em;
 
     span {
-      margin-top: 20px;
       animation: bounce 2s 4.7s infinite;
       position: absolute;
       bottom: 0;
+    }
+
+    @include breakpoint($bp-md) {
+      position: fixed;
+      right: auto;
+      left: 35px;
+      color: $color-black;
     }
   }
 }
@@ -149,6 +166,78 @@ section {
   animation: burgerslidedown 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0s;
 
   @include border-radius(25px);
+  @include breakpoint($bp-md) {
+    right: auto;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    transition: left 0.2s cubic-bezier(0.7, 0, 0.3, 1);
+
+    &:hover {
+      .nav-burger .line {
+        &:nth-of-type(1) {
+          width: 20px;
+        }
+
+        &:nth-of-type(2) {
+          width: 32px;
+        }
+
+        &:nth-of-type(3) {
+          width: 18px;
+        }
+      }
+
+      .txt {
+        -webkit-transform: rotate(-90deg) translateY(-8px);
+        -moz-transform: rotate(-90deg) translateY(-8px);
+        -ms-transform: rotate(-90deg) translateY(-8px);
+        -o-transform: rotate(-90deg) translateY(-8px);
+        transform: rotate(-90deg) translateY(-8px);
+
+        span {
+          &:nth-of-type(1) {
+            -webkit-transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            -o-transform: translateY(-5px);
+            transform: translateY(-5px);
+          }
+
+          &:nth-of-type(2) {
+            -webkit-transform: translateY(5px);
+
+            // -moz-transform: translateY(5px);
+            // -ms-transform: translateY(5px);
+            // -o-transform: translateY(5px);
+            // transform: translateY(5px);
+         
+          }
+
+          &:nth-of-type(3) {
+            -webkit-transform: translateY(-2px);
+
+            // -moz-transform: translateY(-2px);
+            // -ms-transform: translateY(-2px);
+            // -o-transform: translateY(-2px);
+            // transform: translateY(-2px);
+         
+          }
+
+          &:nth-of-type(4) {
+            -webkit-transform: translateY(3px);
+
+            // -moz-transform: translateY(3px);
+            // -ms-transform: translateY(3px);
+            // -o-transform: translateY(3px);
+            // transform: translateY(3px);
+         
+          }
+        }
+      }
+    }
+  }
 }
 
 .nav-burger {
@@ -158,7 +247,7 @@ section {
     float: right;
     clear: right;
     height: 2px;
-    background: $color-dark-gray;
+    background: $color-black;
     -webkit-transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
     -moz-transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
     transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
@@ -170,11 +259,50 @@ section {
     &:nth-of-type(2) {
       width: 20px;
       margin-top: 2px;
+
+      @include breakpoint($bp-md) {
+        margin-top: 3px;
+      }
     }
 
     &:nth-of-type(3) {
       width: 12px;
       margin-top: 2px;
+
+      @include breakpoint($bp-md) {
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.txt {
+  opacity: 0;
+
+  @include breakpoint($bp-md) {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    top: 41%;
+    right: -40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-black;
+    font: {
+      size: 0.4rem;
+      family: $font-mon;
+      weight: 900;
+    };
+    transform: rotate(-90deg);
+    -webkit-transition: -webkit-transform 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms, opacity 150ms linear 0ms, color 150ms linear 0ms;
+    -moz-transition: -moz-transform 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms, opacity 150ms linear 0ms, color 150ms linear 0ms;
+    transition: transform 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms, opacity 150ms linear 0ms, color 150ms linear 0ms;
+
+    span {
+      display: inline-block;
+      -webkit-transition: -webkit-transform 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+      -moz-transition: -moz-transform 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+      transition: transform 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
     }
   }
 }
@@ -218,15 +346,33 @@ section {
     position: absolute;
     left: 20px;
     top: 20%;
-    opacity: 0;
-    transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0.5s;
+
+    @include breakpoint($bp-md) {
+      left: 250px;
+      top: 35%;
+    }
+
 
     li {
-      margin-bottom: 10px;
+      margin: 10px 0 10px 0;
       text-align: left;
+      opacity: 0;
+
+      &:nth-child(1) {
+        transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1) 0.5s;
+      }
+
+      &:nth-child(2) {
+        transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1) 0.6s;
+      }
+
+      &:nth-child(3) {
+        transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1) 0.7s;
+      }
 
       &:last-of-type {
-        margin-top: 30px;
+        margin-top: 40px;
+        transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0.8s;
       }
     }
 
@@ -242,6 +388,11 @@ section {
         family: $font-mon;
         weight: 900;
       };
+
+      @include breakpoint($bp-md) {
+        font-size: 1.5em;
+      }
+
 
       &:before, &:after {
         content: '';
@@ -325,6 +476,13 @@ section {
     opacity: 0;
     transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0.5s;
 
+    @include breakpoint($bp-md) {
+      left: 250px;
+      top: 55%;
+      bottom: auto;
+    }
+
+
     a {
       text-decoration: none;
       color: $color-black;
@@ -350,9 +508,63 @@ section {
   }
 }
 
+.icons {
+  text-decoration: none;
+  margin-right: 20px;
+  display: inline-block;
+
+  svg {
+    vertical-align: top;
+
+    &:hover {
+      #facebook-fill {
+        fill: $color-facebook-hover;
+      }
+
+      #instagram-fill {
+        fill: $color-ins-hover;
+      }
+    }
+  }
+
+  #wechat-fill:hover {
+    fill: $color-wechat-hover;
+  }
+}
+
+.desktop-social-icons {
+  display: none;
+
+  @include breakpoint($bp-md) {
+    display: block;
+    right: 8px;
+    transition: right 0.2s cubic-bezier(0.7, 0, 0.3, 1);
+
+    @include vertical-align(fixed, 50%);
+
+    .icons {
+      display: block;
+      margin: 10px 0;
+      vertical-align: middle;
+    }
+  }
+}
+
 .menueOpen {
   .jombo-container {
     padding: 20px;
+
+    @include breakpoint($bp-md) {
+      padding: 100px;
+    }
+  }
+
+  #greeting .logo {
+    @include breakpoint($bp-md) {
+      top: 100px;
+      left: 250px;
+      z-index: 100;
+    }
   }
 
   .nav-burger {
@@ -377,29 +589,73 @@ section {
       }
 
       &:nth-of-type(3) {
-        width: 0px;
+        width: 0px !important;
       }
     }
+  }
+
+  .nav-button {
+    @include breakpoint($bp-md) {
+      left: 100px;
+    }
+  }
+
+  .txt {
+    display: none;
   }
 
   .menu-color {
     padding: 20px;
     opacity: 1;
     pointer-events: all;
+    @include breakpoint($bp-md) {
+     padding: 100px 250px 100px 20px;
+    }
   }
 
   .menu {
     padding: 20px;
     left: 0;
+    @include breakpoint($bp-md) {
+      padding: 100px 250px 100px 20px;
+    }
   }
 
-  .menu-options {
-    top: 17%;
+  .menu-options li {
+    margin: 0 0 10px 0;
     opacity: 1;
+
+    &:last-of-type {
+      margin-top: 30px;
+
+      @include breakpoint($bp-md) {
+        display: none;
+      }
+    }
   }
 
   .menu-info {
     bottom: 45px;
     opacity: 1;
+  }
+
+  .desktop-social-icons {
+    @include breakpoint($bp-md) {
+        right: 37px;
+      }
+  }
+
+  #greeting .scroll {
+    color: $color-white;
+  }
+}
+
+.menuHover {
+  .jombo-container {
+    padding-left: 78px;
+  }
+
+  #greeting .scroll {
+    color: $color-white;
   }
 }

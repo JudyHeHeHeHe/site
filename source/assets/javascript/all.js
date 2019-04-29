@@ -109,6 +109,18 @@ $(function() {
 
     });
 
+    $('.nav-button').on('mouseover', function(){
+
+      $('body').addClass('menuHover');
+    
+    });
+
+     $('.nav-button').on('mouseout', function(){
+
+      $('body').removeClass('menuHover');
+    
+    });
+
     // Show and hide hello
     function showHello() {
         $('#hello').fadeIn().addClass('fin');
