@@ -104,21 +104,21 @@ $(function() {
     // });
 
 
-    $('.nav-button').on('click', function(){
-      $('body').toggleClass('menueOpen');
+    $('.menu-button').on('click', function(){
+      $('body').toggleClass('menuOpen');
 
     });
 
-    $('.nav-button').on('mouseover', function(){
+    $('.menu-button').on('mouseover', function(){
 
       $('body').addClass('menuHover');
-    
+
     });
 
-     $('.nav-button').on('mouseout', function(){
+     $('.menu-button').on('mouseout', function(){
 
       $('body').removeClass('menuHover');
-    
+
     });
 
     // Show and hide hello
