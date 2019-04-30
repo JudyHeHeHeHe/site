@@ -5,16 +5,16 @@ import "vendor/ScrollMagic.min.js"
 $(function() {
   (function($) {
 
-    var waypoint = new Waypoint({
-      element: document.getElementById('about'),
-      handler: function(direction) {
+    // var waypoint = new Waypoint({
+    //   element: document.getElementById('about'),
+    //   handler: function(direction) {
 
-          $('.half-background').addClass('slide-left');
+    //       $('.half-background').addClass('slide-left');
 
 
-      },
-      offset: '-100%'
-    })
+    //   },
+    //   offset: '-100%'
+    // })
 
 
     // Wipes
@@ -38,72 +38,99 @@ $(function() {
     // }
 
     // Nav bar animation
-    function openNav(){
-      $('.nav-overlay').fadeIn().addClass('open');
-      $('.nav-burger').addClass('active');
-    }
+    // function openNav(){
+    //   $('.nav-overlay').fadeIn().addClass('open');
+    //   $('.nav-burger').addClass('active');
+    // }
 
-    function closeNav(){
-      $('.nav-overlay').fadeOut().removeClass('open');
-      $('.nav-burger').removeClass('active');
-    }
+    // function closeNav(){
+    //   $('.nav-overlay').fadeOut().removeClass('open');
+    //   $('.nav-burger').removeClass('active');
+    // }
 
-    $('.nav-button').on('click', function(e){
-      e.preventDefault();
-      if ($('.nav-overlay').is(':hidden')){
-        openNav();
-      } else {
-        closeNav();
-      }
+    // $('.nav-button').on('click', function(e){
+    //   e.preventDefault();
+    //   if ($('.nav-overlay').is(':hidden')){
+    //     openNav();
+    //   } else {
+    //     closeNav();
+    //   }
+    // });
+
+    // function showNav(){
+    //   if ($(window).width() >= 600) {
+    //     if ($('.nav-overlay').is(':hidden')) {
+    //       $('.nav-overlay').removeAttr('style');
+    //       $('.nav-overlay ul').removeAttr('style');
+    //     }
+    //   }
+    // }
+
+    // showNav();
+
+    // $(window).resize(function() {
+    //   showNav();
+    // });
+
+    // // Show and hide hello
+    // function showHello() {
+    //     $('#hello').fadeIn().addClass('fin');
+    // }
+    // // function hideHello(){
+    // //   $('.hello').fadeOut();
+    // //   $('.name, .scroll').fadeIn();
+    // // }
+    // setTimeout(showHello, 1000);
+    // // setTimeout(hideHello, 6000);
+
+
+    // // Show and hide modals
+    // var length = document.querySelectorAll('.timeline_content').length;
+
+    // $('.timeline_content').each(function(el){
+    //   $(this).on('click', function(){
+    //     if ( el <= length - 3) {
+    //       $(this).parent().find('[id^="modal_"]').removeAttr('class').addClass('modalIn');
+    //     } else if ( el > length - 3) {
+    //       return;
+    //     }
+    //   })
+    // })
+
+    // $('.modal-close').each(function(){
+    //   $(this).on('click', function(){
+    //     $(this).closest('[id^="modal_"]').addClass('modalOut');
+    //   })
+    // });
+
+
+    $('.menu-button').on('click', function(){
+      $('body').toggleClass('menuOpen');
+
     });
 
-    function showNav(){
-      if ($(window).width() >= 600) {
-        if ($('.nav-overlay').is(':hidden')) {
-          $('.nav-overlay').removeAttr('style');
-          $('.nav-overlay ul').removeAttr('style');
-        }
-      }
-    }
+    $('.menu-button').on('mouseover', function(){
 
-    showNav();
+      $('body').addClass('menuHover');
 
-    $(window).resize(function() {
-      showNav();
+    });
+
+     $('.menu-button').on('mouseout', function(){
+
+      $('body').removeClass('menuHover');
+
     });
 
     // Show and hide hello
     function showHello() {
-        $('#hello-svg').fadeIn().addClass('fin');
+        $('#hello').fadeIn().addClass('fin');
     }
-    function hideHello(){
-      $('#hello-svg').fadeOut();
-      $('.name, .scroll').fadeIn();
-    }
-    setTimeout(showHello, 1500);
-    setTimeout(hideHello, 6000);
-
-
-    // Show and hide modals
-    var length = document.querySelectorAll('.timeline_content').length;
-
-    $('.timeline_content').each(function(el){
-      $(this).on('click', function(){
-        if ( el <= length - 3) {
-          $(this).parent().find('[id^="modal_"]').removeAttr('class').addClass('modalIn');
-        } else if ( el > length - 3) {
-          return;
-        }
-      })
-    })
-
-    $('.modal-close').each(function(){
-      $(this).on('click', function(){
-        $(this).closest('[id^="modal_"]').addClass('modalOut');
-      })
-    });
-
-
+    // function hideHello(){
+    //   $('.hello').fadeOut();
+    //   $('.name, .scroll').fadeIn();
+    // }
+    setTimeout(showHello, 1000);
+    // setTimeout(hideHello, 6000);
 
     $(document).on('click', 'a[href^="#"]', function(e) {
         // target element id

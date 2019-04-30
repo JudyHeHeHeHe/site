@@ -1,0 +1,859 @@
+@import "key-frames";
+
+section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.jumbo-container {
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+
+  @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
+
+  @include breakpoint($bp-sm) {
+    padding: 40px;
+  }
+}
+
+#greeting {
+  .left-container, .right-container {
+    height: 100%;
+    display: inline-block;
+    position: relative;
+
+    @include transition(background-color, 0.8s, cubic-bezier(0.7, 0, 0.3, 1));
+  }
+
+  .left-container {
+    background-color: $color-grapefruit;
+    width: 50%;
+    float: left;
+    animation: slideleft1 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0.2s;
+  }
+
+  .right-container {
+    background-color: $color-light-light-gray;
+    float: right;
+    width: 50%;
+    animation: slideleft2 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0.2s;
+  }
+
+  .logo {
+    width: 89px;
+    height: 23px;
+    z-index: 10;
+    background-image: url(../../assets/images/JudyHe.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -999px;
+    overflow: hidden;
+    text-align: left;
+    text-transform: capitalize;
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    animation: logoslidedown 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0s;
+
+    @include breakpoint($bp-sm) {
+      left: 40px;
+      top: 10px;
+
+      @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+    }
+  }
+
+  #hello {
+    width: 100%;
+    padding: 0 20px;
+    display: none;
+    z-index: 10;
+
+    @include both-align(absolute, 50%, 50%, -50%);
+    @include breakpoint($bp-sm) {
+      max-width: 400px;
+    }
+
+
+    @include breakpoint($bp-md) {
+      max-width: 700px;
+    }
+
+
+    &.fin {
+      .path-1, .path-2, .path-3 {
+        stroke-dashoffset: 0;
+      }
+
+      .path-4 {
+        stroke-width: 18px;
+      }
+    }
+  }
+
+  .path {
+    fill: none;
+    stroke: $color-black;
+    stroke-width: 18px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .path-1 {
+    stroke-dasharray: 1850 2000;
+    stroke-dashoffset: 1851;
+
+    @include transition(all, 1.3s, linear);
+  }
+
+  .path-2 {
+    stroke-dasharray: 260 1000;
+    stroke-dashoffset: 261;
+
+    @include transition(all, 0.4s, linear, 1.4s);
+  }
+
+  .path-3 {
+    stroke-dasharray: 100 1000;
+    stroke-dashoffset: 101;
+
+    @include transition(all, 0.3s, linear, 1.9s);
+  }
+
+  .path-4 {
+    stroke-width: 0;
+    stroke: $color-grapefruit;
+
+    @include transition(all, 0.2s, linear, 2.3s);
+  }
+
+  .scroll {
+    display: block;
+    color: $color-white;
+    position: absolute;
+    right: 30px;
+    bottom: 6%;
+    transform: rotate(-90deg);
+    text-orientation: mixed;
+    animation: scrollslideup 0.8s cubic-bezier(0.7, 0, 0.3, 1) 4.7s forwards;
+    opacity: 0;
+    line-height: 60px;
+    font-size: 0.675em;
+
+    @include transition(color, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+
+    span {
+      animation: bounce 2s 4.7s infinite;
+      position: absolute;
+      bottom: 0;
+    }
+
+    @include breakpoint($bp-sm) {
+      position: fixed;
+      right: auto;
+      left: 40px;
+      color: $color-black;
+    }
+  }
+}
+
+.menu-button {
+  position: fixed;
+  right: 30px;
+  top: 37px;
+  opacity: 1;
+  text-align: center;
+  font-size: 0px;
+  z-index: 100;
+  color: inherit !important;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  background: $color-white;
+  animation: burgerslidedown 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0s;
+
+  @include border-radius(25px);
+  @include breakpoint($bp-sm) {
+    right: auto;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    animation: fadeIn 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0s forwards;
+
+    &:hover {
+      .menu-burger .line {
+        &:nth-of-type(1) {
+          width: 20px;
+        }
+
+        &:nth-of-type(2) {
+          width: 32px;
+        }
+
+        &:nth-of-type(3) {
+          width: 18px;
+        }
+      }
+
+      .txt {
+        -webkit-transform: rotate(-90deg) translateY(-8px);
+        -moz-transform: rotate(-90deg) translateY(-8px);
+        -ms-transform: rotate(-90deg) translateY(-8px);
+        -o-transform: rotate(-90deg) translateY(-8px);
+        transform: rotate(-90deg) translateY(-8px);
+
+        span {
+          &:nth-of-type(1) {
+            -webkit-transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            -o-transform: translateY(-5px);
+            transform: translateY(-5px);
+          }
+
+          &:nth-of-type(2) {
+            -webkit-transform: translateY(5px);
+            -moz-transform: translateY(5px);
+            -ms-transform: translateY(5px);
+            -o-transform: translateY(5px);
+            transform: translateY(5px);
+          }
+
+          &:nth-of-type(3) {
+            -webkit-transform: translateY(-2px);
+            -moz-transform: translateY(-2px);
+            -ms-transform: translateY(-2px);
+            -o-transform: translateY(-2px);
+            transform: translateY(-2px);
+          }
+
+          &:nth-of-type(4) {
+            -webkit-transform: translateY(3px);
+            -moz-transform: translateY(3px);
+            -ms-transform: translateY(3px);
+            -o-transform: translateY(3px);
+            transform: translateY(3px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu-burger {
+  @include both-align(absolute, 50%, 50%, -50%);
+
+  .line {
+    float: right;
+    clear: right;
+    height: 2px;
+    background: $color-black;
+
+    @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
+
+    &:nth-of-type(1) {
+      width: 16px;
+    }
+
+    &:nth-of-type(2) {
+      width: 20px;
+      margin-top: 2px;
+
+      @include breakpoint($bp-sm) {
+        margin-top: 3px;
+      }
+    }
+
+    &:nth-of-type(3) {
+      width: 12px;
+      margin-top: 2px;
+
+      @include breakpoint($bp-sm) {
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.txt {
+  opacity: 0;
+
+  @include breakpoint($bp-sm) {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    top: 41%;
+    right: -40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-black;
+    font: {
+      size: 0.4rem;
+      family: $font-mon;
+      weight: 900;
+    };
+    transform: rotate(-90deg);
+    -webkit-transition: -webkit-transform 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms, opacity 150ms linear 0ms, color 150ms linear 0ms;
+    -moz-transition: -moz-transform 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms, opacity 150ms linear 0ms, color 150ms linear 0ms;
+    transition: transform 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms, opacity 150ms linear 0ms, color 150ms linear 0ms;
+
+    span {
+      display: inline-block;
+
+      @include transition(transform, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
+    }
+  }
+}
+
+.menu-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  opacity: 0;
+  pointer-events: none;
+
+  @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
+
+  @include breakpoint($bp-sm) {
+    padding: 80px;
+  }
+
+
+  .color {
+    background: $color-light-light-gray;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.menu {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  left: -100%;
+
+  @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
+
+  .menu-content {
+    position: relative;
+    max-width: calc(100vw - 85px);
+    height: 100%;
+    background-color: $color-white;
+
+    @include breakpoint($bp-sm) {
+      max-width: calc(100vw - 160px);
+    }
+
+
+    @include breakpoint($bp-md) {
+      max-width: 85%;
+    }
+  }
+
+  .menu-options {
+    position: absolute;
+    left: 40px;
+    top: 15%;
+
+    @include breakpoint($bp-sm) {
+      left: 150px;
+      top: 35%;
+    }
+
+
+    @include breakpoint($bp-md) {
+      left: 25%;
+      top: 20%;
+    }
+
+
+    li {
+      margin: 10px 0 10px 0;
+      text-align: left;
+      opacity: 0;
+
+      &:nth-child(1) {
+        @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.5s);
+      }
+
+      &:nth-child(2) {
+        @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.6s);
+      }
+
+      &:nth-child(3) {
+        @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.7s);
+      }
+
+      &:last-of-type {
+        margin-top: 40px;
+
+        @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.8s);
+      }
+    }
+
+    .links {
+      text-decoration: none;
+      color: $color-black;
+      text-align: left;
+      font-size: 1.4em;
+      line-height: 1.7;
+      position: relative;
+      z-index: 2;
+      font: {
+        family: $font-mon;
+        weight: 900;
+      };
+
+      @include breakpoint($bp-sm) {
+        font-size: 1.8em;
+      }
+
+
+      @include breakpoint($bp-md) {
+        font-size: 2em;
+      }
+
+
+      &:before, &:after {
+        content: '';
+        width: 0%;
+        height: 17px;
+        background: var(--cl, #FFFFFF);
+        z-index: -1;
+
+        @include vertical-align(absolute, 50%);
+      }
+
+      &:before {
+        left: -2.5px;
+      }
+
+      &:after {
+        right: 2.5px;
+        background: var(--cl, transparent);
+
+        @include transition(width, 0.8s, cubic-bezier(0.22, 0.61, 0.36, 1));
+      }
+
+      &:hover:before {
+        background: var(--cl, transparent);
+        width: 100%;
+
+        @include transition(width, 0.5s, cubic-bezier(0.22, 0.61, 0.36, 1));
+      }
+
+      &:hover:after {
+        background: transparent;
+        width: 100%;
+        transition: 0s;
+      }
+
+      &.about:after, &.about:hover:before, &.about.active:before {
+        --cl: #ffada9;
+      }
+
+      &.projects:after, &.projects:hover:before, &.projects.active:before {
+        --cl: #f3c130;
+      }
+
+      &.fun:after, &.fun:hover:before, &.fun.active:before {
+        --cl: #d8d8e8;
+      }
+
+      &.about.active:before, &.projects.active:before, &.fun.active:before {
+        width: 100%;
+      }
+    }
+
+    .icons {
+      text-decoration: none;
+      margin-right: 20px;
+      display: inline-block;
+
+      svg {
+        vertical-align: top;
+
+        &:hover {
+          #facebook-fill {
+            fill: $color-facebook-hover;
+          }
+
+          #instagram-fill {
+            fill: $color-ins-hover;
+          }
+        }
+      }
+
+      #wechat-fill:hover {
+        fill: $color-wechat-hover;
+      }
+    }
+  }
+
+  .menu-info {
+    position: absolute;
+    left: 40px;
+    top: 92%;
+    text-align: left;
+    opacity: 0;
+    transition: top 0.4s cubic-bezier(0.7, 0, 0.3, 1) 0s, opacity 0.4s cubic-bezier(0.7, 0, 0.3, 1) 0.5s;
+
+    @include breakpoint($bp-sm) {
+      left: 150px;
+      top: 57%;
+      margin-top: 40px;
+    }
+
+
+    @include breakpoint($bp-md) {
+      left: 25%;
+    }
+
+
+    a {
+      text-decoration: none;
+      color: $color-black;
+      font-size: 0.8em;
+      line-height: 1.7;
+      font: {
+        family: $font-mon;
+        weight: 600;
+      };
+
+      &.address {
+        font-weight: 400;
+      }
+
+      &:hover {
+        text-decoration: underline;
+
+        &.address {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .brief {
+    display: none;
+
+    @include breakpoint($bp-sm) {
+      display: block;
+      position: absolute;
+      left: 61px;
+      bottom: 30px;
+      cursor: pointer;
+
+      &:hover {
+        .arrow:after {
+          right: -10px;
+        }
+
+        .arrow:before {
+          right: -10px;
+          width: 35px;
+        }
+      }
+
+      .arrow {
+        position: relative;
+        width: 65px;
+        display: inline-block;
+        padding-bottom: 45px;
+        margin-right: 20px;
+
+        &:before {
+          content: "";
+          width: 40px;
+          height: 2px;
+          background: $color-black;
+          position: absolute;
+          top: 50%;
+          margin-top: -1px;
+          right: 24px;
+
+          @include transition(all, 0.3s, ease);
+        }
+
+        &:after {
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 6px 0 6px 12px;
+          border-color: transparent transparent transparent $color-black;
+          position: absolute;
+          top: 50%;
+          margin-top: -6px;
+          right: 13px;
+
+          @include transition(all, 0.3s, ease);
+        }
+      }
+
+      p {
+        display: inline-block;
+        color: $color-black;
+        font-size: 0.875em;
+        font: {
+          weight: 400;
+          family: $font-mon;
+          size: 0.875;
+        };
+      }
+
+      span {
+        display: block;
+        text-align: left;
+        line-height: 1.7;
+        font: {
+          weight: 900;
+          family: $font-mon;
+          size: 1.5em;
+        };
+
+        @include breakpoint($bp-sm) {
+          font-size: 1.8em;
+        }
+
+
+        @include breakpoint($bp-md) {
+          font-size: 2em;
+        }
+      }
+    }
+
+
+    @include breakpoint($bp-md) {
+      left: 25%;
+      margin-left: -88px;
+    }
+  }
+}
+
+.icons {
+  text-decoration: none;
+  margin-right: 20px;
+  display: inline-block;
+
+  svg {
+    vertical-align: top;
+
+    &:hover {
+      #facebook-fill {
+        fill: $color-facebook-hover;
+      }
+
+      #instagram-fill {
+        fill: $color-ins-hover;
+      }
+    }
+  }
+
+  #wechat-fill:hover {
+    fill: $color-wechat-hover;
+  }
+}
+
+.desktop-social-icons {
+  display: none;
+
+  @include breakpoint($bp-sm) {
+    display: block;
+    right: 8px;
+
+    @include transition(right, 0.5s, cubic-bezier(0.7, 0, 0.3, 1));
+
+    @include vertical-align(fixed, 50%);
+
+    .icons {
+      display: block;
+      margin: 10px 0;
+      vertical-align: middle;
+    }
+  }
+}
+
+@media (max-height: 660px) and (min-width: 600px) {
+  .menu {
+    .menu-options {
+      top: 10%;
+    }
+
+    .menu-info {
+      top: 42%;
+    }
+  }
+}
+
+.menuOpen {
+  .jumbo-container {
+    padding: 20px;
+
+    @include breakpoint($bp-sm) {
+      padding: 80px;
+    }
+
+
+    @include breakpoint($bp-md) {
+      padding: 100px;
+    }
+  }
+
+  #greeting .logo {
+    @include breakpoint($bp-sm) {
+      top: 80px;
+      left: 150px;
+      z-index: 100;
+    }
+
+
+    @include breakpoint($bp-md) {
+      left: 20%;
+    }
+  }
+
+  .menu-burger {
+    .line {
+      &:nth-of-type(1) {
+        width: 20px !important;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      &:nth-of-type(2) {
+        width: 20px !important;
+        margin-top: -2px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+
+      &:nth-of-type(3) {
+        width: 0px !important;
+      }
+    }
+  }
+
+  .menu-button {
+    @include breakpoint($bp-md) {
+      left: 10% !important;
+    }
+  }
+
+  .txt {
+    display: none;
+  }
+
+  .menu-color {
+    padding: 20px 20px 20px 0;
+    opacity: 1;
+    pointer-events: all;
+
+    @include breakpoint($bp-sm) {
+      padding: 80px 80px 80px 0;
+    }
+
+
+    @include breakpoint($bp-md) {
+      padding-right: 100px;
+    }
+  }
+
+  .menu {
+    padding: 20px 20px 20px 0;
+    left: 0;
+
+    @include breakpoint($bp-sm) {
+      padding: 80px 80px 80px 0;
+    }
+
+
+    @include breakpoint($bp-md) {
+      padding-right: 100px;
+    }
+  }
+
+  .menu-options li {
+    margin: 0 0 10px 0;
+    opacity: 1;
+
+    @include breakpoint($bp-sm) {
+      margin: 0;
+    }
+
+
+    &:last-of-type {
+      margin-top: 30px;
+
+      @include breakpoint($bp-sm) {
+        display: none;
+      }
+    }
+  }
+
+  .menu-info {
+    top: 90%;
+    opacity: 1;
+
+    @include breakpoint($bp-sm) {
+      top: 55%;
+    }
+  }
+
+  .desktop-social-icons {
+    @include breakpoint($bp-sm) {
+      right: 26px;
+    }
+
+
+    @include breakpoint($bp-md) {
+      right: 37px;
+    }
+  }
+
+  #greeting .scroll {
+    color: $color-white;
+  }
+
+  #greeting #hello {
+    z-index: -100;
+  }
+
+  #greeting .left-container, #greeting .right-container {
+    background-color: $color-white;
+  }
+
+  @media (max-height: 660px) and (min-width: 600px) {
+    .menu {
+      .menu-info {
+        top: 40%;
+      }
+    }
+  }
+}
+
+.menuHover {
+  @include breakpoint($bp-sm) {
+    .jumbo-container {
+      padding-left: 78px;
+    }
+
+    #greeting .scroll {
+      color: $color-white;
+    }
+  }
+}
