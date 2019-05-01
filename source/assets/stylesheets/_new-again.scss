@@ -33,6 +33,8 @@ section {
     width: 50%;
     float: left;
     animation: slideleft1 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0.2s;
+
+
   }
 
   .right-container {
@@ -825,16 +827,17 @@ section {
     }
   }
 
-  #greeting .scroll {
-    color: $color-white;
-  }
+  #greeting {
+    &.scroll {
+       color: $color-white;
+    }
 
-  #greeting #hello {
-    z-index: -100;
-  }
-
-  #greeting .left-container, #greeting .right-container {
-    background-color: $color-white;
+    &#hello {
+       z-index: -100;
+    }
+    &.left-container, &.right-container {
+       background-color: $color-white;
+    }
   }
 
   @media (max-height: 660px) and (min-width: 600px) {
@@ -857,3 +860,7 @@ section {
     }
   }
 }
+
+
+
+
