@@ -39,24 +39,37 @@
 }
 
 
-@keyframes slideleft1 {
-  from {
-    width: 100%;
+// @keyframes slideleft1 {
+//   from {
+//     width: 100%;
+//   }
+
+//   to {
+//     width: 50%;
+//   }
+// }
+
+// @keyframes slideleft2 {
+//   from {
+//     width: 0;
+//   }
+
+//   to {
+//     width: 50%;
+//   }
+// }
+
+@keyframes backgroundColor{
+  from{
+    background-size: 200%;
+
   }
 
   to {
-    width: 50%;
-  }
-}
-
-@keyframes slideleft2 {
-  from {
-    width: 0;
+   background-size: 100%;
+     
   }
 
-  to {
-    width: 50%;
-  }
 }
 
 @keyframes scrollslideup {
@@ -92,17 +105,5 @@
 
   to {
     background-color: $color-white;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    left: 10px;
-  }
-
-  to {
-    opacity: 1;
-    left: 15px;
   }
 }
