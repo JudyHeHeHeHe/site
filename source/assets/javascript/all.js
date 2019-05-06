@@ -37,53 +37,6 @@ $(function() {
     //     .addTo(controller);
     // }
 
-    // Nav bar animation
-    // function openNav(){
-    //   $('.nav-overlay').fadeIn().addClass('open');
-    //   $('.nav-burger').addClass('active');
-    // }
-
-    // function closeNav(){
-    //   $('.nav-overlay').fadeOut().removeClass('open');
-    //   $('.nav-burger').removeClass('active');
-    // }
-
-    // $('.nav-button').on('click', function(e){
-    //   e.preventDefault();
-    //   if ($('.nav-overlay').is(':hidden')){
-    //     openNav();
-    //   } else {
-    //     closeNav();
-    //   }
-    // });
-
-    // function showNav(){
-    //   if ($(window).width() >= 600) {
-    //     if ($('.nav-overlay').is(':hidden')) {
-    //       $('.nav-overlay').removeAttr('style');
-    //       $('.nav-overlay ul').removeAttr('style');
-    //     }
-    //   }
-    // }
-
-    // showNav();
-
-    // $(window).resize(function() {
-    //   showNav();
-    // });
-
-    // // Show and hide hello
-    // function showHello() {
-    //     $('#hello').fadeIn().addClass('fin');
-    // }
-    // // function hideHello(){
-    // //   $('.hello').fadeOut();
-    // //   $('.name, .scroll').fadeIn();
-    // // }
-    // setTimeout(showHello, 1000);
-    // // setTimeout(hideHello, 6000);
-
-
     // // Show and hide modals
     // var length = document.querySelectorAll('.timeline_content').length;
 
@@ -104,53 +57,146 @@ $(function() {
     // });
 
 
-    $('.menu-button').on('click', function(){
-      $('body').toggleClass('menuOpen');
+  $('.menu-button').on('click', function(){
+    $('body').toggleClass('menuOpen');
 
-    });
+  });
 
-    $('.menu-button').on('mouseover', function(){
+  $('.menu-button').on('mouseover', function(){
 
-      $('body').addClass('menuHover');
+    $('body').addClass('menuHover');
 
-    });
+  });
 
-     $('.menu-button').on('mouseout', function(){
+   $('.menu-button').on('mouseout', function(){
 
-      $('body').removeClass('menuHover');
+    $('body').removeClass('menuHover');
 
-    });
+  });
 
-    // Show and hide hello
-    function showHello() {
-        $('#hello').fadeIn().addClass('fin');
+  // Show and hide hello
+  function showHello() {
+    $('#hello').fadeIn().addClass('fin');
+  }
+  setTimeout(showHello, 1000);
+
+  $(document).on('click', 'a[href^="#"]', function(e) {
+    // target element id
+    var id = $(this).attr('href');
+
+    // target element
+    var $id = $(id);
+    if ($id.length === 0) {
+        return;
     }
-    // function hideHello(){
-    //   $('.hello').fadeOut();
-    //   $('.name, .scroll').fadeIn();
-    // }
-    setTimeout(showHello, 1000);
-    // setTimeout(hideHello, 6000);
 
-    $(document).on('click', 'a[href^="#"]', function(e) {
-        // target element id
-        var id = $(this).attr('href');
+    // prevent standard hash navigation (avoid blinking in IE)
+    e.preventDefault();
 
-        // target element
-        var $id = $(id);
-        if ($id.length === 0) {
-            return;
-        }
+    // top position relative to the document
+    var pos = $id.offset().top - $('header').height();
 
-        // prevent standard hash navigation (avoid blinking in IE)
-        e.preventDefault();
+    // animated top scrolling
+    $('body, html').animate({scrollTop: pos});
+  });
 
-        // top position relative to the document
-        var pos = $id.offset().top - $('header').height();
+  // function calculateGap() {
+  //   if (($(window).width() > 600)) {
 
-        // animated top scrolling
-        $('body, html').animate({scrollTop: pos});
-    });
+  //   } else {
+     
+  //   } 
+  // }
+
+  // calculateGap();
+
+  // $(window).resize(function() {
+  //   calculateGap();
+  // });
+
+  var controller = new ScrollMagic.Controller();
+
+  var homepageScene1 = new ScrollMagic.Scene({
+    triggerElement: '.home',
+    offset: '0.1',
+    duration: '20%',
+    triggerHook: 0
+    })
+    .setPin('.home')
+    .setClassToggle('body', 'introOpen')
+    .addIndicators({
+        name:'home scene',
+        colorTrigger: 'black',
+        // indent: 200,
+        colorStart: 'pink',
+        colorEnd: 'pink'
+  })
+  .addTo(controller);
+
+
+
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   })(jQuery);
 
