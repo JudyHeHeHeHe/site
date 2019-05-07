@@ -37,7 +37,8 @@ section {
     width: 89px;
     height: 23px;
     z-index: 10;
-    background-image: url(../../assets/images/JudyHe.svg);
+
+    // background-image: url(../../assets/images/JudyHe.svg);
     background-repeat: no-repeat;
     background-position: center center;
     text-indent: -999px;
@@ -494,7 +495,7 @@ section {
     }
   }
 
-  .menu-info {
+  .menu-address {
     position: absolute;
     left: 40px;
     top: 92%;
@@ -512,126 +513,129 @@ section {
     @include breakpoint($bp-md) {
       left: 25%;
     }
+  }
+}
 
+.address-links {
+  text-decoration: none;
+  color: $color-black;
+  font-size: 0.8em;
+  line-height: 1.7;
+  font: {
+    family: $font-mon;
+    weight: 600;
+  };
 
-    a {
-      text-decoration: none;
-      color: $color-black;
-      font-size: 0.8em;
-      line-height: 1.7;
-      font: {
-        family: $font-mon;
-        weight: 600;
-      };
-
-      &.address {
-        font-weight: 400;
-      }
-
-      &:hover {
-        text-decoration: underline;
-
-        &.address {
-          text-decoration: none;
-        }
-      }
-    }
+  &.address {
+    font-weight: 400;
   }
 
-  .brief {
-    display: none;
+  &:hover {
+    text-decoration: underline;
 
-    @include breakpoint($bp-sm) {
+    &.address {
+      text-decoration: none;
+    }
+  }
+}
+
+.menu-brief {
+  display: none;
+
+  @include breakpoint($bp-sm) {
+    display: block;
+    position: absolute;
+    left: 61px;
+    bottom: 30px;
+  }
+}
+
+.brief {
+    cursor: pointer;
+
+    &:hover {
+      .arrow:after {
+        right: -10px;
+      }
+
+      .arrow:before {
+        right: -10px;
+        width: 35px;
+      }
+    }
+
+    .arrow {
+      position: relative;
+      width: 65px;
+      display: inline-block;
+      padding-bottom: 45px;
+      margin-right: 20px;
+
+      &:before {
+        content: "";
+        width: 40px;
+        height: 2px;
+        background: $color-black;
+        position: absolute;
+        top: 50%;
+        margin-top: -1px;
+        right: 24px;
+
+        @include transition(all, 0.3s, ease);
+      }
+
+      &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 0 6px 12px;
+        border-color: transparent transparent transparent $color-black;
+        position: absolute;
+        top: 50%;
+        margin-top: -6px;
+        right: 13px;
+
+        @include transition(all, 0.3s, ease);
+      }
+    }
+
+    p {
+      display: inline-block;
+      color: $color-black;
+      font-size: 0.875em;
+      font: {
+        weight: 400;
+        family: $font-mon;
+        size: 0.875;
+      };
+    }
+
+    span {
       display: block;
-      position: absolute;
-      left: 61px;
-      bottom: 30px;
-      cursor: pointer;
+      text-align: left;
+      line-height: 1.7;
+      font: {
+        weight: 900;
+        family: $font-mon;
+        size: 1.5em;
+      };
 
-      &:hover {
-        .arrow:after {
-          right: -10px;
-        }
-
-        .arrow:before {
-          right: -10px;
-          width: 35px;
-        }
+      @include breakpoint($bp-sm) {
+        font-size: 1.8em;
       }
 
-      .arrow {
-        position: relative;
-        width: 65px;
-        display: inline-block;
-        padding-bottom: 45px;
-        margin-right: 20px;
 
-        &:before {
-          content: "";
-          width: 40px;
-          height: 2px;
-          background: $color-black;
-          position: absolute;
-          top: 50%;
-          margin-top: -1px;
-          right: 24px;
-
-          @include transition(all, 0.3s, ease);
-        }
-
-        &:after {
-          content: "";
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 6px 0 6px 12px;
-          border-color: transparent transparent transparent $color-black;
-          position: absolute;
-          top: 50%;
-          margin-top: -6px;
-          right: 13px;
-
-          @include transition(all, 0.3s, ease);
-        }
-      }
-
-      p {
-        display: inline-block;
-        color: $color-black;
-        font-size: 0.875em;
-        font: {
-          weight: 400;
-          family: $font-mon;
-          size: 0.875;
-        };
-      }
-
-      span {
-        display: block;
-        text-align: left;
-        line-height: 1.7;
-        font: {
-          weight: 900;
-          family: $font-mon;
-          size: 1.5em;
-        };
-
-        @include breakpoint($bp-sm) {
-          font-size: 1.8em;
-        }
-
-
-        @include breakpoint($bp-md) {
-          font-size: 2em;
-        }
+      @include breakpoint($bp-md) {
+        font-size: 2em;
       }
     }
 
 
-    @include breakpoint($bp-md) {
-      left: 25%;
-      margin-left: -88px;
-    }
+
+  @include breakpoint($bp-md) {
+    left: 25%;
+    margin-left: -88px;
   }
 }
 
@@ -684,7 +688,7 @@ section {
       top: 10%;
     }
 
-    .menu-info {
+    .menu-address {
       top: 42%;
     }
   }
@@ -801,7 +805,7 @@ section {
     }
   }
 
-  .menu-info {
+  .menu-address {
     top: 90%;
     opacity: 1;
 
@@ -833,7 +837,7 @@ section {
 
   @media (max-height: 660px) and (min-width: 600px) {
     .menu {
-      .menu-info {
+      .menu-address {
         top: 40%;
       }
     }
@@ -935,4 +939,8 @@ section {
       transform: translate(40%, 50%);
     }
   }
+}
+
+footer {
+
 }
