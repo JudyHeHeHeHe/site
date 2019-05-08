@@ -48,20 +48,22 @@
 </head>
 <body class="<%= page_classes %>">
   <header>
-    <div class="menu">
-      <div class="menu-container">
-        <ul class="menu-options">
-          <li><a href="#about" class="links about active">Ipsum.</a></li>
-          <li><a href="#projects" class="links projects">Pjskds.</a></li>
-          <li><a href="#fun" class="links fun">FUN.</a></li>
-          <li class="social-icons">
-            <%= partial "partials/social-icons" %>
-          </li>
-        </ul>
-        <%= partial(:'partials/contact-info', :locals => {:position => "menu-contact-info" }) %>
-        <%= partial(:'partials/brief-me', :locals => {:position => "menu-brief" }) %>
+    <nav class="menu">
+      <div class="menu-color">
+        <div class="menu-container">
+          <ul class="menu-options">
+            <li><a href="#about" class="links about active">Ipsum.</a></li>
+            <li><a href="#projects" class="links projects">Pjskds.</a></li>
+            <li><a href="#fun" class="links fun">FUN.</a></li>
+            <li class="social-icons">
+              <%= partial "partials/social-icons" %>
+            </li>
+          </ul>
+          <%= partial(:'partials/contact-info', :locals => {:position => "menu-contact-info" }) %>
+          <%= partial(:'partials/brief-me', :locals => {:position => "menu-brief" }) %>
+        </div>
       </div>
-    </div>
+    </nav>
     <a class="menu-burger-area">
       <i class="menu-burger">
         <span class="line"></span>
@@ -78,7 +80,6 @@
     <div class="desktop-social-icons">
       <%= partial "partials/social-icons" %>
     </div>
-    <div class="menu-color"><div class="color"></div></div>
   </header>
   <main>
   <%= yield %>

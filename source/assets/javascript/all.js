@@ -57,20 +57,20 @@ $(function() {
     // });
 
 
-  $('.menu-button').on('click', function(){
-    $('body').toggleClass('menuOpen');
+  $('.menu-burger-area').on('click', function(){
+    $('body').toggleClass('menu-active');
 
   });
 
   $('.menu-burger-area').on('mouseover', function(){
 
-    $('body').addClass('menuHover');
+    $('body').addClass('menu-hover');
 
   });
 
    $('.menu-burger-area').on('mouseout', function(){
 
-    $('body').removeClass('menuHover');
+    $('body').removeClass('menu-hover');
 
   });
 

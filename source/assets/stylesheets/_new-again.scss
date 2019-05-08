@@ -146,50 +146,13 @@ section {
       font-size: 2em;
     }
   }
-
-  @include breakpoint($bp-md) {
-    left: 25%;
-    margin-left: -88px;
-  }
-}
-
-.menuHover {
-  @include breakpoint($bp-sm) {
-    .jumbo-container {
-      padding-left: 78px;
-    }
-
-    #greeting .scroll {
-      color: $color-white;
-    }
-  }
 }
 
 .menu-color {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-
-  // z-index: 11;
   opacity: 0;
-
-  // pointer-events: none;
-  background-color: $color-white;
-
   @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
-
-  @include breakpoint($bp-sm) {
-    padding: 80px;
-  }
-
-
-  .color {
-    background: $color-light-light-gray;
-    width: 100%;
-    height: 100%;
-  }
 }
 
 .menu {
@@ -198,12 +161,13 @@ section {
   width: 100%;
   z-index: 100;
   left: -100%;
+  background-color: $color-white;
 
   @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
 
   .menu-container {
     position: relative;
-    max-width: calc(100vw - 100px);
+    max-width: calc(100vw - 85px);
     height: 100%;
     background-color: $color-white;
 
@@ -265,7 +229,7 @@ section {
       font-size: 1.4em;
       line-height: 1.7;
       position: relative;
-      z-index: 2;
+      z-index: 1;
       font: {
         family: $font-mon;
         weight: 900;
@@ -362,6 +326,11 @@ section {
       left: 61px;
       bottom: 30px;
     }
+
+
+    @include breakpoint($bp-md) {
+      left: 25%;
+    }
   }
 }
 
@@ -372,14 +341,15 @@ section {
   opacity: 1;
   text-align: center;
   font-size: 0px;
-  z-index: 100;
+  z-index: 101;
 
-  // color: inherit !important;
+
+
   height: 45px;
   width: 45px;
   cursor: pointer;
   background: $color-white;
-  animation: burgerslide 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  animation: burgerslide 0.8s cubic-bezier(0.7, 0, 0.3, 1);
 
   &:hover {
     .menu-burger .line {
@@ -505,6 +475,7 @@ section {
   @include breakpoint($bp-sm) {
     display: block;
     right: 8px;
+    z-index: 101;
 
     @include transition(right, 0.5s, cubic-bezier(0.7, 0, 0.3, 1));
 
@@ -515,6 +486,136 @@ section {
       margin: 10px 0;
       vertical-align: middle;
     }
+  }
+}
+
+.menu-hover {
+  @include breakpoint($bp-sm) {
+    .jumbo-container {
+      padding-left: 78px;
+    }
+
+    #greeting .scroll {
+      color: $color-white;
+    }
+  }
+}
+
+.menu-active {
+  .menu {
+    padding: 20px 20px 20px 0;
+
+    @include breakpoint($bp-sm) {
+      padding: 80px 80px 80px 0;
+    }
+
+
+    @include breakpoint($bp-md) {
+      padding-right: 100px;
+    }
+  }
+
+  .menu {
+    left: 0;
+  }
+
+  .menu-color {
+    opacity: 1;
+     background: $color-light-light-gray;
+  }
+
+  .menu-options li {
+    margin: 0 0 10px 0;
+    opacity: 1;
+
+    &:last-of-type {
+      margin-top: 30px;
+
+      @include breakpoint($bp-sm) {
+        display: none;
+      }
+    }
+  }
+
+  .menu-contact-info {
+    top: 90%;
+    opacity: 1;
+
+    @include breakpoint($bp-sm) {
+      top: 55%;
+    }
+  }
+
+  .menu-burger-area {
+    @include breakpoint($bp-md) {
+      left: 10% !important;
+    }
+  }
+
+  .menu-burger {
+    .line {
+      &:nth-of-type(1) {
+        width: 20px !important;
+
+        @include transform(rotate(45deg));
+      }
+
+      &:nth-of-type(2) {
+        width: 20px !important;
+        margin-top: -2px;
+
+        @include transform(rotate(-45deg));
+      }
+
+      &:nth-of-type(3) {
+        width: 0px !important;
+      }
+    }
+  }
+
+  .menu-txt {
+    display: none;
+  }
+
+  .desktop-social-icons {
+    @include breakpoint($bp-sm) {
+      right: 26px;
+    }
+
+
+    @include breakpoint($bp-md) {
+      right: 37px;
+    }
+  }
+
+   .jumbo-container {
+    padding: 20px;
+
+    @include breakpoint($bp-sm) {
+      padding: 80px;
+    }
+
+
+    @include breakpoint($bp-md) {
+      padding: 100px;
+    }
+  }
+
+     .logo {
+    @include breakpoint($bp-sm) {
+      top: 80px;
+      left: 150px;
+
+    }
+
+
+    @include breakpoint($bp-md) {
+      left: 20%;
+    }
+  }
+
+  .scroll {
+    color: $color-white;
   }
 }
 
@@ -534,8 +635,9 @@ section {
 .logo {
   width: 89px;
   height: 23px;
-  z-index: 10;
-  background-image: url(../../assets/images/JudyHe.svg);
+  z-index: 101;
+
+  // background-image: url(../../assets/images/JudyHe.svg);
   background-repeat: no-repeat;
   background-position: center;
   text-indent: -999px;
@@ -717,3 +819,5 @@ section {
     }
   }
 }
+
+
