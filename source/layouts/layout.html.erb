@@ -47,29 +47,46 @@
   <%= stylesheet_link_tag "all.bundle" %>
 </head>
 <body class="<%= page_classes %>">
- <!--  <header>
-    <a href="/" id="logo" class="logo top-logo">Judy He</a>
-    <nav>
-      <a href="" class="nav-button">
-        <div class="nav-burger"></div>
-      </a>
-      <div class="nav-overlay">
-        <ul>
-          <li class="about"><a href="#about">About</a></li>
-
-          <li class="work"><a href="#work">Work</a></li>
-
-          <li class="fun"><a href="#fun">FUN</a></li>
-
-          <li class="contact"><a href="#contact">Contact</a></li>
+  <header>
+    <div class="menu">
+      <div class="menu-container">
+        <ul class="menu-options">
+          <li><a href="#about" class="links about active">Ipsum.</a></li>
+          <li><a href="#projects" class="links projects">Pjskds.</a></li>
+          <li><a href="#fun" class="links fun">FUN.</a></li>
+          <li class="social-icons">
+            <%= partial "partials/social-icons" %>
+          </li>
         </ul>
+        <%= partial(:'partials/contact-info', :locals => {:position => "menu-contact-info" }) %>
+        <%= partial(:'partials/brief-me', :locals => {:position => "menu-brief" }) %>
       </div>
-    </nav>
-  </header> -->
-
+    </div>
+    <a class="menu-burger-area">
+      <i class="menu-burger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </i>
+      <p class="menu-txt">
+        <span>M</span>
+        <span>E</span>
+        <span>N</span>
+        <span>U</span>
+      </p>
+    </a>
+    <div class="desktop-social-icons">
+      <%= partial "partials/social-icons" %>
+    </div>
+    <div class="menu-color"><div class="color"></div></div>
+  </header>
   <main>
   <%= yield %>
   </main>
+  <footer>
+    <%= partial(:'partials/brief-me', :locals => {:position => "footer-brief" }) %>
+    <%= partial(:'partials/contact-info', :locals => {:position => "footer-contact-info" }) %>
+  </footer>
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
   <%= javascript_include_tag "all.bundle" %>

@@ -62,13 +62,13 @@ $(function() {
 
   });
 
-  $('.menu-button').on('mouseover', function(){
+  $('.menu-burger-area').on('mouseover', function(){
 
     $('body').addClass('menuHover');
 
   });
 
-   $('.menu-button').on('mouseout', function(){
+   $('.menu-burger-area').on('mouseout', function(){
 
     $('body').removeClass('menuHover');
 
