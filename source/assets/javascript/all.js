@@ -59,20 +59,21 @@ $(function() {
 
   $('.menu-burger-area').on('click', function(){
     $('body').toggleClass('menu-active');
-
   });
 
   $('.menu-burger-area').on('mouseover', function(){
-
     $('body').addClass('menu-hover');
-
   });
 
    $('.menu-burger-area').on('mouseout', function(){
-
     $('body').removeClass('menu-hover');
-
   });
+
+
+$('.about-bg').on('click', function(){
+  $('svg polyline').toggleClass('dash');
+});
+
 
   // Show and hide hello
   function showHello() {
@@ -132,7 +133,6 @@ $(function() {
   //       colorEnd: 'pink'
   // })
   // .addTo(controller);
-
 
 
 

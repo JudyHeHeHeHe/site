@@ -100,7 +100,6 @@ h3 {
   font: {
     family: $font-mon;
     weight: 600;
-    style: italic;
   };
 
   @include breakpoint($bp-sm) {
