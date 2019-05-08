@@ -57,20 +57,20 @@ $(function() {
     // });
 
 
-  $('.menu-button').on('click', function(){
-    $('body').toggleClass('menuOpen');
+  $('.menu-burger-area').on('click', function(){
+    $('body').toggleClass('menu-active');
 
   });
 
-  $('.menu-button').on('mouseover', function(){
+  $('.menu-burger-area').on('mouseover', function(){
 
-    $('body').addClass('menuHover');
+    $('body').addClass('menu-hover');
 
   });
 
-   $('.menu-button').on('mouseout', function(){
+   $('.menu-burger-area').on('mouseout', function(){
 
-    $('body').removeClass('menuHover');
+    $('body').removeClass('menu-hover');
 
   });
 
@@ -104,8 +104,8 @@ $(function() {
   //   if (($(window).width() > 600)) {
 
   //   } else {
-     
-  //   } 
+
+  //   }
   // }
 
   // calculateGap();
@@ -116,28 +116,28 @@ $(function() {
 
   var controller = new ScrollMagic.Controller();
 
-  var homepageScene1 = new ScrollMagic.Scene({
-    triggerElement: '.home',
-    offset: '0.1',
-    duration: '20%',
-    triggerHook: 0
-    })
-    .setPin('.home')
-    .setClassToggle('body', 'introOpen')
-    .addIndicators({
-        name:'home scene',
-        colorTrigger: 'black',
-        // indent: 200,
-        colorStart: 'pink',
-        colorEnd: 'pink'
-  })
-  .addTo(controller);
+  // var homepageScene1 = new ScrollMagic.Scene({
+  //   triggerElement: '.home',
+  //   offset: '0.1',
+  //   duration: '20%',
+  //   triggerHook: 0
+  //   })
+  //   .setPin('.home')
+  //   .setClassToggle('body', 'introOpen')
+  //   .addIndicators({
+  //       name:'home scene',
+  //       colorTrigger: 'black',
+  //       // indent: 200,
+  //       colorStart: 'pink',
+  //       colorEnd: 'pink'
+  // })
+  // .addTo(controller);
 
 
 
-    
 
-  
+
+
 
 
 

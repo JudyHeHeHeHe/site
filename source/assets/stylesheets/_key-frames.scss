@@ -1,6 +1,6 @@
 @import "base";
 
-@keyframes burgerslidedown {
+@keyframes burgerslide {
   from {
     top: 0;
     opacity: 0;
@@ -25,6 +25,18 @@
 }
 
 @include breakpoint($bp-sm) {
+  @keyframes burgerslide {
+    from {
+      left: -15px;
+      opacity: 0;
+    }
+
+    to {
+      left: 15px;
+      opacity: 1;
+    }
+  }
+
   @keyframes logoslidedown {
     from {
       top: -100%;
@@ -59,17 +71,14 @@
 //   }
 // }
 
-@keyframes backgroundColor{
-  from{
+@keyframes backgroundColor {
+  from {
     background-size: 200%;
-
   }
 
   to {
-   background-size: 100%;
-     
+    background-size: 100%;
   }
-
 }
 
 @keyframes scrollslideup {
