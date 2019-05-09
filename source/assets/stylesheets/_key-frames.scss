@@ -50,26 +50,15 @@
   }
 }
 
+@keyframes dash {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 
-// @keyframes slideleft1 {
-//   from {
-//     width: 100%;
-//   }
-
-//   to {
-//     width: 50%;
-//   }
-// }
-
-// @keyframes slideleft2 {
-//   from {
-//     width: 0;
-//   }
-
-//   to {
-//     width: 50%;
-//   }
-// }
 
 @keyframes backgroundColor {
   from {
@@ -107,12 +96,4 @@
   }
 }
 
-@keyframes swapcolor {
-  from {
-    background-color: $color-light-light-gray;
-  }
 
-  to {
-    background-color: $color-white;
-  }
-}

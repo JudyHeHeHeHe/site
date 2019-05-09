@@ -10,12 +10,12 @@ section {
 .jumbo-container {
   width: 100%;
   margin: 0 auto;
-  height: 100vh;
 
   @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
 
   @include breakpoint($bp-sm) {
-    padding: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
@@ -148,10 +148,114 @@ section {
   }
 }
 
+.waves {
+  width: 50px;
+  height: 10px;
+  display: block;
+  position: relative;
+  padding-bottom: 30px;
+
+  svg {
+    position: absolute;
+    left: 0;
+  }
+}
+
+svg polyline {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.title {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 30px;
+
+  h2 {
+    line-height: 0.8;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 20px;
+    font: {
+      size: 3em;
+      weight: 900;
+    };
+  }
+
+  h3 {
+    color: $color-black;
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+  }
+
+  p {
+    color: $color-black;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: $color-black;
+    text-decoration: underline;
+    display: block;
+    line-height: 0.8;
+    text-transform: uppercase;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    width: 100px;
+    font: {
+      size: 0.9em;
+      weight: 600;
+    };
+
+    &:before, &:after {
+      content: '';
+      width: 0%;
+      height: 10px;
+      background: var(--cl, #FFFFFF);
+      z-index: -1;
+
+      @include vertical-align(absolute, 50%);
+    }
+
+    &:before {
+      left: -2.5px;
+    }
+
+    &:after {
+      right: 2.5px;
+      background: var(--cl, transparent);
+
+      @include transition(width, 0.8s, cubic-bezier(0.22, 0.61, 0.36, 1));
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:hover:before {
+      background: var(--cl, transparent);
+      width: 100px;
+
+      @include transition(width, 0.5s, cubic-bezier(0.22, 0.61, 0.36, 1));
+    }
+
+    &:hover:after {
+      background: transparent;
+      width: 100px;
+      transition: 0s;
+    }
+  }
+}
+
+// menu begins
 .menu-color {
   width: 100%;
   height: 100%;
   opacity: 0;
+
   @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
 }
 
@@ -164,173 +268,173 @@ section {
   background-color: $color-white;
 
   @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
+}
 
-  .menu-container {
-    position: relative;
-    max-width: calc(100vw - 85px);
-    height: 100%;
-    background-color: $color-white;
+.menu-container {
+  position: relative;
+  max-width: calc(100vw - 85px);
+  height: 100%;
+  background-color: $color-white;
 
-    @include breakpoint($bp-sm) {
-      max-width: calc(100vw - 160px);
-    }
-
-
-    @include breakpoint($bp-md) {
-      max-width: 85%;
-    }
+  @include breakpoint($bp-sm) {
+    max-width: calc(100vw - 160px);
   }
 
-  .menu-options {
-    position: absolute;
-    left: 40px;
-    top: 15%;
 
-    @include breakpoint($bp-sm) {
-      left: 150px;
-      top: 35%;
-    }
+  @include breakpoint($bp-md) {
+    max-width: 85%;
+  }
+}
 
+.menu-options {
+  position: absolute;
+  left: 40px;
+  top: 15%;
 
-    @include breakpoint($bp-md) {
-      left: 25%;
-      top: 20%;
-    }
-
-
-    li {
-      margin: 10px 0;
-      text-align: left;
-      opacity: 0;
-
-      &:nth-child(1) {
-        @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.5s);
-      }
-
-      &:nth-child(2) {
-        @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.6s);
-      }
-
-      &:nth-child(3) {
-        @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.7s);
-      }
-
-      &:last-of-type {
-        margin-top: 40px;
-
-        @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.8s);
-      }
-    }
-
-    .links {
-      text-decoration: none;
-      color: $color-black;
-      text-align: left;
-      font-size: 1.4em;
-      line-height: 1.7;
-      position: relative;
-      z-index: 1;
-      font: {
-        family: $font-mon;
-        weight: 900;
-      };
-
-      @include breakpoint($bp-sm) {
-        font-size: 1.8em;
-      }
-
-
-      @include breakpoint($bp-md) {
-        font-size: 2em;
-      }
-
-
-      &:before, &:after {
-        content: '';
-        width: 0%;
-        height: 17px;
-        background: var(--cl, #FFFFFF);
-        z-index: -1;
-
-        @include vertical-align(absolute, 50%);
-      }
-
-      &:before {
-        left: -2.5px;
-      }
-
-      &:after {
-        right: 2.5px;
-        background: var(--cl, transparent);
-
-        @include transition(width, 0.8s, cubic-bezier(0.22, 0.61, 0.36, 1));
-      }
-
-      &:hover:before {
-        background: var(--cl, transparent);
-        width: 100%;
-
-        @include transition(width, 0.5s, cubic-bezier(0.22, 0.61, 0.36, 1));
-      }
-
-      &:hover:after {
-        background: transparent;
-        width: 100%;
-        transition: 0s;
-      }
-
-      &.about:after, &.about:hover:before, &.about.active:before {
-        --cl: #ffada9;
-      }
-
-      &.projects:after, &.projects:hover:before, &.projects.active:before {
-        --cl: #f3c130;
-      }
-
-      &.fun:after, &.fun:hover:before, &.fun.active:before {
-        --cl: #d8d8e8;
-      }
-
-      &.about.active:before, &.projects.active:before, &.fun.active:before {
-        width: 100%;
-      }
-    }
+  @include breakpoint($bp-sm) {
+    left: 150px;
+    top: 35%;
   }
 
-  .menu-contact-info {
-    position: absolute;
-    left: 40px;
-    top: 92%;
+
+  @include breakpoint($bp-md) {
+    left: 25%;
+    top: 20%;
+  }
+
+
+  li {
+    margin: 10px 0;
     text-align: left;
     opacity: 0;
-    transition: top 0.4s cubic-bezier(0.7, 0, 0.3, 1) 0s, opacity 0.4s cubic-bezier(0.7, 0, 0.3, 1) 0.5s;
 
-    @include breakpoint($bp-sm) {
-      left: 150px;
-      top: 57%;
-      margin-top: 40px;
+    &:nth-child(1) {
+      @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.5s);
     }
 
+    &:nth-child(2) {
+      @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.6s);
+    }
 
-    @include breakpoint($bp-md) {
-      left: 25%;
+    &:nth-child(3) {
+      @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.7s);
+    }
+
+    &:last-of-type {
+      margin-top: 40px;
+
+      @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1), 0.8s);
     }
   }
 
-  .menu-brief {
-    display: none;
+  .links {
+    text-decoration: none;
+    color: $color-black;
+    text-align: left;
+    font-size: 1.4em;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+    font: {
+      family: $font-mon;
+      weight: 900;
+    };
 
     @include breakpoint($bp-sm) {
-      display: block;
-      position: absolute;
-      left: 61px;
-      bottom: 30px;
+      font-size: 1.8em;
     }
 
 
     @include breakpoint($bp-md) {
-      left: 25%;
+      font-size: 2em;
     }
+
+
+    &:before, &:after {
+      content: '';
+      width: 0%;
+      height: 17px;
+      background: var(--cl, #FFFFFF);
+      z-index: -1;
+
+      @include vertical-align(absolute, 50%);
+    }
+
+    &:before {
+      left: -2.5px;
+    }
+
+    &:after {
+      right: 2.5px;
+      background: var(--cl, transparent);
+
+      @include transition(width, 0.8s, cubic-bezier(0.22, 0.61, 0.36, 1));
+    }
+
+    &:hover:before {
+      background: var(--cl, transparent);
+      width: 100%;
+
+      @include transition(width, 0.5s, cubic-bezier(0.22, 0.61, 0.36, 1));
+    }
+
+    &:hover:after {
+      background: transparent;
+      width: 100%;
+      transition: 0s;
+    }
+
+    &.about:after, &.about:hover:before, &.about.active:before {
+      --cl: #ffada9;
+    }
+
+    &.projects:after, &.projects:hover:before, &.projects.active:before {
+      --cl: #f3c130;
+    }
+
+    &.fun:after, &.fun:hover:before, &.fun.active:before {
+      --cl: #d8d8e8;
+    }
+
+    &.about.active:before, &.projects.active:before, &.fun.active:before {
+      width: 100%;
+    }
+  }
+}
+
+.menu-contact-info {
+  position: absolute;
+  left: 40px;
+  top: 92%;
+  text-align: left;
+  opacity: 0;
+  transition: top 0.4s cubic-bezier(0.7, 0, 0.3, 1) 0s, opacity 0.4s cubic-bezier(0.7, 0, 0.3, 1) 0.5s;
+
+  @include breakpoint($bp-sm) {
+    left: 150px;
+    top: 57%;
+    margin-top: 40px;
+  }
+
+
+  @include breakpoint($bp-md) {
+    left: 25%;
+  }
+}
+
+.menu-brief {
+  display: none;
+
+  @include breakpoint($bp-sm) {
+    display: block;
+    position: absolute;
+    left: 61px;
+    bottom: 30px;
+  }
+
+
+  @include breakpoint($bp-md) {
+    left: 25%;
   }
 }
 
@@ -342,9 +446,6 @@ section {
   text-align: center;
   font-size: 0px;
   z-index: 101;
-
-
-
   height: 45px;
   width: 45px;
   cursor: pointer;
@@ -504,6 +605,7 @@ section {
 .menu-active {
   .menu {
     padding: 20px 20px 20px 0;
+    left: 0;
 
     @include breakpoint($bp-sm) {
       padding: 80px 80px 80px 0;
@@ -515,13 +617,9 @@ section {
     }
   }
 
-  .menu {
-    left: 0;
-  }
-
   .menu-color {
     opacity: 1;
-     background: $color-light-light-gray;
+    background: $color-light-light-gray;
   }
 
   .menu-options li {
@@ -588,24 +686,10 @@ section {
     }
   }
 
-   .jumbo-container {
-    padding: 20px;
-
-    @include breakpoint($bp-sm) {
-      padding: 80px;
-    }
-
-
-    @include breakpoint($bp-md) {
-      padding: 100px;
-    }
-  }
-
-     .logo {
+  .logo {
     @include breakpoint($bp-sm) {
       top: 80px;
       left: 150px;
-
     }
 
 
@@ -621,15 +705,25 @@ section {
 
 // greeting section begins
 .bottom-padding {
-  width: 100%;
-  height: 40px;
-  background-color: $color-white;
-  position: fixed;
-  bottom: 0;
+  display: none;
+
+  @include breakpoint($bp-sm) {
+    display: block;
+    z-index: 99;
+    width: 100%;
+    height: 40px;
+    background-color: $color-white;
+    position: fixed;
+    bottom: 0;
+  }
 }
 
 .greeting-jumbo-container {
   height: 100vh;
+
+  @include breakpoint($bp-sm) {
+    padding-top: 40px;
+  }
 }
 
 .logo {
@@ -776,7 +870,8 @@ section {
   // opacity: 0;
   opacity: 1;
   text-align: left;
-  transition: all 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+
+  @include transition(all, 0.8s, cubic-bezier(0.7, 0, 0.3, 1));
 
   @include breakpoint($bp-sm) {
     left: 0;
@@ -820,4 +915,163 @@ section {
   }
 }
 
+// email section begins
+.email-bg {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  height: 300px;
+  background: {
+    image: url(../../assets/images/email-transition.jpg);
+    position: center 90%;
+    repeat: no-repeat;
+    size: cover;
+  };
 
+  @include breakpoint($bp-sm) {
+    height: 300px;
+    background-position: center bottom;
+  }
+
+
+  @include breakpoint($bp-sm) {
+    height: 500px;
+  }
+
+
+  @include breakpoint($bp-md) {
+    height: 600px;
+  }
+}
+
+.email-title {
+  h2, .dot {
+    color: $color-grapefruit;
+  }
+
+  a:after, a:hover:before {
+    --cl: #ffada9;
+  }
+   @include breakpoint($bp-md) {
+    width: 40%;
+    float: left;
+  }
+}
+
+.esp {
+  width: 100%;
+  background-color: $color-black-background;
+  margin: 0 auto;
+  padding: 50px 30px;
+  @include breakpoint($bp-md) {
+    width: 50%;
+    margin: 50px 30px;
+    float: right;
+  }
+
+  ul {
+    width: 100%;
+    height: 100%;
+
+    @include flexbox;
+
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+
+
+
+    li {
+      flex: 1 0 35%;
+      height: 90px;
+      max-width: 160px;
+      margin: 0 10px;
+
+
+
+      &:nth-child(-n+3) {
+
+        margin-bottom: 20px;
+      }
+
+
+
+      @include breakpoint($bp-sm) {
+        flex: 1 0 22%;
+        margin: 0 20px;
+        max-width: 200px;
+
+        &:nth-child(-n+3) {
+          margin-bottom: 30px;
+        }
+
+      }
+
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+
+        @include transition(all, 0.3s, ease-in-out);
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      .litmus {
+        background: {
+          image: url(../../assets/images/litmus.png);
+          position: center;
+          repeat: no-repeat;
+          size: contain;
+        };
+      }
+
+      .eoa {
+        background: {
+          image: url(../../assets/images/EOA.png);
+          position: center;
+          repeat: no-repeat;
+          size: contain;
+        };
+      }
+
+      .ibm {
+        background: {
+          image: url(../../assets/images/ibm.png);
+          position: center;
+          repeat: no-repeat;
+          size: contain;
+        };
+      }
+
+      .blackbaud {
+        background: {
+          image: url(../../assets/images/blackbaud.svg);
+          position: center;
+          repeat: no-repeat;
+          size: contain;
+        };
+      }
+
+      .emma {
+        background: {
+          image: url(../../assets/images/emma.png);
+          position: center;
+          repeat: no-repeat;
+          size: contain;
+        };
+      }
+    }
+  }
+}
+
+#about.active {
+  svg polyline {
+    animation: dash 0.5s linear forwards;
+  }
+}
