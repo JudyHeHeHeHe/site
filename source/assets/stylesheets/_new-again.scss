@@ -166,87 +166,88 @@ svg polyline {
   stroke-dashoffset: 100;
 }
 
-.title {
+.title-container {
   width: 100%;
   margin: 0 auto;
   padding: 50px 30px;
+}
 
-  h2 {
-    line-height: 0.8;
-    text-transform: uppercase;
-    text-align: left;
-    margin-bottom: 20px;
-    font: {
-      size: 3em;
-      weight: 900;
-    };
+h2.section-header {
+  line-height: 0.8;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 20px;
+  font: {
+    size: 3em;
+    weight: 900;
+  };
+}
+
+h3.section-subheader {
+  color: $color-black;
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+p.section-copy {
+  color: $color-black;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+a.section-link {
+  color: $color-black;
+  text-decoration: underline;
+  display: block;
+  line-height: 0.8;
+  text-transform: uppercase;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  width: 90px;
+  font: {
+    family: $font-tan;
+    size: 0.9em;
+    weight: 600;
+  };
+
+  &:before, &:after {
+    content: '';
+    width: 0%;
+    height: 10px;
+    background: var(--cl, #FFFFFF);
+    z-index: -1;
+
+    @include vertical-align(absolute, 50%);
   }
 
-  h3 {
-    color: $color-black;
-    font-weight: 800;
-    margin-bottom: 20px;
-    font-size: 1.2em;
+  &:before {
+    left: -2.5px;
   }
 
-  p {
-    color: $color-black;
-    font-weight: 400;
-    margin-bottom: 20px;
+  &:after {
+    right: 2.5px;
+    background: var(--cl, transparent);
+
+    @include transition(width, 0.8s, cubic-bezier(0.22, 0.61, 0.36, 1));
   }
 
-  a {
-    color: $color-black;
-    text-decoration: underline;
-    display: block;
-    line-height: 0.8;
-    text-transform: uppercase;
-    text-align: left;
-    position: relative;
-    z-index: 1;
-    width: 100px;
-    font: {
-      size: 0.9em;
-      weight: 600;
-    };
+  &:hover {
+    text-decoration: none;
+  }
 
-    &:before, &:after {
-      content: '';
-      width: 0%;
-      height: 10px;
-      background: var(--cl, #FFFFFF);
-      z-index: -1;
+  &:hover:before {
+    background: var(--cl, transparent);
+    width: 90px;
 
-      @include vertical-align(absolute, 50%);
-    }
+    @include transition(width, 0.5s, cubic-bezier(0.22, 0.61, 0.36, 1));
+  }
 
-    &:before {
-      left: -2.5px;
-    }
-
-    &:after {
-      right: 2.5px;
-      background: var(--cl, transparent);
-
-      @include transition(width, 0.8s, cubic-bezier(0.22, 0.61, 0.36, 1));
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    &:hover:before {
-      background: var(--cl, transparent);
-      width: 100px;
-
-      @include transition(width, 0.5s, cubic-bezier(0.22, 0.61, 0.36, 1));
-    }
-
-    &:hover:after {
-      background: transparent;
-      width: 100px;
-      transition: 0s;
-    }
+  &:hover:after {
+    background: transparent;
+    width: 90px;
+    transition: 0s;
   }
 }
 
@@ -944,7 +945,7 @@ svg polyline {
   }
 }
 
-.email-title {
+.email-title-container {
   h2, .dot {
     color: $color-grapefruit;
   }
@@ -952,7 +953,8 @@ svg polyline {
   a:after, a:hover:before {
     --cl: #ffada9;
   }
-   @include breakpoint($bp-md) {
+
+  @include breakpoint($bp-md) {
     width: 40%;
     float: left;
   }
@@ -963,11 +965,13 @@ svg polyline {
   background-color: $color-black-background;
   margin: 0 auto;
   padding: 50px 30px;
+
   @include breakpoint($bp-md) {
     width: 50%;
     margin: 50px 30px;
     float: right;
   }
+
 
   ul {
     width: 100%;
@@ -978,23 +982,15 @@ svg polyline {
     flex-flow: row wrap;
     justify-content: space-around;
 
-
-
-
     li {
       flex: 1 0 35%;
       height: 90px;
       max-width: 160px;
       margin: 0 10px;
 
-
-
       &:nth-child(-n+3) {
-
         margin-bottom: 20px;
       }
-
-
 
       @include breakpoint($bp-sm) {
         flex: 1 0 22%;
@@ -1004,7 +1000,6 @@ svg polyline {
         &:nth-child(-n+3) {
           margin-bottom: 30px;
         }
-
       }
 
 
@@ -1070,7 +1065,108 @@ svg polyline {
   }
 }
 
-#about.active {
+#email.active {
+  svg polyline {
+    animation: dash 0.5s linear forwards;
+  }
+}
+
+// project section begins
+#project {
+  .jumbo-container {
+    position: relative;
+  }
+
+  .project-header {
+    position: absolute;
+    width: 100%;
+    padding: 50px 30px;
+    top: -140px;
+  }
+
+  h2 {
+    color: $color-projects;
+  }
+
+  .dot {
+    color: $color-projects;
+  }
+
+  a:after, a:hover:before {
+    --cl: #f3c130;
+  }
+
+  .project-bg {
+    display: block;
+    width: 100%;
+    margin: 140px auto 0;
+    height: 300px;
+    z-index: -1;
+    background: {
+      image: url(../../assets/images/project-transition.jpg);
+      position: center;
+      repeat: no-repeat;
+      size: cover;
+    };
+
+    @include breakpoint($bp-sm) {
+      height: 300px;
+    }
+
+
+    @include breakpoint($bp-sm) {
+      height: 500px;
+    }
+
+
+    @include breakpoint($bp-md) {
+      height: 600px;
+    }
+  }
+
+  .project-example {
+    width: 100%;
+    margin: 0 auto;
+    text-align: right;
+
+    p, a {
+      float: right;
+      text-align: right;
+      clear: both;
+    }
+     .section-link {
+    padding: 20px 0;
+    margin-right: 30px;
+    font-weight: 400;
+
+  }
+  }
+
+  .example-img {
+    width: 100%;
+    height: 350px;
+    background: {
+      image: url(../../assets/images/screenshots/raise-the-barn.png);
+      position: center;
+      repeat: no-repeat;
+      size: cover;
+    };
+  }
+
+  .example-title {
+    padding: 20px 30px 0 30px;
+
+    color: $color-black;
+  }
+
+  .example-year {
+   font-weight: 400;
+   padding: 0 30px;
+  }
+
+}
+
+#project.active {
   svg polyline {
     animation: dash 0.5s linear forwards;
   }

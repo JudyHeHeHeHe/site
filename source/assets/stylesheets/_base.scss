@@ -12,6 +12,7 @@ $color-red-hover: #ff6600;
 $color-grapefruit: #ff5851;
 $color-black: #333;
 $color-black-background: #1c1b20;
+$color-projects: #f3c130;
 
 $color-footer: #C8C1BC;
 $color-border: #D8D8D8;
@@ -36,8 +37,10 @@ $bp-md-lg: $bp-md ($bp-lg - 1);
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Tangerine:400,700");
 
 $font-mon: 'Montserrat', sans-serif;
+$font-tan: 'Tangerine', cursive;;
 
 // Centering: NOTE - requires absolute or relative positioning
 @mixin vertical-align($position: relative, $offset: 50%, $value: -50%) {
