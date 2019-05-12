@@ -37,10 +37,10 @@ $bp-md-lg: $bp-md ($bp-lg - 1);
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900");
-@import url("https://fonts.googleapis.com/css?family=Tangerine:400,700");
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i");
 
 $font-mon: 'Montserrat', sans-serif;
-$font-tan: 'Tangerine', cursive;;
+$font-lib: 'Libre Baskerville', serif;
 
 // Centering: NOTE - requires absolute or relative positioning
 @mixin vertical-align($position: relative, $offset: 50%, $value: -50%) {
