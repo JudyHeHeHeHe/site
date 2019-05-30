@@ -1,73 +1,107 @@
 [
   {
-    "time" : "February 09, 2018",
-    "name" : "African WildLife Foundation",
+    "time" : "February, 2018",
+    "org" : "African WildLife Foundation",
     "project" : "Support African Elephants",
-    "image" : "awf_logo.png",
+    "logo" : "awf_logo.png",
+    "bgcolor": "#e3544a",
+    "image": "save-african-elephants.jpg",
     "url" : "https://campaign.awf.org/support-african-elephants",
     'id' : '1'
   },
 
   {
-    "time" : "June 18, 2018",
-    "name" : "Habitat for Horses",
+    "time" : "June, 2018",
+    "org" : "Habitat for Horses",
     "project" : "Raise the Barn",
-    "image" : "hfh_logo.png",
+    "logo" : "hfh_logo.png",
+    "bgcolor": "#5eabe6",
+    "image": "raise-the-barn.jpg",
     "url" : "https://www.habitatforhorses.org/landing/raise_the_barn",
     'id' : '2'
   },
   {
-    "time" : "August 20, 2018",
-    "name" : "Habitat for Horses",
+    "time" : "August, 2018",
+    "org" : "Habitat for Horses",
     "project" : "2018 BLM",
-    "image" : "hfh_logo.png",
+    "logo" : "hfh_logo.png",
+    "bgcolor": "#555a61",
+    "image": "2018-BLM.png",
     "url" : "https://www.habitatforhorses.org/support/petitions/2018-08-blm-petition",
     'id' : '3'
   },
 
   {
-    "time" : "September 18, 2018",
-    "name" : "NAACP Legal Defense Fund",
+    "time" : "September, 2018",
+    "org" : "NAACP Legal Defense Fund",
     "project" : "SEM Landing",
-    "image" : "ldf_logo.svg",
+    "logo" : "ldf_logo.svg",
+    "bgcolor": "#f7c700",
+    "image": "LDF-sem-landing.png",
     "url" : "https://naacplegaldefensefund.org/campaigns/donate-naacp-ldf",
     'id' : '4'
   },
 
   {
-    "time" : "October 26, 2018",
-    "name" : "NAACP Legal Defense Fund",
+    "time" : "October, 2018",
+    "org" : "NAACP Legal Defense Fund",
     "project" : "SMS Landing",
-    "image" : "ldf_logo.svg",
+    "logo" : "ldf_logo.svg",
+    "bgcolor": "#33255e",
+    "image": "LDF-sms-landing.png",
     "url" : "https://naacplegaldefensefund.org/campaigns/sms/",
     'id' : '5'
   },
   {
-    "time" : "April 04, 2019",
-    "name" : "Physicians for Human Rights",
+    "time" : "April, 2019",
+    "org" : "Physicians for Human Rights",
     "project" : "Stay Informed",
-    "image" : "php_logo.png",
+    "logo" : "php_logo.png",
+    "bgcolor": "#333333",
+    "image": "PHR-stay-informed.png",
     "url" : "https://secure.phr.org/stay-informed",
     'id' : '6'
   },
   {
-    "time" : "May 04, 2019",
-    "name" : "Physicians for Human Rights",
-    "project" : "SEM Landing",
-    "image" : "php_logo.png",
+    "time" : "May, 2019",
+    "org" : "Physicians for Human Rights",
+    "project" : "SEM Landing Page",
+    "logo" : "php_logo.png",
+    "bgcolor": "#ccaf34",
+    "image": "Donate-to-Physicians-for-Human-Rights.jpg",
     "url" : "https://secure.phr.org/stay-informed",
     'id' : '7'
   },
   {
-    "time" : "Some day, 2019",
-    "project" : "Some Project",
-    "image" : "question-mark-button.svg",
-    "url" : ""
+    "time" : "May, 2019",
+    "org" : "Physicians for Human Rights",
+    "project" : "DM Membership Landing Page",
+    "logo" : "php_logo.png",
+    "bgcolor": "#9a2429",
+    "image": "PHR-DM-Landing.png",
+    "url" : "https://secure.phr.org/stay-informed",
+    'id' : '8'
   },
   {
-    "time" : "Some day, 2020",
-    "project" : "More Projects",
-    "image" : "question-mark-button.svg",
-    "url" : ""
+    "time" : "October, 2018",
+    "org" : "Dug Policy Alliance",
+    "project" : "DM Membership Landing Page",
+    "logo" : "dpa_logo.png",
+    "bgcolor": "#adc797",
+    "image": "DPA-A-second-chance.png",
+    "url" : "drugpolicy.org/campaigns/second-chance/",
+    'id' : '9'
   },
+  # {
+  #   "time" : "Some day, 2019",
+  #   "project" : "Some Project",
+  #   "logo" : "question-mark-button.svg",
+  #   "url" : ""
+  # },
+  # {
+  #   "time" : "Some day, 2020",
+  #   "project" : "More Projects",
+  #   "logo" : "question-mark-button.svg",
+  #   "url" : ""
+  # },
 ]

@@ -181,7 +181,7 @@ svg polyline {
 }
 
 h2.section-header {
-  line-height: 0.8;
+  line-height: 1;
   text-transform: uppercase;
   text-align: left;
   margin-bottom: 20px;
@@ -419,6 +419,10 @@ a.section-link {
       --cl: #ffada9;
     }
 
+    &.email:after, &.email:hover:before, &.email.active:before {
+      --cl: #fcb7a8;
+    }
+
     &.projects:after, &.projects:hover:before, &.projects.active:before {
       --cl: #f3c130;
     }
@@ -427,7 +431,7 @@ a.section-link {
       --cl: #d8d8e8;
     }
 
-    &.about.active:before, &.projects.active:before, &.fun.active:before {
+    &.about.active:before, &.email.active:before, &.projects.active:before, &.fun.active:before {
       width: 100%;
     }
   }
@@ -990,11 +994,11 @@ a.section-link {
 
 .email-title-container {
   h2, .dot {
-    color: $color-grapefruit;
+    color: $color-pink;
   }
 
   a:after, a:hover:before {
-    --cl: #ffada9;
+    --cl: #fcb7a8;
   }
 
   @include breakpoint($bp-md) {
@@ -1332,7 +1336,7 @@ a.section-link {
     width: 100%;
     height: 330px;
     background: {
-      image: url(../../assets/images/screenshots/raise-the-barn.png);
+      image: url(../../assets/images/projects/raise-the-barn.jpg);
       position: center;
       repeat: no-repeat;
       size: cover;
@@ -1403,9 +1407,11 @@ footer {
     @include breakpoint($bp-sm) {
       margin: 0 10%;
     }
-     @include breakpoint($bp-sm) {
+
+
+    @include breakpoint($bp-md) {
       margin: 0 5%;
-     }
+    }
   }
 
   .footer-contact-info {
@@ -1415,6 +1421,509 @@ footer {
       display: inline-block;
       float: right;
       margin: 0 5%;
+    }
+  }
+}
+
+.inner-container {
+  min-height: 600px;
+  position: relative;
+
+  @include breakpoint($bp-sm) {
+    height: 100vh;
+  }
+}
+
+.email-container {
+  background-image: linear-gradient(to bottom, $color-light-light-gray 60%, $color-pink 40%);
+
+  @include breakpoint($bp-md) {
+    background-size: 100%;
+    background-image: linear-gradient(to right, $color-light-light-gray 25%, $color-pink 25%);
+  }
+}
+
+.email-page-title-container {
+  position: absolute;
+  top: 275px;
+  margin: 0 30px;
+
+  @include breakpoint($bp-sm) {
+    left: 15%;
+    margin: 0;
+    top: 52%;
+  }
+
+
+  @include breakpoint($bp-md) {
+    left: 18%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 210px;
+    width: 70%;
+    transform: translateY(-50%);
+  }
+
+
+  h2 {
+    color: $color-black;
+  }
+
+  p {
+    font: {
+      family: $font-lib;
+      style: italic;
+    };
+
+    @include breakpoint($bp-md) {
+      margin-top: auto;
+      padding: 0 20px;
+    }
+  }
+
+  h3 {
+    @include breakpoint($bp-md) {
+      margin-bottom: auto;
+      padding: 0 30px;
+    }
+  }
+}
+
+.timeline-jumbo-container {
+  padding: 50px 30px;
+
+  @include breakpoint($bp-sm) {
+    padding: 80px 5% 80px 15%;
+  }
+
+
+  .timeline-container {
+    @include breakpoint($bp-sm) {
+      width: 46%;
+      display: inline-block;
+      padding-right: 30px;
+      float: left;
+    }
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 40px;
+
+    @include breakpoint($bp-sm) {
+      margin-bottom: 80px;
+    }
+  }
+
+  .dot {
+    color: $color-pink;
+  }
+
+  p.sub {
+    font: {
+      family: $font-lib;
+      style: italic;
+    };
+  }
+
+  .waves {
+    padding-bottom: 0;
+  }
+
+  .blocks {
+    display: none;
+
+    @include breakpoint($bp-sm) {
+      display: inline-block;
+      width: 208px;
+      margin-top: 100px;
+
+      @include breakpoint($bp-md) {
+        width: 242px;
+      }
+    }
+
+
+    .top-block {
+      width: 100px;
+      display: inline-block;
+      float: right;
+
+      @include breakpoint($bp-md) {
+        width: 120px;
+      }
+    }
+
+    .bottom-block {
+      width: 160px;
+      display: inline-block;
+      float: left;
+
+      @include breakpoint($bp-md) {
+        width: 180px;
+      }
+    }
+  }
+}
+
+.timeline-jumbo-container.active {
+  svg polyline {
+    animation: dash 0.5s linear forwards;
+  }
+}
+
+// Project page starts here
+.project-container {
+  background-image: url(../../assets/images/yellow-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.project-page-title-container {
+  position: absolute;
+  top: 275px;
+  margin: 0 30px;
+
+  @include breakpoint($bp-sm) {
+    left: 15%;
+    margin: 0;
+    top: 40%;
+    width: 40vw;
+  }
+
+
+  h2.section-header {
+    color: $color-black;
+    padding-bottom: 30px;
+
+    @include breakpoint($bp-sm) {
+      padding-bottom: 60px;
+    }
+  }
+
+  p.section-copy {
+    font-style: italic;
+    font-family: $font-lib;
+  }
+}
+
+.project-list {
+  margin-top: 10em;
+
+  @include breakpoint($bp-sm) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.each-project {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  @include breakpoint($bp-sm) {
+    flex: 1 0 36%;
+    height: 400px;
+  }
+
+
+  @include breakpoint($bp-md) {
+    height: 500px;
+    flex: 1 0 30%;
+  }
+
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    @include breakpoint($bp-sm) {
+      width: 100%;
+      height: 370px;
+      display: block;
+    }
+  }
+
+  &:hover {
+    .overlay {
+      transform: translateY(0%) skewY(0deg);
+      transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+    }
+
+    .description {
+      transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transform: translateY(120%) skewY(10deg);
+  transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1) 100ms;
+}
+
+.description {
+  opacity: 0;
+  transform: translateY(20px);
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  z-index: 3;
+  transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1) 100ms;
+
+  h3, p {
+    color: $color-white;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  p {
+    font-size: 1em;
+    font-family: $font-lib;
+    font-style: italic;
+  }
+}
+
+[id^='modal_'] {
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+
+  &.modalIn {
+    transform: scaleY(0.01) scaleX(0);
+    animation: unfoldIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+    .modal-container {
+      transform: scale(0);
+      animation: zoomIn 0.3s 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    &.modalOut {
+      transform: scale(1);
+      animation: unfoldOut 0.8s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+      .modal-container {
+        animation: zoomOut 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      }
+    }
+  }
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: $color-black;
+  opacity: 0.9;
+}
+
+.modal-container {
+  background-color: $color-white;
+  margin: auto;
+  padding: 20px 0;
+  border: 1px solid $color-border;
+  width: 100%;
+  max-width: 700px;
+  height: 650px;
+  max-height: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  .modal-close {
+    color: $color-grapefruit;
+    float: right;
+    border: 1px solid $color-border;
+    padding: 1px 10px;
+    cursor: pointer;
+    margin: 0 20px;
+    font: {
+      size: 26px;
+      family: $font-mon;
+      weight: 700;
+    };
+
+    &:hover, &:focus {
+      color: $color-yellow-hover;
+    }
+  }
+}
+
+.modal-header {
+  width: 80%;
+  padding: 0 20px 20px 20px;
+  text-align: left;
+
+  img {
+    width: 100%;
+    max-width: 130px;
+    display: block;
+
+    @include breakpoint($bp-md) {
+      display: inline-block;
+    }
+  }
+
+  .project-name {
+    display: block;
+    padding-top: 15px;
+
+    @include breakpoint($bp-sm) {
+      font-size: 1.3em;
+    }
+  }
+}
+
+.modal-body {
+  width: 100%;
+  margin: 0 auto;
+
+  .secondary_img {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .modal-descitption {
+    padding: 20px;
+  }
+
+  .modal-info {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    li {
+      text-align: left;
+
+      @include flexbox;
+      @include align-items(flex-start);
+
+      &:nth-child(2) {
+        margin-top: 10px;
+      }
+    }
+
+    img {
+      margin-right: 15px;
+      align-self: flex-start;
+      max-width: 20px;
+
+      &.modal-tag {
+        margin-top: 9px;
+      }
+    }
+  }
+}
+
+.modal-social-share {
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+
+  ul {
+    text-align: left;
+  }
+
+  li {
+    width: 90px;
+    border: 1px solid $color-border;
+    text-align: left;
+    margin-right: 15px;
+    padding: 2px 5px;
+    display: inline-block;
+    text-align: center;
+
+    @include border-radius(5px);
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      width: 20px;
+      vertical-align: middle;
+    }
+
+    p {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 3px;
+
+      @include breakpoint($bp-sm) {
+        font-size: 0.8em;
+      }
     }
   }
 }

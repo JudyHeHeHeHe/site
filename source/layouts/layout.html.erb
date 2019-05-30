@@ -54,9 +54,13 @@
       <div class="menu-color">
         <div class="menu-container">
           <ul class="menu-options">
-            <li><a href="#about" class="links about active">Emails.</a></li>
-            <li><a href="#projects" class="links projects">Projects.</a></li>
-            <li><a href="#fun" class="links fun">FUN.</a></li>
+            <li><%= link_to 'About.', '/', :class => "links about active" %>
+            <li><%= link_to 'Emails.', '/email.html', :class => "links email" %>
+            <li><%= link_to 'Projects.', '/project.html', :class => "links projects" %>
+            <li><%= link_to 'FUN.', '/fun.html', :class => "links fun" %>
+            <!--   <a href="#email" class="links email active">Emails.</a></li> -->
+           <!--  <li><a href="#projects" class="links projects">Projects.</a></li>
+            <li><a href="#fun" class="links fun">FUN.</a></li> -->
             <li class="social-icons">
               <%= partial "partials/social-icons" %>
             </li>
@@ -82,6 +86,7 @@
     <div class="desktop-social-icons">
       <%= partial "partials/social-icons" %>
     </div>
+    <a href="/" class="logo"></a>
   </header>
   <main>
   <%= yield %>

@@ -37,43 +37,35 @@ $(function() {
     //     .addTo(controller);
     // }
 
-    // // Show and hide modals
-    // var length = document.querySelectorAll('.timeline_content').length;
+  // Show and hide modals
+  $('.each-project').each(function(el){
+    $(this).on('click', function(){
+      $(this).next('[id^="modal_"]').removeAttr('class').addClass('modalIn');   
+    })
+  })
 
-    // $('.timeline_content').each(function(el){
-    //   $(this).on('click', function(){
-    //     if ( el <= length - 3) {
-    //       $(this).parent().find('[id^="modal_"]').removeAttr('class').addClass('modalIn');
-    //     } else if ( el > length - 3) {
-    //       return;
-    //     }
-    //   })
-    // })
+  
+  $('.modal-close').on('click', function(){
+    $(this).closest('[id^="modal_"]').addClass('modalOut');
+  })
+    
 
-    // $('.modal-close').each(function(){
-    //   $(this).on('click', function(){
-    //     $(this).closest('[id^="modal_"]').addClass('modalOut');
-    //   })
-    // });
+  $('.menu-button').on('click', function(){
+    $('body').toggleClass('menuOpen');
 
-
-  $('.menu-burger-area').on('click', function(){
-    $('body').toggleClass('menu-active');
   });
 
   $('.menu-burger-area').on('mouseover', function(){
-    $('body').addClass('menu-hover');
+
+    $('body').addClass('menuHover');
+
   });
 
    $('.menu-burger-area').on('mouseout', function(){
-    $('body').removeClass('menu-hover');
+
+    $('body').removeClass('menuHover');
+
   });
-
-
-$('.about-bg').on('click', function(){
-  $('svg polyline').toggleClass('dash');
-});
-
 
   // Show and hide hello
   function showHello() {
@@ -133,6 +125,7 @@ $('.about-bg').on('click', function(){
   //       colorEnd: 'pink'
   // })
   // .addTo(controller);
+
 
 
 
