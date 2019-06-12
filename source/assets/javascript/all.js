@@ -134,15 +134,6 @@ function removeClass(el, className){
     offset: '-30%'
   });
 
-
-  // $('#greeting').waypoint(function(direction) {
-  //   if (direction === 'up') {
-  //     removeClass($('body'), 'greeting-active');
-  //   } 
-  // }, {
-  //   offset: '-30%' 
-  // });
-
   var controller = new ScrollMagic.Controller();
 
   var homepageScene1 = new ScrollMagic.Scene({
