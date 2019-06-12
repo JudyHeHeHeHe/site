@@ -14,6 +14,10 @@ module.exports = {
       __dirname + '/source/assets/images',
       __dirname + '/node_modules',
     ],
+    // alias: {
+    //   'waypoints': 'waypoints/lib/jquery.waypoints.js'
+    //   // 'inview': 'waypoints/lib/shortcuts/inview.min.js'
+    // },
     extensions: ['.js', '.css', '.scss']
   },
 
