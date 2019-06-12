@@ -1,5 +1,5 @@
 ---
-page_title: Lore Ipsum
+page_title: Email
 ---
 <div class="top-padding padding"></div>
 <div class="bottom-padding padding"></div>
@@ -57,4 +57,17 @@ page_title: Lore Ipsum
     <%= image_tag 'block-bottom.svg', :class => 'block bottom-block' %>
   </div>
 </div>
+<div class="swiper-jumbo-container">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <% data.emails.each do |email| %> 
+      <div class="swiper-slide <%= email.id %>">
+        <img src="../../assets/images/emails/<%= email.image %>" />   
+      </div>
+      <% end %>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
 

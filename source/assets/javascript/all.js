@@ -1,41 +1,44 @@
 import "all.scss";
-import "vendor/noframework.waypoints.min.js"
-import "vendor/ScrollMagic.min.js"
+import Waypoints from 'waypoints';
+// import Inview from 'inview';
+import { TimelineMax, TweenMax, Linear } from 'gsap';
+// import "waypoints/lib/shortcuts/inview.min.js";
+// import ScrollMagic from 'scrollmagic'; 
+// import "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
+import Swiper from 'swiper';
+
 
 $(function() {
   (function($) {
 
-    // var waypoint = new Waypoint({
-    //   element: document.getElementById('about'),
-    //   handler: function(direction) {
-
-    //       $('.half-background').addClass('slide-left');
-
-
-    //   },
-    //   offset: '-100%'
-    // })
-
-
-    // Wipes
-    // var controller = new ScrollMagic.Controller({
-    //   globalSceneOptions: {
-    //     triggerHook: 'onLeave'
-    //   }
-    // });
-
-    // // get all slides
-    // var slides = document.querySelectorAll("section.panel");
-
-    // // create scene for every slide
-    // for (var i=0; i<slides.length; i++) {
-    //   new ScrollMagic.Scene({
-    //       triggerElement: slides[i]
-    //     })
-    //     .setPin(slides[i])
-    //     .addIndicators() // add indicators (requires plugin)
-    //     .addTo(controller);
-    // }
+  var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 5,
+      spaceBetween: 30,
+      grabCursor: true,
+      // init: false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        }
+      }
+    });
 
   // Show and hide modals
   $('.each-project').each(function(el){
@@ -50,7 +53,7 @@ $(function() {
   })
     
 
-  $('.menu-button').on('click', function(){
+  $('.menu-burger-area').on('click', function(){
     $('body').toggleClass('menuOpen');
 
   });
@@ -107,24 +110,56 @@ $(function() {
   //   calculateGap();
   // });
 
+function removeClass(el, className){
+  if (el.hasClass(className)) {
+    el.removeClass(className);
+  }
+}
+
+  var greetingDown = $('#greeting').waypoint(function(direction) {
+    if (direction === 'down') {
+      $('body').addClass('greeting-active');
+    } else if(direction === 'up') {
+      removeClass($('body'), 'greeting-active');
+    }
+  }, {
+    offset: '-1%'
+  });
+
+  var greetingUp = $('#greeting').waypoint(function(direction) {
+    if (direction === 'up') {
+      removeClass($('body'), 'greeting-active');
+    }
+  }, {
+    offset: '-30%'
+  });
+
+
+  // $('#greeting').waypoint(function(direction) {
+  //   if (direction === 'up') {
+  //     removeClass($('body'), 'greeting-active');
+  //   } 
+  // }, {
+  //   offset: '-30%' 
+  // });
+
   var controller = new ScrollMagic.Controller();
 
-  // var homepageScene1 = new ScrollMagic.Scene({
-  //   triggerElement: '.home',
-  //   offset: '0.1',
-  //   duration: '20%',
-  //   triggerHook: 0
-  //   })
-  //   .setPin('.home')
-  //   .setClassToggle('body', 'introOpen')
-  //   .addIndicators({
-  //       name:'home scene',
-  //       colorTrigger: 'black',
-  //       // indent: 200,
-  //       colorStart: 'pink',
-  //       colorEnd: 'pink'
-  // })
-  // .addTo(controller);
+  var homepageScene1 = new ScrollMagic.Scene({
+    // triggerElement: '#hello',
+    // offset: '0.1',
+    duration: '30%',
+    })
+    .setPin('#greeting')
+    // .setClassToggle('body', 'introOpen')
+    .addIndicators({
+        name:'home scene',
+        colorTrigger: 'black',
+        // indent: 200,
+        colorStart: 'pink',
+        colorEnd: 'pink'
+  })
+  .addTo(controller);
 
 
 

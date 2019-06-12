@@ -10,7 +10,7 @@ section {
 .jumbo-container {
   margin: 0 auto;
   padding: 0;
-  background-color: $color-light-light-gray;
+  // background-color: $color-light-light-gray;
   overflow: hidden;
 
   @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
@@ -751,7 +751,174 @@ a.section-link {
   }
 }
 
+.menuOpen {
+  .jumbo-container {
+    padding: 20px;
+
+    @include breakpoint($bp-sm) {
+      padding: 80px;
+    }
+
+
+    @include breakpoint($bp-md) {
+      padding: 100px;
+    }
+  }
+
+  #greeting .logo {
+    @include breakpoint($bp-sm) {
+      top: 80px;
+      left: 150px;
+      z-index: 100;
+    }
+
+
+    @include breakpoint($bp-md) {
+      left: 20%;
+    }
+  }
+
+  .menu-burger {
+    .line {
+      &:nth-of-type(1) {
+        width: 20px !important;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      &:nth-of-type(2) {
+        width: 20px !important;
+        margin-top: -2px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+
+      &:nth-of-type(3) {
+        width: 0px !important;
+      }
+    }
+  }
+
+  .menu-button {
+    @include breakpoint($bp-md) {
+      left: 10% !important;
+    }
+  }
+
+  .txt {
+    display: none;
+  }
+
+  .menu-color {
+    padding-right: 20px;
+    opacity: 1;
+    pointer-events: all;
+    background-color: $color-grapefruit;
+
+    @include breakpoint($bp-sm) {
+      padding-right: 80px;
+    }
+
+
+    @include breakpoint($bp-md) {
+      padding-right: 100px;
+    }
+  }
+
+  .menu {
+    padding: 20px 20px 20px 0;
+    left: 0;
+
+    @include breakpoint($bp-sm) {
+      padding: 80px 80px 80px 0;
+    }
+
+
+    @include breakpoint($bp-md) {
+      padding-right: 100px;
+    }
+  }
+
+  .menu-options li {
+    margin: 0 0 10px 0;
+    opacity: 1;
+
+    @include breakpoint($bp-sm) {
+      margin: 0;
+    }
+
+
+    &:last-of-type {
+      margin-top: 30px;
+
+      @include breakpoint($bp-sm) {
+        display: none;
+      }
+    }
+  }
+
+  .menu-info {
+    top: 90%;
+    opacity: 1;
+
+    @include breakpoint($bp-sm) {
+      top: 55%;
+    }
+  }
+
+  .desktop-social-icons {
+    @include breakpoint($bp-sm) {
+      right: 26px;
+    }
+
+
+    @include breakpoint($bp-md) {
+      right: 37px;
+    }
+  }
+
+  #greeting {
+    &.scroll {
+      color: $color-white;
+    }
+
+    &#hello {
+      z-index: -100;
+    }
+  }
+
+  @media (max-height: 660px) and (min-width: 600px) {
+    .menu {
+      .menu-info {
+        top: 40%;
+      }
+    }
+  }
+}
+
+.menuHover {
+  @include breakpoint($bp-sm) {
+    .jumbo-container {
+      padding-left: 78px;
+    }
+
+    #greeting .scroll {
+      color: $color-white;
+    }
+  }
+}
+
 // greeting section begins
+#greeting {
+  width: 100% !important;
+}
+
 .bottom-padding {
   bottom: 0;
 }
@@ -1828,7 +1995,7 @@ footer {
 
   img {
     width: 100%;
-    max-width: 130px;
+    max-width: 90px;
     display: block;
 
     @include breakpoint($bp-md) {
@@ -1839,6 +2006,15 @@ footer {
   .project-name {
     display: block;
     padding-top: 15px;
+    font-size:1em;
+    text-decoration: underline;
+    color: $color-dark-gray;
+
+    &:hover {
+      text-decoration: none;
+      color: $color-dark-gray;
+
+    }
 
     @include breakpoint($bp-sm) {
       font-size: 1.3em;
@@ -1857,6 +2033,9 @@ footer {
 
   .modal-descitption {
     padding: 20px;
+    font-weight: 400;
+    font-family: $font-lib;
+    font-style: italic;
   }
 
   .modal-info {
@@ -1878,11 +2057,16 @@ footer {
     img {
       margin-right: 15px;
       align-self: flex-start;
-      max-width: 20px;
+      max-width: 13px;
+      margin-top: 5px;
 
       &.modal-tag {
         margin-top: 9px;
       }
+    }
+
+    p {
+      font-weight: 400;
     }
   }
 }
@@ -1920,10 +2104,53 @@ footer {
       display: inline-block;
       vertical-align: middle;
       margin-right: 3px;
+      font-weight: 400;
 
       @include breakpoint($bp-sm) {
         font-size: 0.8em;
       }
     }
   }
+}
+
+.swiper-jumbo-container {
+  padding: 50px 30px;
+  @include breakpoint($bp-sm) {
+    padding: 50px 0;
+    margin: 0 40px;
+  }
+
+}
+
+.swiper-slide {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.greeting-active {
+   #greeting {
+    .greeting-container {
+      background-size: 200%;
+    }
+
+    .scroll {
+      color: $color-grapefruit;
+
+      @include breakpoint($bp-sm) {
+        color: $color-black;
+      }
+    }
+
+    #hello {
+      transform: translate(2%, -160%);
+
+      @include breakpoint($bp-sm) {
+        transform: translate(52%, -50%);
+        max-width: 50%;
+      }
+}
+}
+
 }
