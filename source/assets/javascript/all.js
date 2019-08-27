@@ -44,12 +44,14 @@ $(function() {
   $('.each-project').each(function(el){
     $(this).on('click', function(){
       $(this).next('[id^="modal_"]').removeAttr('class').addClass('modalIn');   
+      $('html, body').toggleClass('non-scrolling');
     })
   })
 
   
-  $('.modal-close').on('click', function(){
+  $('.modal-close-button').on('click', function(){
     $(this).closest('[id^="modal_"]').addClass('modalOut');
+    $('html, body').toggleClass('non-scrolling');
   })
     
 

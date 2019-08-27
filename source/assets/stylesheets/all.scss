@@ -29,6 +29,10 @@ body {
   background-color: $color-white;
 }
 
+.non-scrolling {
+  overflow: hidden;
+}
+
 body {
   line-height: 1.4;
   text-align: center;
@@ -52,9 +56,10 @@ main {
   position: relative;
   width: 100%;
   margin: 0 auto;
-   margin-bottom: 150px;
+  margin-bottom: 150px;
+
   @include breakpoint($bp-sm) {
- margin-bottom: 180px;
+    margin-bottom: 180px;
   }
 }
 

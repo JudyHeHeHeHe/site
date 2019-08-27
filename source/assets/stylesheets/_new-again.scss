@@ -10,6 +10,7 @@ section {
 .jumbo-container {
   margin: 0 auto;
   padding: 0;
+
   // background-color: $color-light-light-gray;
   overflow: hidden;
 
@@ -1373,6 +1374,86 @@ a.section-link {
   }
 }
 
+.interactive-email-header {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 30px 10px;
+  color: $color-black;
+}
+
+.star {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 30px 10px;
+}
+
+@keyframes star1 {
+  to {
+    zoom: 10%;
+    opacity: 0;
+  }
+
+  from {
+    zoom: 100%;
+    opacity: 1;
+  }
+}
+
+.star1 {
+  animation-name: star1;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 0.2s;
+  animation-direction: alternate;
+}
+
+@keyframes star2 {
+  to {
+    opacity: 0;
+  }
+
+  from {
+    opacity: 1;
+  }
+}
+
+.star2 {
+  animation-name: star2;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 0.3s;
+  animation-direction: alternate;
+}
+
+@keyframes star3 {
+  0% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.star3 {
+  animation-name: star3;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 0.4s;
+  animation-direction: alternate;
+}
+
 #email.active {
   svg polyline {
     animation: dash 0.5s linear forwards;
@@ -1777,7 +1858,7 @@ footer {
 }
 
 .project-list {
-  margin-top: 10em;
+  // margin-top: 10em;
 
   @include breakpoint($bp-sm) {
     display: flex;
@@ -1955,70 +2036,81 @@ footer {
 .modal-container {
   background-color: $color-white;
   margin: auto;
-  padding: 20px 0;
+  padding: 0;
   border: 1px solid $color-border;
   width: 100%;
-  max-width: 700px;
-  height: 650px;
+  max-width: 550px;
+  height: auto;
   max-height: 100%;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   z-index: 100;
   position: absolute;
   top: 50%;
   left: 50%;
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 
-  .modal-close {
-    color: $color-grapefruit;
-    float: right;
-    border: 1px solid $color-border;
-    padding: 1px 10px;
-    cursor: pointer;
-    margin: 0 20px;
-    font: {
-      size: 26px;
-      family: $font-mon;
-      weight: 700;
-    };
+  .modal-close-button {
+    position: absolute;
+    color: $color-white;
+    font: normal 1em $font-mon;
+    text-decoration: none;
+    margin: 0 auto;
+    top: -1.5em;
+    left: 0;
+    right: 0;
 
-    &:hover, &:focus {
-      color: $color-yellow-hover;
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include breakpoint($bp-sm) {
+      position: absolute;
+      display: block;
+      z-index: 2;
+      background: #00a1f3;
+      text-indent: -9999em;
+      border-radius: 100%;
+      margin-right: 0;
+      width: 44px;
+      height: 44px;
+      top: -22px;
+      right: -22px;
+      -moz-transition: background-color .3s;
+      -o-transition: background-color .3s;
+      -webkit-transition: background-color .3s;
+      transition: background-color .3s;
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        background: #fff;
+        margin: -2px auto 0;
+        width: 28px;
+        height: 4px;
+        top: 50%;
+        left: 0;
+        right: 0;
+      }
     }
   }
 }
 
 .modal-header {
-  width: 80%;
-  padding: 0 20px 20px 20px;
+  padding: 20px;
   text-align: left;
 
   img {
     width: 100%;
-    max-width: 90px;
+    max-width: 100px;
     display: block;
-
-    @include breakpoint($bp-md) {
-      display: inline-block;
-    }
-  }
-
-  .project-name {
-    display: block;
-    padding-top: 15px;
-    font-size:1em;
-    text-decoration: underline;
-    color: $color-dark-gray;
-
-    &:hover {
-      text-decoration: none;
-      color: $color-dark-gray;
-
-    }
-
-    @include breakpoint($bp-sm) {
-      font-size: 1.3em;
-    }
   }
 }
 
@@ -2029,30 +2121,25 @@ footer {
   .secondary_img {
     width: 100%;
     margin: 0 auto;
+    padding: 0 20px;
+    display: block;
   }
 
   .modal-descitption {
     padding: 20px;
-    font-weight: 400;
-    font-family: $font-lib;
-    font-style: italic;
+    font: {
+      size: 0.8em;
+      weight: 400;
+      family: $font-lib;
+      style: italic;
+    };
   }
 
   .modal-info {
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
-
-    li {
-      text-align: left;
-
-      @include flexbox;
-      @include align-items(flex-start);
-
-      &:nth-child(2) {
-        margin-top: 10px;
-      }
-    }
+    display: flex;
 
     img {
       margin-right: 15px;
@@ -2062,6 +2149,7 @@ footer {
 
       &.modal-tag {
         margin-top: 9px;
+        font-size: 0.8em;
       }
     }
 
@@ -2115,11 +2203,11 @@ footer {
 
 .swiper-jumbo-container {
   padding: 50px 30px;
+
   @include breakpoint($bp-sm) {
     padding: 50px 0;
     margin: 0 40px;
   }
-
 }
 
 .swiper-slide {
@@ -2130,7 +2218,7 @@ footer {
 }
 
 .greeting-active {
-   #greeting {
+  #greeting {
     .greeting-container {
       background-size: 200%;
     }
@@ -2150,7 +2238,6 @@ footer {
         transform: translate(52%, -50%);
         max-width: 50%;
       }
-}
-}
-
+    }
+  }
 }
