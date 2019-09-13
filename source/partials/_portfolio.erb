@@ -1,7 +1,7 @@
 <div id="modal_<%= id %>">
   <div class="backdrop"></div>
   <div class="modal-container">
-    <a class="modal-close-button" href="#close">[x] <span class="underline">close</span></a>
+   <span class="modal-close">&times;</span>
     <% if id == '1' %>
       <%= partial(:'partials/portfolio_content', :locals => {
         :logo => "logo/awf_logo.png",
