@@ -7,12 +7,12 @@
 <!--<![endif]-->
 <head>
   <meta charset="UTF-8">
-  <title><%=current_page.data.page_title || "Judy He" %></title>
+  <title><%=current_page.data.page_title + " | Judy He" %></title>
 
   <% if current_page.data.description %>
   <meta name="description" content="<%=current_page.data.description %>">
   <% else %>
-  <meta name="description" content="">
+  <meta name="description" content="NYC based web developer and an enthusiastic entrepreneur, providing innovative, modern and aethetic digital solutions.">
   <% end %>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <meta property="og:url" content="https://judythewebdeveloper.com<%=current_page.url %>" />
-  <meta property="og:site_name" content="Judythewebdeveloper"/>
+  <meta property="og:site_name" content="Judyisadeveloper"/>
   <meta property="og:type" content="website"/>
 
   <% if current_page.data.meta_title %>
@@ -28,13 +28,13 @@
   <% elsif current_page.data.title %>
   <meta property="og:title" content="<%=current_page.data.title %>">
   <% else %>
-  <meta property="og:title" content=""/>
+  <meta property="og:title" content="Judy is a web developer"/>
   <% end %>
 
   <% if current_page.data.description %>
   <meta property="og:description" content="<%=current_page.data.description %>">
   <% else %>
-  <meta property="og:description" content=""/>
+  <meta property="og:description" content="NYC based web developer and an enthusiastic entrepreneur, providing innovative, modern and aethetic digital solutions."/>
   <% end %>
 
   <% if current_page.data.image %>
@@ -56,7 +56,7 @@
             <li><%= link_to 'Home.', '/', :class => "links link-home active" %></li>
             <li><%= link_to 'Emails.', '/emails.html', :class => "links link-email" %></li>
             <li><%= link_to 'Projects.', '/projects.html', :class => "links link-project" %></li>
-            <li class="social-icons">
+            <li class="mobile-social-icons">
               <%= partial "partials/social-icons" %>
             </li>
           </ul>

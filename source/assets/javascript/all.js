@@ -43,13 +43,17 @@ $(function() {
   // Show and hide modals
   $('.each-project').each(function(el){
     $(this).on('click', function(){
-      $(this).next('[id^="modal_"]').removeAttr('class').addClass('modalIn');   
+      $(this).next('[id^="modal_"]').removeAttr('class').addClass('modalIn');  
+      $('body').addClass('position-fixed'); 
+      $('html').addClass('position-fixed'); 
     })
   })
 
   
   $('.modal-close').on('click', function(){
     $(this).closest('[id^="modal_"]').addClass('modalOut');
+     $('body').removeClass('position-fixed'); 
+     $('html').removeClass('position-fixed'); 
   })
     
   $('.menu-burger-area').on('click', function(){
@@ -72,38 +76,20 @@ $(function() {
   }
   setTimeout(showHello, 1000);
 
-  $(document).on('click', 'a[href^="#"]', function(e) {
-    // target element id
-    var id = $(this).attr('href');
+  // $(document).on('click', 'a[href^="#"]', function(e) {
+  //   // target element id
+  //   var id = $(this).attr('href');
 
-    // target element
-    var $id = $(id);
-    if ($id.length === 0) {
-        return;
-    }
-
-    // prevent standard hash navigation (avoid blinking in IE)
-    e.preventDefault();
-
-    // top position relative to the document
-    var pos = $id.offset().top - $('header').height();
-
-    // animated top scrolling
-    $('body, html').animate({scrollTop: pos});
-  });
-
-  // function calculateGap() {
-  //   if (($(window).width() > 600)) {
-
-  //   } else {
-
+  //   // target element
+  //   var $id = $(id);
+  //   if ($id.length === 0) {
+  //       return;
   //   }
-  // }
+  //   e.preventDefault();
 
-  // calculateGap();
+  //   var pos = $id.offset().top - $('header').height();
 
-  // $(window).resize(function() {
-  //   calculateGap();
+  //   $('body, html').animate({scrollTop: pos});
   // });
 
 function removeClass(el, className){
@@ -122,21 +108,23 @@ var greetingDown = $('#greeting').waypoint(function(direction) {
   offset: '-1%'
 });
 
-var projectDown = $('.project-page-jumbo-container').waypoint(function(direction) {
-  if (direction === 'down') {
-    $('.project-page-jumbo-container').addClass('project-active');
-  } else if(direction === 'up') {
-    removeClass($('.project-page-jumbo-container'), 'project-active');
-  }
-}, {
-  offset: '-1%'
-});
+// var projectDown = $('.project-page-jumbo-container').waypoint(function(direction) {
+//   if (direction === 'down') {
+//     $('.project-page-jumbo-container').addClass('project-active');
+//   } else if(direction === 'up') {
+//     removeClass($('.project-page-jumbo-container'), 'project-active');
+//   }
+// }, {
+//   offset: '-1%'
+// });
 
 var greetingDown = $('main').waypoint(function(direction) {
   if (direction === 'down') {
     $('.scroll').addClass('scrollActive');
+    $('.intro').addClass('active');
   } else if(direction === 'up') {
     removeClass($('.scroll'), 'scrollActive');
+    removeClass($('.intro'), 'active');
   }
 }, {
   offset: '-1%'
@@ -148,8 +136,11 @@ $(window).scroll(function() {
     $('.footer-wrapper').addClass('active');
     $('.scroll').addClass('scrollDisappear');
   } else if ($(window).scrollTop() + $(window).height() < $(document).height() - (footerHeight / 2)){
-    $('.footer-wrapper').removeClass('active');
-    $('.scroll').removeClass('scrollDisappear');
+    removeClass($('.footer-wrapper'), 'active');
+    removeClass($('.scroll'), 'scrollDisappear');
+
+    // $('.footer-wrapper').removeClass('active');
+    // $('.scroll').removeClass('scrollDisappear');
   }
 });
 
@@ -160,6 +151,14 @@ var homepageScene1 = new ScrollMagic.Scene({
   })
   .setPin('#greeting')
 .addTo(controller);
+
+// var homePageScene2 = new ScrollMagic.Scene({
+//   triggerElement: '#hello',
+//   triggerHook: 0.3
+// })
+// .setClassToggle('.intro', 'active')
+// .addIndicators()
+// .addTo(controller);
 
 var emailbgParallax = new ScrollMagic.Scene({
   triggerElement: '.email-bg-container',
@@ -212,14 +211,6 @@ var projectSectionScene3 = new ScrollMagic.Scene({
 .setClassToggle('.project-example', 'active')
 .addTo(controller);
 
-var projectbgParallax = new ScrollMagic.Scene({
-  triggerElement: '.project-bg-container',
-  triggerHook: 1,
-  duration: '100%'
-})
-.setTween(TweenMax.from('.project-bg', 1, {y: '30%', ease:Power0.easeNone}))
-.addTo(controller);
-
 var emailPageBgScene = new ScrollMagic.Scene({
   triggerElement: '.email-container',
   triggerHook: 0.1,
@@ -228,6 +219,15 @@ var emailPageBgScene = new ScrollMagic.Scene({
 .setTween(TweenMax.from('.email-container', 1, {backgroundSize: '200%', ease:Power0.easeNone}))
 .setClassToggle('.email-page-title-container', 'active')
 // .addIndicators({name: "pin scene", colorEnd: "#758987"})
+.addTo(controller);
+
+var projectPageBgScene = new ScrollMagic.Scene({
+   triggerElement: '.project-page-jumbo-container',
+  triggerHook: 0.1,
+  duration: '100%'
+})
+.setClassToggle('.project-page-jumbo-container', 'active')
+.setTween(TweenMax.from('.project-bg', 1, {y: '10%', ease:Power0.easeNone}))
 .addTo(controller);
 
 var blocksScene = new ScrollMagic.Scene({

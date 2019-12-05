@@ -1,45 +1,48 @@
-@import "key-frames";
-
-section {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  overflow: hidden;
-}
-
-.jumbo-container {
-  margin: 0 auto;
-  padding: 0;
-  overflow: hidden;
-
-  @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
-
-  @include breakpoint($bp-sm) {
-    margin: 0 40px;
-  }
-}
-
-.icons {
+.social-icon {
   text-decoration: none;
-  margin-right: 20px;
-  display: inline-block;
 
   svg {
     vertical-align: top;
-
-    &:hover {
-      #facebook-fill {
-        fill: $color-facebook-hover;
-      }
-
-      #instagram-fill {
-        fill: $color-ins-hover;
-      }
-    }
   }
 
-  #wechat-fill:hover {
-    fill: $color-wechat-hover;
+  &:hover {
+    #facebook-fill {
+      fill: $color-facebook-hover;
+    }
+
+    #instagram-fill {
+      fill: $color-ins-hover;
+    }
+
+    #wechat-fill:hover {
+      fill: $color-wechat-hover;
+    }
+  }
+}
+
+.mobile-social-icons {
+  .social-icon {
+    margin-right: 20px;
+    display: inline-block;
+  }
+}
+
+.desktop-social-icons {
+  display: none;
+
+  @include breakpoint($bp-sm) {
+    display: block;
+    right: 8px;
+    z-index: 101;
+
+    @include transition(right, 0.5s, cubic-bezier(0.7, 0, 0.3, 1));
+
+    @include vertical-align(fixed, 50%);
+
+    .social-icon {
+      display: block;
+      margin: 10px 0;
+    }
   }
 }
 
@@ -603,26 +606,6 @@ a.section-link {
   }
 }
 
-.desktop-social-icons {
-  display: none;
-
-  @include breakpoint($bp-sm) {
-    display: block;
-    right: 8px;
-    z-index: 101;
-
-    @include transition(right, 0.5s, cubic-bezier(0.7, 0, 0.3, 1));
-
-    @include vertical-align(fixed, 50%);
-
-    .icons {
-      display: block;
-      margin: 10px 0;
-      vertical-align: middle;
-    }
-  }
-}
-
 .menu-hover {
   @include breakpoint($bp-sm) {
     .jumbo-container {
@@ -1101,8 +1084,6 @@ a.section-link {
   bottom: 7%;
   left: -100%;
   opacity: 0;
-
-  // opacity: 1;
   text-align: left;
 
   @include transition(all, 0.8s, cubic-bezier(0.7, 0, 0.3, 1));
@@ -1116,7 +1097,8 @@ a.section-link {
   .headshot, p {
     max-width: 250px;
     margin-left: 0;
-    transform: translateY(30px);
+
+    // transform: translateY(30px);
 
     @include breakpoint($bp-sm) {
       max-width: 300px;
@@ -1148,6 +1130,20 @@ a.section-link {
     .white {
       color: $color-white;
     }
+  }
+}
+
+.intro.active {
+  opacity: 1;
+  left: 10px;
+
+  @include breakpoint($bp-sm) {
+    left: 10%;
+  }
+
+
+  .headshot, p {
+    transform: translateY(0);
   }
 }
 
@@ -1559,7 +1555,7 @@ a.section-link {
   }
 }
 
-.project-bg {
+.project-section-bg {
   background: {
     image: url(../../assets/images/project-transition.jpg);
     position: center;
@@ -1683,6 +1679,20 @@ a.section-link {
     padding-right: 0;
   }
 }
+
+.project-page-jumbo-container.active {
+  .project-page-title-container {
+    opacity: 1;
+
+    @include transform(translateY(0));
+
+    svg polyline {
+      animation: dash 0.5s linear forwards 0.3s;
+    }
+  }
+}
+
+//Footer section begins
 
 .footer-wrapper.active {
   transform: translateY(0);
@@ -1918,17 +1928,24 @@ footer {
 }
 
 .project-container {
+  height: 100vh;
+}
+
+.project-bg {
   background-image: url(../../assets/images/yellow-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
 }
 
 .project-page-title-container {
   position: absolute;
   top: 275px;
   margin: 0 30px;
+  opacity: 0;
+
+  @include transform(translateY(10%));
+  @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
 
   @include breakpoint($bp-sm) {
     left: 15%;
@@ -2152,55 +2169,58 @@ footer {
   left: 50%;
   -webkit-overflow-scrolling: touch;
 
-  .modal-close-button {
+  .modal-close {
     position: absolute;
+    display: block;
+    overflow: hidden;
     color: $color-white;
-    font: normal 1em $font-mon;
-    text-decoration: none;
-    margin: 0 auto;
-    top: -1.5em;
-    left: 0;
-    right: 0;
+    top: -35px;
+    right: 50%;
+    z-index: 1;
+    transform: translateX(50%);
+    cursor: pointer;
 
     &:hover {
       text-decoration: underline;
     }
 
     @include breakpoint($bp-sm) {
-      position: absolute;
-      display: block;
-      z-index: 2;
-      background: #00a1f3;
-      text-indent: -9999em;
+      background: #fff;
+      text-indent: -999em;
       border-radius: 100%;
-      margin-right: 0;
       width: 44px;
       height: 44px;
       top: -22px;
-      right: -22px;
-      -moz-transition: background-color .3s;
-      -o-transition: background-color .3s;
-      -webkit-transition: background-color .3s;
-      transition: background-color .3s;
+      right: 0;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        background: #5A5A5A;
+        margin: -1px auto 0;
+        width: 28px;
+        height: 6px;
+        top: 47%;
+        left: 0;
+        right: 0;
+        transform-origin: 50% 50%;
+
+        @include transition(background 300ms ease-out);
+      }
 
       &:before {
-        transform: rotate(45deg);
+        @include transform(rotate(-45deg));
       }
 
       &:after {
-        transform: rotate(-45deg);
+        @include transform(rotate(45deg));
       }
 
-      &:before, &:after {
-        content: "";
-        position: absolute;
-        background: #fff;
-        margin: -2px auto 0;
-        width: 28px;
-        height: 4px;
-        top: 50%;
-        left: 0;
-        right: 0;
+      &:hover {
+        &:before, &:after {
+          background: #000000;
+        }
       }
     }
   }
@@ -2343,4 +2363,8 @@ footer {
       }
     }
   }
+}
+
+.position-fixed {
+  overflow: hidden;
 }
