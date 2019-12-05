@@ -57,7 +57,8 @@ $(function() {
   })
     
   $('.menu-burger-area').on('click', function(){
-    $('body').toggleClass('menuOpen');
+    $('body').toggleClass('menuOpen position-fixed');
+    $('html').toggleClass('position-fixed');
   });
 
   $('.menu-burger-area').on('mouseover', function(){
