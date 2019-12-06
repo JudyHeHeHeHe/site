@@ -166,7 +166,15 @@ var emailbgParallax = new ScrollMagic.Scene({
   triggerHook: 1,
   duration: '100%'
 })
-.setTween(TweenMax.from('.email-bg', 1, {y: '30%', ease:Power0.easeNone}))
+.setTween(TweenMax.from('.email-section-bg', 1, {y: '30%', ease:Power0.easeNone}))
+.addTo(controller);
+
+var projectbgParallax = new ScrollMagic.Scene({
+  triggerElement: '.project-bg-container',
+  triggerHook: 1,
+  duration: '100%'
+})
+.setTween(TweenMax.from('.project-section-bg', 1, {y: '30%', ease:Power0.easeNone}))
 .addTo(controller);
 
 var emailSectionScene1 = new ScrollMagic.Scene({

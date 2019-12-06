@@ -98,7 +98,6 @@ h2 {
 h3 {
   color: $color-dark-gray;
   text-align: left;
-  
   line-height: 1.7;
   font: {
     family: $font-mon;
@@ -114,7 +113,6 @@ h3 {
 p {
   color: $color-black;
   text-align: left;
-  
   line-height: 1.7;
   font: {
     family: $font-mon;
@@ -150,4 +148,325 @@ section {
   @include breakpoint($bp-sm) {
     margin: 0 40px;
   }
+}
+
+.social-icon {
+  text-decoration: none;
+
+  svg {
+    vertical-align: top;
+  }
+
+  &:hover {
+    #facebook-fill {
+      fill: $color-facebook-hover;
+    }
+
+    #instagram-fill {
+      fill: $color-ins-hover;
+    }
+
+    #wechat-fill:hover {
+      fill: $color-wechat-hover;
+    }
+  }
+}
+
+.mobile-social-icons {
+  .social-icon {
+    margin-right: 20px;
+    display: inline-block;
+  }
+}
+
+.desktop-social-icons {
+  display: none;
+
+  @include breakpoint($bp-sm) {
+    display: block;
+    right: 8px;
+    z-index: 101;
+
+    @include transition(right, 0.5s, cubic-bezier(0.7, 0, 0.3, 1));
+
+    @include vertical-align(fixed, 50%);
+
+    .social-icon {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+}
+
+.contact-links {
+  text-decoration: none;
+  color: $color-black;
+  line-height: 1.7;
+  font: {
+    size: 0.8em;
+    family: $font-mon;
+    weight: 600;
+  };
+
+  &.address {
+    font-weight: 400;
+  }
+
+  &:hover {
+    text-decoration: underline;
+
+    &.address {
+      text-decoration: none;
+    }
+  }
+}
+
+.brief {
+  cursor: pointer;
+
+  &:hover {
+    .arrow:after {
+      right: -10px;
+    }
+
+    .arrow:before {
+      right: -10px;
+      width: 35px;
+    }
+  }
+
+  .arrow {
+    position: relative;
+    width: 65px;
+    display: inline-block;
+    padding-bottom: 45px;
+    margin-right: 20px;
+
+    &:before {
+      content: "";
+      width: 40px;
+      height: 2px;
+      background: $color-black;
+      position: absolute;
+      top: 50%;
+      margin-top: -1px;
+      right: 24px;
+
+      @include transition(all, 0.3s, ease);
+    }
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 0 6px 12px;
+      border-color: transparent transparent transparent $color-black;
+      position: absolute;
+      top: 50%;
+      margin-top: -6px;
+      right: 13px;
+
+      @include transition(all, 0.3s, ease);
+    }
+  }
+
+  p {
+    display: inline-block;
+    font: {
+      weight: 400;
+      family: $font-mon;
+      size: 0.875em;
+    };
+  }
+
+  span {
+    display: block;
+    text-align: left;
+    line-height: 1.7;
+    font: {
+      weight: 900;
+      family: $font-mon;
+      size: 1.5em;
+    };
+
+    @include breakpoint($bp-sm) {
+      font-size: 1.8em;
+    }
+
+
+    @include breakpoint($bp-md) {
+      font-size: 2em;
+    }
+  }
+}
+
+.menu-brief {
+  display: none;
+
+  @include breakpoint($bp-sm) {
+    display: block;
+    position: absolute;
+    left: 61px;
+    bottom: 0;
+  }
+
+
+  @include breakpoint($bp-md) {
+    left: 25%;
+  }
+}
+
+.footer-brief {
+  @include breakpoint($bp-sm) {
+    margin: 0 10%;
+  }
+
+
+  @include breakpoint($bp-md) {
+    margin: 0 5%;
+  }
+}
+
+.waves {
+  width: 50px;
+  height: 10px;
+  display: block;
+  position: relative;
+  padding-bottom: 30px;
+
+  svg {
+    position: absolute;
+    left: 0;
+  }
+}
+
+svg polyline {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.title-container {
+  margin: 10%;
+
+  @include breakpoint($bp-md) {
+    margin: 15% 10%;
+  }
+
+
+  @include breakpoint($bp-md) {
+    margin: 18% 0 8% 18%;
+  }
+}
+
+h2.section-header {
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 20px;
+  font: {
+    size: 3em;
+    weight: 900;
+  };
+
+  @include breakpoint($bp-sm) {
+    font-size: 4em;
+  }
+
+
+  @include breakpoint($bp-md) {
+    font-size: 5em;
+  }
+}
+
+h3.section-subheader {
+  color: $color-black;
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+
+  @include breakpoint($bp-sm) {
+    font-size: 1.6em;
+  }
+
+
+  @include breakpoint($bp-md) {
+    font-size: 2em;
+  }
+}
+
+p.section-copy {
+  font-weight: 400;
+  margin-bottom: 20px;
+
+  @include breakpoint($bp-md) {
+    font-size: 1.2em;
+  }
+}
+
+a.section-link {
+  color: $color-black;
+  text-decoration: underline;
+  display: block;
+  line-height: 0.8;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  width: 90px;
+  font: {
+    family: $font-lib;
+    size: 0.9em;
+    weight: 600;
+    style: italic;
+  };
+
+  &:before, &:after {
+    content: '';
+    width: 0%;
+    height: 10px;
+    background: var(--cl, #FFFFFF);
+    z-index: -1;
+
+    @include vertical-align(absolute, 50%);
+  }
+
+  &:before {
+    left: -2.5px;
+  }
+
+  &:after {
+    right: 2.5px;
+    background: var(--cl, transparent);
+
+    @include transition(width, 0.8s, cubic-bezier(0.22, 0.61, 0.36, 1));
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:hover:before {
+    background: var(--cl, transparent);
+    width: 90px;
+
+    @include transition(width, 0.5s, cubic-bezier(0.22, 0.61, 0.36, 1));
+  }
+
+  &:hover:after {
+    background: transparent;
+    width: 90px;
+    transition: 0s;
+  }
+}
+
+.bottom-padding {
+  bottom: 0;
+}
+
+.top-padding {
+  top: 0;
+}
+
+.position-fixed {
+  overflow: hidden;
 }

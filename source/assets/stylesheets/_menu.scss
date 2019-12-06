@@ -575,7 +575,7 @@
 
 .menuHover {
   @include breakpoint($bp-sm) {
-    .jumbo-container, .email-bg-container {
+    .jumbo-container {
       padding-left: 78px;
     }
 
