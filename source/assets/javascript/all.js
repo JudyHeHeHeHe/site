@@ -5,7 +5,7 @@ import { TimelineMax, TweenMax, Linear } from 'gsap';
 // import "waypoints/lib/shortcuts/inview.min.js";
 // import ScrollMagic from 'scrollmagic'; 
 // import "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
-import Swiper from 'swiper';
+// import Swiper from 'swiper';
 
 
 $(function() {

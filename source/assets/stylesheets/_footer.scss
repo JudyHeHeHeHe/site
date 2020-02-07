@@ -19,7 +19,7 @@ footer {
   text-align: left;
   background-color: $color-white;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     height: 120px;
   }
 
@@ -28,7 +28,7 @@ footer {
   .footer-contact-info {
     display: none;
 
-    @include breakpoint($bp-md) {
+    @include breakpoint('bp-md') {
       display: inline-block;
       float: right;
       margin: 0 5%;

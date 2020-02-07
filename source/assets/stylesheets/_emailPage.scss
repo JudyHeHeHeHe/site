@@ -2,7 +2,7 @@
   min-height: 600px;
   position: relative;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     height: 100vh;
   }
 }
@@ -22,14 +22,14 @@
   @include transform(translateY(10%));
   @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     left: 15%;
     margin: 0;
     top: 52%;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     left: 18%;
     top: 50%;
     display: flex;
@@ -63,14 +63,14 @@
       style: italic;
     };
 
-    @include breakpoint($bp-md) {
+    @include breakpoint('bp-md') {
       margin-top: auto;
       padding: 0 20px;
     }
   }
 
   h3 {
-    @include breakpoint($bp-md) {
+    @include breakpoint('bp-md') {
       margin-bottom: auto;
       padding: 0 30px;
     }
@@ -90,13 +90,13 @@
 .timeline-jumbo-container {
   padding: 50px 30px;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     padding: 80px 5% 80px 60px;
   }
 
 
   .timeline-container {
-    @include breakpoint($bp-sm) {
+    @include breakpoint('bp-sm') {
       width: 46%;
       display: inline-block;
       padding-right: 30px;
@@ -125,7 +125,7 @@
     &:not(:last-child) {
       margin-bottom: 40px;
 
-      @include breakpoint($bp-sm) {
+      @include breakpoint('bp-sm') {
         margin-bottom: 80px;
       }
     }
@@ -149,12 +149,12 @@
   .blocks {
     display: none;
 
-    @include breakpoint($bp-sm) {
+    @include breakpoint('bp-sm') {
       display: inline-block;
       width: 208px;
       margin-top: 250px;
 
-      @include breakpoint($bp-md) {
+      @include breakpoint('bp-md') {
         width: 242px;
       }
     }
@@ -165,7 +165,7 @@
       display: inline-block;
       float: right;
 
-      @include breakpoint($bp-md) {
+      @include breakpoint('bp-md') {
         width: 120px;
       }
     }
@@ -175,7 +175,7 @@
       display: inline-block;
       float: left;
 
-      @include breakpoint($bp-md) {
+      @include breakpoint('bp-md') {
         width: 180px;
       }
     }
@@ -191,7 +191,7 @@
 .swiper-jumbo-container {
   padding: 50px 30px;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     padding: 50px 0;
     margin: 0 40px;
   }

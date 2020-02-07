@@ -1,4 +1,4 @@
-@import "~reset-css";
+@import "reset";
 
 html {
   box-sizing: border-box;
@@ -50,7 +50,7 @@ main {
   margin: 0 auto;
   margin-bottom: 150px;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     margin-bottom: 180px;
   }
 }
@@ -67,12 +67,12 @@ h1 {
     size: 1.5em;
   };
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     font-size: 2.75em;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     font-size: 3.125em;
   }
 }
@@ -85,12 +85,12 @@ h2 {
     size: 1em;
   };
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     font-size: 1.8em;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     font-size: 1.125em;
   }
 }
@@ -105,7 +105,7 @@ h3 {
     size: 0.8125em;
   };
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     font-size: 1em;
   }
 }
@@ -120,7 +120,7 @@ p {
     size: 0.8125em;
   };
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     font-size: 1em;
   }
 }
@@ -145,7 +145,7 @@ section {
 
   @include transition(all, 0.4s, cubic-bezier(0.7, 0, 0.3, 1));
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     margin: 0 40px;
   }
 }
@@ -182,7 +182,7 @@ section {
 .desktop-social-icons {
   display: none;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     display: block;
     right: 8px;
     z-index: 101;
@@ -290,12 +290,12 @@ section {
       size: 1.5em;
     };
 
-    @include breakpoint($bp-sm) {
+    @include breakpoint('bp-sm') {
       font-size: 1.8em;
     }
 
 
-    @include breakpoint($bp-md) {
+    @include breakpoint('bp-md') {
       font-size: 2em;
     }
   }
@@ -304,7 +304,7 @@ section {
 .menu-brief {
   display: none;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     display: block;
     position: absolute;
     left: 61px;
@@ -312,18 +312,18 @@ section {
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     left: 25%;
   }
 }
 
 .footer-brief {
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     margin: 0 10%;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     margin: 0 5%;
   }
 }
@@ -349,12 +349,12 @@ svg polyline {
 .title-container {
   margin: 10%;
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     margin: 15% 10%;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     margin: 18% 0 8% 18%;
   }
 }
@@ -369,12 +369,12 @@ h2.section-header {
     weight: 900;
   };
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     font-size: 4em;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     font-size: 5em;
   }
 }
@@ -385,12 +385,12 @@ h3.section-subheader {
   margin-bottom: 20px;
   font-size: 1.2em;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     font-size: 1.6em;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     font-size: 2em;
   }
 }
@@ -399,7 +399,7 @@ p.section-copy {
   font-weight: 400;
   margin-bottom: 20px;
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     font-size: 1.2em;
   }
 }

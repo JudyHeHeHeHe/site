@@ -24,7 +24,7 @@
   }
 }
 
-@include breakpoint($bp-sm) {
+@include breakpoint('bp-sm') {
   @keyframes burgerslide {
     from {
       left: -15px;

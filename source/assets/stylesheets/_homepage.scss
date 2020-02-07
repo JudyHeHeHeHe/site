@@ -5,7 +5,7 @@
 .greeting-jumbo-container {
   height: 100vh;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     padding-top: 40px;
   }
 }
@@ -17,7 +17,7 @@
   left: 30px;
   animation: logoslidedown 0.8s cubic-bezier(0.7, 0, 0.3, 1);
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     position: fixed;
     left: 40px;
     top: 10px;
@@ -29,7 +29,7 @@
   p {
     display: none;
 
-    @include breakpoint($bp-sm) {
+    @include breakpoint('bp-sm') {
       display: inline-block;
       color: $color-black;
       vertical-align: bottom;
@@ -57,7 +57,7 @@
     position: center;
   };
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     display: inline-block;
     vertical-align: bottom;
   }
@@ -86,12 +86,12 @@
 
   @include both-align(absolute, 50%, 50%, -50%);
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     max-width: 400px;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     max-width: 700px;
   }
 
@@ -165,7 +165,7 @@
     bottom: 0;
   }
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     right: auto;
     left: 60px;
     line-height: 60px;
@@ -175,7 +175,7 @@
 .scrollActive {
   left: 20px;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     left: 60px;
   }
 }
@@ -194,7 +194,7 @@
 
   @include transition(all, 0.8s, cubic-bezier(0.7, 0, 0.3, 1));
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     left: 10%;
     width: 50%;
   }
@@ -206,7 +206,7 @@
 
     // transform: translateY(30px);
 
-    @include breakpoint($bp-sm) {
+    @include breakpoint('bp-sm') {
       max-width: 300px;
     }
   }
@@ -214,7 +214,7 @@
   .headshot {
     width: 200px;
 
-    @include breakpoint($bp-sm) {
+    @include breakpoint('bp-sm') {
       width: 250px;
     }
   }
@@ -227,7 +227,7 @@
       size: 1em;
     };
 
-    @include breakpoint($bp-sm) {
+    @include breakpoint('bp-sm') {
       font-size: 1.2em;
     }
 
@@ -242,7 +242,7 @@
   opacity: 1;
   left: 10px;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     left: 10%;
   }
 
@@ -257,7 +257,7 @@
   position: relative;
   overflow: hidden;
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     height: 550px;
   }
 }
@@ -295,7 +295,7 @@
     --cl: #fcb7a8;
   }
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     width: 40%;
     float: left;
     padding-right: 20px;
@@ -312,7 +312,7 @@
   @include transform(translateX(100%));
   @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     width: 35%;
     margin: 28% 5% 13% 0;
 
@@ -331,7 +331,7 @@
     flex-flow: row wrap;
     justify-content: space-between;
 
-    @include breakpoint($bp-sm) {
+    @include breakpoint('bp-sm') {
       justify-content: space-around;
     }
 
@@ -358,7 +358,7 @@
         margin-right: auto;
       }
 
-      @include breakpoint($bp-sm) {
+      @include breakpoint('bp-sm') {
         flex: 1 0 25%;
         max-width: 180px;
 
@@ -393,7 +393,7 @@
       }
 
 
-      @include breakpoint($bp-md) {
+      @include breakpoint('bp-md') {
         flex: 1 0 30%;
 
         &:nth-child(2) {
@@ -415,7 +415,7 @@
           margin-right: 20px;
         }
 
-        @include breakpoint($bp-lg) {
+        @include breakpoint('bp-lg') {
           flex: 1 0 25%;
 
           &:nth-child(2) {
@@ -576,7 +576,7 @@
 .project-jumbo-container {
   padding-top: 120px;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     padding-top: 150px;
   }
 }
@@ -592,12 +592,12 @@
   @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
   @include transform(translateY(10%));
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     top: 83px;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     padding: 0 0 0 18%;
     top: 53px;
   }
@@ -627,7 +627,7 @@
 
   @include transform(translateY(30px));
   @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     width: 30%;
     display: inline-block;
     margin: 10% 5% 10% 0;
@@ -636,7 +636,7 @@
   }
 
 
-  @include breakpoint($bp-lg) {
+  @include breakpoint('bp-lg') {
     width: 35%;
   }
 }
@@ -663,7 +663,7 @@
   @include transform(translateX(100%));
   @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     width: 40%;
     display: inline-block;
     padding-bottom: 0;
@@ -687,7 +687,7 @@
     padding: 20px 0;
     margin-right: 10%;
 
-    @include breakpoint($bp-md) {
+    @include breakpoint('bp-md') {
       margin-right: 0;
     }
   }
@@ -703,12 +703,12 @@
     size: cover;
   };
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     height: 450px;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     height: 300px;
   }
 }
@@ -716,12 +716,12 @@
 .example-title {
   padding: 10px 10% 0 0;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     font-size: 0.8125em;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     padding-right: 0;
   }
 }
@@ -730,12 +730,12 @@
   font-weight: 400;
   padding: 0 10% 0 0;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint('bp-sm') {
     font-size: 0.8125em;
   }
 
 
-  @include breakpoint($bp-md) {
+  @include breakpoint('bp-md') {
     padding-right: 0;
   }
 }
@@ -761,7 +761,7 @@
     .scroll {
       color: $color-grapefruit;
 
-      @include breakpoint($bp-sm) {
+      @include breakpoint('bp-sm') {
         color: $color-black;
       }
     }
@@ -769,7 +769,7 @@
     #hello {
       transform: translate(2%, -160%);
 
-      @include breakpoint($bp-sm) {
+      @include breakpoint('bp-sm') {
         transform: translate(52%, -50%);
         max-width: 50%;
       }

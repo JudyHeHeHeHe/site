@@ -1,5 +1,5 @@
-@import "~breakpoint-sass/stylesheets/breakpoint";
-@import "~swiper/dist/css/swiper.css";
+
+
 
 $color-light-light-gray: #f3f3f5;
 $color-background-gray: #f8f8f8;
@@ -28,15 +28,37 @@ $color-ins-hover: #8a3ab9;
 $color-wechat-hover: #7cb22e;
 
 // breakpoints
-$bp-xs: 380px;
-$bp-sm: 600px;
-$bp-md: 1024px;
-$bp-lg: 1400px;
+$breakpoints: (
+  'bp-xs':  380px,
+  'bp-sm': 600px,
+  'bp-md':  1024px,
+  'bp-lg': 1400px
+) !default;
 
-$bp-front-xs: 460px;
-$bp-sm-md: $bp-sm ($bp-md - 1);
-$bp-sm-lg: $bp-sm ($bp-lg - 1);
-$bp-md-lg: $bp-md ($bp-lg - 1);
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+ 
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+// $bp-xs: 380px;
+// $bp-sm: 600px;
+// $bp-md: 1024px;
+// $bp-lg: 1400px;
+
+// $bp-front-xs: 460px;
+// $bp-sm-md: $bp-sm ($bp-md - 1);
+// $bp-sm-lg: $bp-sm ($bp-lg - 1);
+// $bp-md-lg: $bp-md ($bp-lg - 1);
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900");
