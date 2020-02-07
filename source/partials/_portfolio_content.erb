@@ -1,21 +1,12 @@
 <div class="modal-header">
   <%= image_tag logo %>
-  <a href="<%= url %>" target="_blank" class="project-name"><%= project_name %></a>
 </div>
 <div class="modal-body">
-  <%=image_tag secondary_img, :class => 'secondary_img'%>
+  <a href="<%= url %>" target="_blank"><%=image_tag secondary_img, :class => 'secondary_img'%></a>
   <p class="modal-descitption"><%= description %></p>
   <div class="modal-info">
-    <ul>
-      <li>
-        <%=image_tag 'calendar.svg', :class => 'modal-calendar'%>
-        <p class="modal-date"><%= date %></p>
-      </li>
-      <li>
-        <%=image_tag 'tag.svg', :class => 'modal-tag' %>
-        <p class="modal-tags"><%= tags %></p>
-      </li>
-    </ul>
+    <%=image_tag 'tag.svg', :class => 'modal-tag' %>
+    <p class="modal-tags"><%= tags %></p>
   </div>
 </div>
 <div class="modal-social-share">

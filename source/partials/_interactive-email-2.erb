@@ -1,0 +1,1021 @@
+<style type="text/css">
+   
+  
+
+    .sn-wrapper {
+      width: 100%;
+      table-layout: fixed;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    .sn-outer1 {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 640px;
+    }
+    .sn-outer2 {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 600px;
+    }
+    .sn-outer3 {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 810px;
+    }
+    .sn-outer4 {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 550px;
+    }
+    .sn-two-column {
+      text-align: center;
+      font-size: 0;
+    }
+    .sn-two-column .sn-column {
+      width: 100%;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .sn-two-column .sn-column img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+    .sn-three-column {
+      text-align: center;
+      font-size: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .sn-three-column .sn-column {
+      width: 100%;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .sn-three-column img {
+      width: 100%;
+      height: auto;
+    }
+     @media screen { 
+    /* latin */
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Crimson Text Regular'), local('CrimsonText-Regular'), url(https://fonts.gstatic.com/s/crimsontext/v10/wlp2gwHKFkZgtmSR3NB0oRJfbwhTIfFd3A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu3cOWxw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+}
+    @media screen and (-webkit-min-device-pixel-ratio: 0) {
+      .cbox-support:checked ~ div .fallback {
+          display:none;
+      }
+      .cbox-support:checked ~ div .interactive{
+          display:block!important;
+          max-height:none!important;
+      }
+      /* 
+      Selective blocking for non supported clients.
+      - AOL does not support the for="" attribute in labels
+      */
+      input[class~="aolmail_cbox-support"]:checked ~ div .fallback{ 
+        display:block!important; 
+      }
+      input[class~="aolmail_cbox-support"]:checked ~ div .interactive{
+        display:none !important;
+      }
+    }
+   /* input{
+      display:none;
+    }*/
+    .content-wrapper{
+      font-family: Helvetica, Arial, sans-serif;
+      font-size:30px;
+    }
+    .ibutton{
+      width: 196px;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: helvetica, sans-serif;
+      padding:  12px 0;
+      vertical-align: middle;
+      border: 2px solid #f0713a;
+      color:#f0713a;
+      cursor:pointer;
+      display:inline-block;
+      margin: 50px 20px;
+      text-align: center;
+      transition: all 0.2s linear;
+    }
+    .ibutton:hover {
+      color:#fff;
+      background-color:#f0713a; 
+    }
+    .interactive{
+      position:relative;
+    }
+    .page{
+      text-align:center;
+      display:none;
+      overflow:hidden;
+    }
+    .page1 {
+      text-align: left;
+    }
+   /* #cbox-1:checked ~ * .interactive .page1,*/
+    #cbox-1:checked ~ * .interactive .page1,
+    #cbox-2a:checked ~ * .interactive .page2a,
+    #cbox-2b:checked ~ * .interactive .page2b{
+      display:block;
+      -webkit-animation: fadein 0.5s linear;
+      animation: fadein 0.5s linear;
+    }
+    @-webkit-keyframes fadein{
+      0%,45%{ opacity:0; }
+      100%{ opacity:1; }
+    }
+    @keyframes fadein{
+      0%,45%{ opacity:0; }
+      100%{ opacity:1; }
+    }
+   .button-hover-3:hover {
+      background: #fff !important;
+      transition: background 200ms;
+    }
+    .button-hover-3:hover a {
+      background: #fff !important;
+      transition: background 200ms;
+      color: #F75A5A !important;
+      transition: color 200ms;
+    }
+    .button-hover-3:hover span {
+      color: #f0713a !important;
+      transition: color 200ms;
+    }
+    .button-text-hover-3:hover {
+      color: #f0713a !important;
+      transition: color 200ms;
+    }
+    .button-hover-2:hover {
+      background: #F0723A !important;
+      transition: background 200ms;
+    }
+    .button-hover-2:hover a {
+      background: #F0723A !important;
+      transition: background 200ms;
+      color: #fff !important;
+      transition: color 200ms;
+    }
+    .button-hover-2:hover span {
+      color: #fff !important;
+      transition: color 200ms;
+    }
+    .button-text-hover-2:hover {
+      color: #fff !important;
+      transition: color 200ms;
+    }
+    .sn-shorter-3:hover {
+      width: 216px !important;
+    }
+    .sn-shorter-4:hover {
+      width: 155px !important;
+    }
+    .sn-shorter-2:hover {
+      width: 206px !important;
+    }
+     @media all and (max-width: 810px) {
+       .sn-fluid-image-1 {
+        width: 100% !important;
+        margin: 0 auto !important;
+        height: auto !important;
+      }
+     }
+    @media all and (max-width: 640px) {
+      .sn-fluid-text {
+        width: 100% !important;
+        margin: 0 auto !important;
+        height: auto !important;
+      }
+      .sn-fluid-image {
+        width: 100% !important;
+        margin: 0 auto !important;
+        height: auto !important;
+      }
+      .sn-center {
+        text-align: center !important;
+      }
+      .sn-container {
+        width:100% !important;
+        float:none;
+      }
+      .sn-column {
+        display: block !important;
+        margin-left: 0 !important;
+      }
+      .ibutton {
+        display: block !important;
+      }
+      *[class="sn-disappear"]{
+        display:none !important;
+      }
+      *[class=gmailNoHeight] {
+        display:block!important;
+        width:auto!important;
+        overflow:visible!important;
+        float:none !important;
+        height:0px!important;
+        max-height:inherit!important;
+      }
+      img[class="sn-appear"]{
+        display : block !important;
+        width : 100% !important;
+        max-height: inherit !important;
+        overflow : visible !important;
+        float : none !important;
+      }
+      *[class=gmail] {
+        width : 100% !important;
+        display:block!important;
+        width:auto!important;
+        overflow:visible!important;
+        float:none !important;
+        height:inherit!important;
+        max-height:inherit!important;
+      }
+    }
+</style>
+<!--[if (gte mso 9)|(IE)]>
+    <style type="text/css">
+      table {border-collapse: collapse !important;}
+      .fallback-font {font-family: helvetica, sans-serif;font-weight: bold;}
+    </style>
+    <![endif]-->
+  <!-- pretext ends -->
+  <table align="center" height="100%" width="100%" cellpadding="0" cellspacing="0" border="0">
+  <!-- header begins -->
+  <td align="center">
+    <!--[if (gte mso 9)|(IE)]>
+        <table width="810" align="center" style="border-spacing:0;">
+        <tr>
+        <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+          <![endif]-->
+    <table class="sn-outer3" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;margin:0 auto;width:100%;max-width:810px;">
+    <!--[if mso]>
+        <tr>
+          <td align="center" style="padding: 0;">
+            <a href=""><%=image_tag 'emails/header.jpg', :style => 'width: 810px;display: block;', :class =>'sn-fluid-image-1' %></a>
+          </td>
+        </tr>
+        <![endif]-->
+    <!--[if !mso]><!-->
+    <tr>
+      <td class="sn-disappear" align="center" style="padding: 0;">
+        <a href=""><%=image_tag 'emails/header.jpg', :style => 'width: 810px;display: block;', :class =>'sn-fluid-image-1' %></a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding: 0;">
+        <div class="gmail" style="display:none;width:0;overflow:hidden;float:left;max-height:0;">
+          <table cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td align="center">
+              <a href=""><%=image_tag 'emails/header.jpg', :style => 'width: 100%;display: block;', :class =>'sn-appear' %></a>
+            </td>
+          </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <!--<![endif]-->
+    </table>
+    <!--[if (gte mso 9)|(IE)]>
+              </td>
+              </tr>
+              </table>
+              <![endif]-->
+  </td>
+</tr>
+<!-- header ends -->
+<!-- quiz begins -->
+<tr>
+  <td align="center">
+    <!--[if (gte mso 9)|(IE)]>
+        <table width="810" align="center" style="border-spacing:0;">
+        <tr>
+        <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+          <![endif]-->
+    <table class="sn-outer3" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;margin:0 auto;width:100%;max-width:810px;background-color: #ECEBE8;">
+    <tr>
+      <td align="center">
+        <!--[if (gte mso 9)|(IE)]>
+        <table width="600" align="center" style="border-spacing:0;">
+        <tr>
+        <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+          <![endif]-->
+        <table class="sn-outer2" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;margin:0 auto;width:100%;max-width:600px;">
+        <tr>
+          <td align=center>
+            <!-- Form tag required for Samsung -->
+            <form>
+              <!--[if !mso]><!-- -->
+              <!-- remove checked from cbox-support to see fallback content in regular browser -->
+              <input type=checkbox class="cbox-support" style="display:none" checked>
+              <input name="option" type=radio id=cbox-1 style="display:none" checked>
+              <input name="option" type=radio id=cbox-2a style="display:none">
+              <input name="option" type=radio id=cbox-2b style="display:none">
+              <!--<![endif]-->
+              <div class="content-wrapper">
+                <!-- FALLBACK -->
+                <div class="fallback">
+                  <table width="100%">
+                  <tr>
+                    <td align="center" style="line-height: 150%;text-align:left;padding:50px 20px 30px 20px;">
+                      <span style="font-family: Helvetica, sans-serif; font-size: 25px; color: #4B3E35; text-decoration:none; font-weight: bold; line-height: 150%;">ANSWER THIS</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" style="line-height: 150%;text-align:left;padding:0 20px;" class="fallback-font">
+                      <span style="font-family: 'Crimson Text', helvetica, serif; font-size: 34px; color: #4B3E35; text-decoration:none; font-weight: normal; line-height: 150%;" class="fallback-font">Poachers target old elephants for their large tusks. </span>
+                    </td>
+                  </tr>
+                  <!--button begins-->
+                  <tr>
+                    <td valign="bottom" align="left" height="44" style="height: 44px !important;padding:50px 20px;">
+                      <table width="210" align="left" cellpadding="0" cellspacing="0" border="0" style="max-width:210px;border-top: 2px solid #F0723A;border-bottom: 2px solid #F0723A;border-left: 2px solid #F0723A;border-right: 2px solid #F0723A;" class="sn-container">
+                      <tr>
+                        <td valign="bottom" align="center" width="206" height="44" style="height: 44px !important;line-height:1px;margin-auto:0px;mso-line-height-rule:exactly;text-align: center;" class="sn-shorter-2">
+                          <div>
+                            <!--[if mso]>
+              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#link" style="height:44px;v-text-anchor:middle;width:206px;" stroke="f" fillcolor="#ECEBE8">
+                <w:anchorlock/>
+                <center>
+                <![endif]-->
+                            <table cellspacing="0" cellpadding="0" align="center" border="0">
+                            <tr>
+                              <td align="center" width="206" height="44" style="font-size:18px; font-weight: bold; font-family: helvetica, sans-serif;color: #F0723A; display:inline-block;line-height:140%;mso-line-height-rule:exactly; text-decoration: none; " valign="middle" class="button-hover-2">
+                                <a href="" style="font-size:18px; font-weight: bold; font-family: helvetica, sans-serif; text-decoration: none; line-height:44px; width:100%; display:inline-block;">
+                                <span style="color: #F0723A;font-size:18px; font-weight: bold; font-family:helvetica, sans-serif;white-space:nowrap;display:inline-block; text-decoration: none;line-height:44px; ">FIND OUT</span>
+                                </a>
+                              </td>
+                            </tr>
+                            </table>
+                            <!--[if mso]>
+              </center>
+            </v:rect>
+          <![endif]-->
+                          </div>
+                        </td>
+                      </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <!--button ends-->
+                  </table>
+                </div>
+                <!-- end of FALLBACK -->
+                <!-- INTERACTIVE/KINETIC -->
+                <!--[if !mso]><!-- -->
+                <div class="interactive" style="display:none;max-height:0;overflow:hidden;">
+                  <div class="page-container">
+                    <div class="page page1">
+                      <div class="question" style="padding: 50px 20px 30px 20px;text-align: left;">
+                        <span style="font-family: Helvetica, sans-serif; font-size: 25px; color: #4B3E35; text-decoration:none; font-weight: bold; line-height: 150%;">ANSWER THIS:</span>
+                      </div>
+                      <div class="question fallback-font" style="padding: 0 20px;text-align: left;">
+                        <span style="font-family: 'Crimson Text', helvetica, serif; font-size: 34px; color: #4B3E35; text-decoration:none; font-weight: normal; line-height: 150%;" class="fallback-font">Poachers target old elephants for their large tusks. </span>
+                      </div>
+                      <label class="ibutton" for="cbox-2a">MYTH</label>
+                      <label class="ibutton" for="cbox-2b">FACT</label>
+                    </div>
+                    <div class="page page2a">
+                      <table align="left" width="100%" style="width: 100%;">
+                      <tr>
+                        <td align="center" style="line-height: 150%;text-align:left;padding:50px 20px 30px 20px;">
+                          <span style="font-family: Helvetica, sans-serif; font-size: 25px; color: #4B3E35; text-decoration:none; font-weight: bold; line-height: 150%;">ANSWER THIS</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="line-height: 150%;text-align:left;padding:0 20px;" class="fallback-font">
+                          <span style="font-family: 'Crimson Text', helvetica, serif; font-size: 34px; color: #4B3E35; text-decoration:none; font-weight: normal; line-height: 150%;" class="fallback-font">Poachers target old elephants for their large tusks. </span>
+                        </td>
+                      </tr>
+                      </table>
+                      <table align="left" width="480" style="width: 480px;" class="sn-container">
+                      <tr>
+                        <td class="sn-two-column" align="left" valign="top" style="padding-top:0;padding-bottom:30px;padding-right:0;padding-left:0;text-align:center;font-size:0;direction:ltr;">
+                          <!--[if (gte mso 9)|(IE)]>
+                <table width="480" style="border-spacing:0;">
+                <tr>
+                <td width="240" valign="middle" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;width: 240px;" align="left">
+              <![endif]-->
+                          <div class="sn-column" align="center" style="max-width:240px;display:inline-block;vertical-align:middle;font-size:0;">
+                            <table width="100%" style="border-spacing:0;" cellpadding="0" cellspacing="0" border="0" valign="top">
+                            <!--button begins-->
+                            <tr>
+                              <td align="center" valign="bottom" height="47" style="height: 47px !important;padding:50px 20px 0 20px;">
+                                <table width="200" align="center" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                  <td valign="bottom" align="center" width="200" height="47" style="height: 47px !important;line-height:1px;margin-auto:0px;mso-line-height-rule:exactly;text-align: center;">
+                                    <div>
+                                      <!--[if mso]>
+                                                        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#link" style="height:47px;v-text-anchor:middle;width:200px;" stroke="f" fillcolor="#C84942">
+                                                          <w:anchorlock/>
+                                                          <center>
+                                                          <![endif]-->
+                                      <table cellspacing="0" cellpadding="0" align="center" border="0">
+                                      <tr>
+                                        <td align="center" width="200" height="47" bgcolor="#C84942" style="font-size:20px; font-weight: bold; font-family: arial, sans-serif;color: #ffffff; display:inline-block;line-height:140%;mso-line-height-rule:exactly; text-decoration: none; " valign="middle">
+                                          <span style="color: #FFFFFF;font-size:20px; font-weight: bold; font-family:arial, sans-serif;white-space:nowrap;display:inline-block; text-decoration: none;line-height:47px; ">MYTH</span>
+                                        </td>
+                                      </tr>
+                                      </table>
+                                      <!--[if mso]>
+                                                        </center>
+                                                      </v:rect>
+                                                    <![endif]-->
+                                    </div>
+                                  </td>
+                                </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <!--button ends-->
+                            </table>
+                          </div>
+                          <!--[if (gte mso 9)|(IE)]>
+                </td><td width="240" valign="middle" align="center" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+              <![endif]-->
+                          <div class="sn-column" align="center" style="max-width:240px;display:inline-block;vertical-align:middle;font-size:0;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;" class="sn-container">
+                            <!--button begins-->
+                            <tr>
+                              <td align="center" valign="bottom" height="44" style="height: 44px !important;padding:50px 20px 0 20px;">
+                                <table width="200" align="center" cellpadding="0" cellspacing="0" border="0" style="max-width:200px;border-top: 2px solid #f0713a;border-bottom: 2px solid #f0713a;border-left: 2px solid #f0713a;border-right: 2px solid #f0713a;">
+                                <tr>
+                                  <td valign="bottom" align="center" width="225" height="44" style="max-width:195px;height: 44px !important;line-height:1px;margin-auto:0px;mso-line-height-rule:exactly;text-align: center;">
+                                    <div>
+                                      <!--[if mso]>
+                                                    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#link" style="height:44px;v-text-anchor:middle;width:195px;" stroke="f" fillcolor="#ECEBE8">
+                                                      <w:anchorlock/>
+                                                      <center>
+                                                      <![endif]-->
+                                      <table cellspacing="0" cellpadding="0" align="center" border="0" width="195" style="max-width:195px;">
+                                      <tr>
+                                        <td align="center" width="195" height="44" style="max-width:195px;font-size:20px; font-weight: bold; font-family: arial, sans-serif;color: #f0713a; display:inline-block;line-height:140%;mso-line-height-rule:exactly;" valign="middle">
+                                          <span style="color: #f0713a;font-size:20px; font-weight: bold; font-family:arial, sans-serif;white-space:nowrap;display:inline-block;line-height: 44px;">FACT</span>
+                                        </td>
+                                      </tr>
+                                      </table>
+                                      <!--[if mso]>
+                                                    </center>
+                                                  </v:rect>
+                                                <![endif]-->
+                                    </div>
+                                  </td>
+                                </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <!--button ends-->
+                            </table>
+                          </div>
+                          <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+              <![endif]-->
+                        </td>
+                      </tr>
+                      </table>
+                      <table align="left" width="100%" style="width: 100%;">
+                      <tr>
+                        <td align="center" style="line-height: 150%;padding:30px 25px 0 20px;text-align: left;">
+                          <span style="font-family:helvetica, sans-serif; font-size:25px; color:#C84942; font-weight:bold; text-decoration: none;line-height: 150%;text-transform: uppercase;">SADLY, THAT'S NOT THE CASE</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="line-height: 150%;padding:15px 20px 30px 20px;text-align: left;">
+                          <span style="font-family:helvetica, sans-serif; font-size:20px; color:#4B3E35; font-weight:normal; text-decoration: none;line-height: 150%;">
+                          Greedy poachers will slaughter an elephant of any size to get their money. They prize the great tuskers, but they will happily kill a baby elephant for her pencil-sized tusk.</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="left" style="display: block;padding: 0 20px 50px 20px;">
+                          <a href="#link" style="display: block;"><%=image_tag 'emails/quiz-img.jpg', :style => 'width: 100%;display: block;', :class=>"sn-fluid-image" %></a>
+                        </td>
+                      </tr>
+                      </table>
+                    </div>
+                    <div class="page page2b">
+                      <table align="left" width="100%" style="width: 100%;">
+                      <tr>
+                        <td align="center" style="line-height: 150%;text-align:left;padding:50px 20px 30px 20px;">
+                          <span style="font-family: Helvetica, sans-serif; font-size: 25px; color: #4B3E35; text-decoration:none; font-weight: bold; line-height: 150%;">ANSWER THIS</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="line-height: 150%;text-align:left;padding:0 20px;" class="fallback-font">
+                          <span style="font-family: 'Crimson Text', helvetica, serif; font-size: 34px; color: #4B3E35; text-decoration:none; font-weight: normal; line-height: 150%;" class="fallback-font">Poachers target old elephants for their large tusks. </span>
+                        </td>
+                      </tr>
+                      </table>
+                      <table align="left" width="480" style="width: 480px;" class="sn-container">
+                      <tr>
+                        <td class="sn-two-column" align="left" valign="top" style="padding-top:0;padding-bottom:30px;padding-right:0;padding-left:0;text-align:center;font-size:0;direction:ltr;">
+                          <!--[if (gte mso 9)|(IE)]>
+                <table width="480" style="border-spacing:0;">
+                <tr>
+                <td width="240" valign="middle" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;width: 240px;" align="left">
+              <![endif]-->
+                          <div class="sn-column" align="center" style="max-width:240px;display:inline-block;vertical-align:middle;font-size:0;">
+                            <table width="100%" style="border-spacing:0;" cellpadding="0" cellspacing="0" border="0" valign="top">
+                            <!--button begins-->
+                            <tr>
+                              <td align="lcenter" valign="bottom" height="44" style="height: 44px !important;padding:50px 20px 0 20px;">
+                                <table width="200" align="center" cellpadding="0" cellspacing="0" border="0" style="max-width:200px;border-top: 2px solid #f0713a;border-bottom: 2px solid #f0713a;border-left: 2px solid #f0713a;border-right: 2px solid #f0713a;">
+                                <tr>
+                                  <td valign="bottom" align="center" width="225" height="44" style="max-width:195px;height: 44px !important;line-height:1px;margin-auto:0px;mso-line-height-rule:exactly;text-align: center;">
+                                    <div>
+                                      <!--[if mso]>
+                                                    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#link" style="height:44px;v-text-anchor:middle;width:195px;" stroke="f" fillcolor="#ECEBE8">
+                                                      <w:anchorlock/>
+                                                      <center>
+                                                      <![endif]-->
+                                      <table cellspacing="0" cellpadding="0" align="center" border="0" width="195" style="max-width:195px;">
+                                      <tr>
+                                        <td align="center" width="195" height="44" style="max-width:195px;font-size:20px; font-weight: bold; font-family: arial, sans-serif;color: #f0713a; display:inline-block;line-height:140%;mso-line-height-rule:exactly;" valign="middle">
+                                          <span style="color: #f0713a;font-size:20px; font-weight: bold; font-family:arial, sans-serif;white-space:nowrap;display:inline-block;line-height: 44px;">MYTH</span>
+                                        </td>
+                                      </tr>
+                                      </table>
+                                      <!--[if mso]>
+                                                    </center>
+                                                  </v:rect>
+                                                <![endif]-->
+                                    </div>
+                                  </td>
+                                </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <!--button ends-->
+                            </table>
+                          </div>
+                          <!--[if (gte mso 9)|(IE)]>
+                </td><td width="240" valign="middle" align="center" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+              <![endif]-->
+                          <div class="sn-column" align="center" style="max-width:240px;display:inline-block;vertical-align:middle;font-size:0;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;" class="sn-container">
+                            <!--button begins-->
+                            <tr>
+                              <td align="center" valign="bottom" height="47" style="height: 47px !important;padding:50px 20px 0 20px;">
+                                <table width="200" align="center" cellpadding="0" cellspacing="0" border="0" class="sn-container">
+                                <tr>
+                                  <td valign="bottom" align="center" width="200" height="47" style="height: 47px !important;line-height:1px;margin-auto:0px;mso-line-height-rule:exactly;text-align: center;">
+                                    <div>
+                                      <!--[if mso]>
+                                                        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#link" style="height:47px;v-text-anchor:middle;width:200px;" stroke="f" fillcolor="#309a95">
+                                                          <w:anchorlock/>
+                                                          <center>
+                                                          <![endif]-->
+                                      <table cellspacing="0" cellpadding="0" align="center" border="0">
+                                      <tr>
+                                        <td align="center" width="200" height="47" bgcolor="#309a95" style="font-size:20px; font-weight: bold; font-family: arial, sans-serif;color: #ffffff; display:inline-block;line-height:140%;mso-line-height-rule:exactly; text-decoration: none; " valign="middle">
+                                          <span style="color: #FFFFFF;font-size:20px; font-weight: bold; font-family:arial, sans-serif;white-space:nowrap;display:inline-block; text-decoration: none;line-height:47px; ">FACT</span>
+                                        </td>
+                                      </tr>
+                                      </table>
+                                      <!--[if mso]>
+                                                        </center>
+                                                      </v:rect>
+                                                    <![endif]-->
+                                    </div>
+                                  </td>
+                                </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <!--button ends-->
+                            </table>
+                          </div>
+                          <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+              <![endif]-->
+                        </td>
+                      </tr>
+                      </table>
+                      <table align="left" width="100%" style="width: 100%;">
+                      <tr>
+                        <td align="center" style="line-height: 150%;padding:30px 25px 0 20px;text-align: left;">
+                          <span style="font-family:helvetica, sans-serif; font-size:25px; color:#309a95; font-weight:bold; text-decoration: none;line-height: 150%;text-transform: uppercase;">SADLY, YOU’RE RIGHT</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="line-height: 150%;padding:15px 20px 30px 20px;text-align: left;">
+                          <span style="font-family:helvetica, sans-serif; font-size:20px; color:#4B3E35; font-weight:normal; text-decoration: none;line-height: 150%;">
+                          Greedy poachers will slaughter an elephant of any size to get their money. They prize the great tuskers, but they will happily kill a baby elephant for her pencil-sized tusk.</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="left" style="display: block;padding: 0 20px 50px 20px;">
+                          <a href="#link" style="display: block;"><%=image_tag 'emails/quiz-img.jpg', :style => 'width: 100%;display: block;', :class=>"sn-fluid-image" %></a>
+                        </td>
+                      </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!--<![endif]-->
+                <!-- End of Interactive/Kinetic -->
+              </div>
+              <!-- end of content wrapper -->
+            </form>
+          </td>
+        </tr>
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+              </td>
+              </tr>
+              </table>
+              <![endif]-->
+      </td>
+    </tr>
+    </table>
+    <!--[if (gte mso 9)|(IE)]>
+              </td>
+              </tr>
+              </table>
+              <![endif]-->
+  </td>
+</tr>
+<!-- quiz ends -->
+<!-- callout begins -->
+<tr>
+  <td align="center">
+    <!--[if (gte mso 9)|(IE)]>
+        <table width="810" align="center" style="border-spacing:0;">
+        <tr>
+        <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+          <![endif]-->
+    <table class="sn-outer3" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;margin:0 auto;width:100%;max-width:810px;">
+    <!--[if mso]>
+      <tr>
+        <td align="center">
+          <a href="" style="display:block;"><%=image_tag 'emails/awf-pattern-fallback.jpg', :style => 'width: 810px;display: block;' %></a>
+          </td>
+        </tr> 
+      <![endif]-->
+    <!--[if !mso]><!-->
+    <tr>
+      <td class="sn-disappear" align="center" style="padding: 0;">
+        <table class="sn-outer3" cellpadding="0" cellspacing="0" border="0" align="center" style="border-spacing:0;margin:0 auto;width:100%;max-width:810px;text-decoration: none;">
+        <tr>
+          <td bgcolor="F0723A" width="100%" height="auto" valign="top" class="sn-outer3" style="background-repeat: no-repeat;background-color: #F0723A;background-size: cover;background-image:url(/assets/images/emails/awf-pattern.jpg);">
+            <div valign="top">
+              <table class="sn-outer3" width="100%" valign="top" cellpadding="0" cellspacing="0" border="0" align="center" style="border-spacing:0;margin:0 auto;max-width:810px;text-decoration: none;">
+              <tr>
+                <td align="center">
+                  <!--[if (gte mso 9)|(IE)]>
+        <table width="600" align="center" style="border-spacing:0;">
+        <tr>
+        <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+          <![endif]-->
+                  <table class="sn-outer2" align="center" style="border-spacing:0;margin:0 auto;width:100%;max-width:600px;">
+                  <!--spacer-->
+                  <tr>
+                    <td height="50" style="height:50px !important;line-height:0px;font-size:0px;margin-auto:0px;mso-line-height-rule:exactly;">
+                      <span style="font-size:0;line-height:0;margin-auto:0px;mso-line-height-rule:exactly;">&nbsp;</span>
+                    </td>
+                  </tr>
+                  <!--spacer-->
+                  <tr>
+                    <td align="left" style="padding:0 20px;width:100%;text-align:left;line-height: 120%;" class="fallback-font">
+                      <span style="color: #FFF;font-size:53px; font-weight: bold; font-family: 'Source Sans Pro', helvetica,sans-serif;line-height:120%;letter-spacing: 5.8px;" class="fallback-font">BUST THE MYTHS.</span>
+                    </td>
+                  </tr>
+                  <!--spacer-->
+                  <tr>
+                    <td height="10" style="height:10px !important;line-height:0px;font-size:0px;margin-auto:0px;mso-line-height-rule:exactly;">
+                      <span style="font-size:0;line-height:0;margin-auto:0px;mso-line-height-rule:exactly;">&nbsp;</span>
+                    </td>
+                  </tr>
+                  <!--spacer-->
+                  <tr>
+                    <td align="left" style="padding:0 20px;width:100%;text-align:left;line-height: 120%;" class="fallback-font-2">
+                      <span style="color: #4B3E35;font-size:42px; font-weight: bold; font-family: 'Source Sans Pro', helvetica,sans-serif;line-height:120%;letter-spacing: 6px;">Stop the killing. </span>
+                    </td>
+                  </tr>
+                  <!--spacer-->
+                  <tr>
+                    <td height="20" style="height:20px !important;line-height:0px;font-size:0px;margin-auto:0px;mso-line-height-rule:exactly;">
+                      <span style="font-size:0;line-height:0;margin-auto:0px;mso-line-height-rule:exactly;">&nbsp;</span>
+                    </td>
+                  </tr>
+                  <!--spacer-->
+                  <!--button begins-->
+                  <tr>
+                    <td valign="bottom" align="left" height="44" style="height: 44px !important;padding: 30px 20px;">
+                      <table width="220" align="left" cellpadding="0" cellspacing="0" border="0" style="max-width:220px;border-top: 2px solid #fff;border-bottom: 2px solid #fff;border-left: 2px solid #fff;border-right: 2px solid #fff;" class="sn-container">
+                      <tr>
+                        <td valign="bottom" align="center" width="216" height="44" style="height: 44px !important;line-height:1px;margin-auto:0px;mso-line-height-rule:exactly;text-align: center;" class="sn-shorter-3">
+                          <div>
+                            <!--[if mso]>
+              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#link" style="height:44px;v-text-anchor:middle;width:216px;" stroke="f" fillcolor="#F0723A">
+                <w:anchorlock/>
+                <center>
+                <![endif]-->
+                            <table cellspacing="0" cellpadding="0" align="center" border="0">
+                            <tr>
+                              <td align="center" width="216" height="44" style="font-size:18px; font-weight: bold; font-family: helvetica, sans-serif;color: #ffffff; display:inline-block;line-height:140%;mso-line-height-rule:exactly; text-decoration: none; " valign="middle" class="button-hover-3">
+                                <a href="" style="font-size:18px; font-weight: bold; font-family: helvetica, sans-serif; text-decoration: none; line-height:44px; width:100%; display:inline-block;">
+                                <span style="color: #FFFFFF;font-size:18px; font-weight: bold; font-family:helvetica, sans-serif;white-space:nowrap;display:inline-block; text-decoration: none;line-height:44px; ">DONATE NOW</span>
+                                </a>
+                              </td>
+                            </tr>
+                            </table>
+                            <!--[if mso]>
+              </center>
+            </v:rect>
+          <![endif]-->
+                          </div>
+                        </td>
+                      </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <!--button ends-->
+                  <!--spacer-->
+                  <tr>
+                    <td height="20" style="height:20px !important;line-height:0px;font-size:0px;margin-auto:0px;mso-line-height-rule:exactly;">
+                      <span style="font-size:0;line-height:0;margin-auto:0px;mso-line-height-rule:exactly;">&nbsp;</span>
+                    </td>
+                  </tr>
+                  <!--spacer-->
+                  </table>
+                  <!--[if (gte mso 9)|(IE)]>
+              </td>
+              </tr>
+              </table>
+              <![endif]-->
+                </td>
+              </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding: 0;">
+        <div class="gmail" style="display:none;width:0;overflow:hidden;float:center;max-height:0;">
+          <table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0 auto;">
+          <tr>
+            <td style="background-repeat: no-repeat;background-size: cover;background-image:url(/assets/images/emails/awf-pattern-mobile.png);" bgcolor="#F0723A" width="100%" valign="top" class="sn-container">
+              <div valign="top">
+                <a href="" style="display: block;text-decoration: none;">
+                <table valign="top" cellpadding="0" cellspacing="0" border="0" align="center" style="border-spacing:0;margin:0;width:100%;text-decoration: none;">
+                <!--spacer-->
+                <tr>
+                  <td height="50" style="height:50px !important;line-height:0px;font-size:0px;margin-auto:0px;mso-line-height-rule:exactly;">
+                    <span style="font-size:0;line-height:0;margin-auto:0px;mso-line-height-rule:exactly;">&nbsp;</span>
+                  </td>
+                </tr>
+                <!--spacer-->
+                <tr>
+                  <td align="left" style="padding:0 20px;width:100%;text-align:left;line-height: 120%;" class="fallback-font-2">
+                    <span style="color: #FFF;font-size:27px; font-weight: bold; font-family: 'Source Sans Pro', helvetica,sans-serif;line-height:120%;letter-spacing: 3px;" class="fallback-font">BUST THE MYTHS.</span>
+                  </td>
+                </tr>
+                <!--spacer-->
+                <tr>
+                  <td height="10" style="height:10px !important;line-height:0px;font-size:0px;margin-auto:0px;mso-line-height-rule:exactly;">
+                    <span style="font-size:0;line-height:0;margin-auto:0px;mso-line-height-rule:exactly;">&nbsp;</span>
+                  </td>
+                </tr>
+                <!--spacer-->
+                <tr>
+                  <td align="left" style="padding:0 20px;width:100%;text-align:left;line-height: 120%;" class="fallback-font-2">
+                    <span style="color: #4B3E35;font-size:21px; font-weight: bold; font-family: 'Source Sans Pro', helvetica,sans-serif;line-height:120%;letter-spacing: 3px;">Stop the killing. </span>
+                  </td>
+                </tr>
+                <!--button begins-->
+                <tr>
+                  <td valign="bottom" align="left" height="44" style="height: 44px !important;padding: 30px 20px 50px 20px;">
+                    <table width="160" align="left" cellpadding="0" cellspacing="0" border="0" style="max-width:160px;border-top: 2px solid #fff;border-bottom: 2px solid #fff;border-left: 2px solid #fff;border-right: 2px solid #fff;" class="sn-container">
+                    <tr>
+                      <td valign="bottom" align="center" width="156" height="44" style="height: 44px !important;line-height:1px;margin-auto:0px;mso-line-height-rule:exactly;text-align: center;" class="sn-shorter-4">
+                        <div>
+                          <!--[if mso]>
+              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#link" style="height:44px;v-text-anchor:middle;width:156px;" stroke="f" fillcolor="#f0713a">
+                <w:anchorlock/>
+                <center>
+                <![endif]-->
+                          <table cellspacing="0" cellpadding="0" align="center" border="0">
+                          <tr>
+                            <td align="center" width="156" height="44" style="font-size:18px; font-weight: bold; font-family: helvetica, sans-serif;color: #ffffff; display:inline-block;line-height:140%;mso-line-height-rule:exactly; text-decoration: none; " valign="middle" class="button-hover-3">
+                              <a href="" style="font-size:18px; font-weight: bold; font-family: helvetica, sans-serif; text-decoration: none; line-height:44px; width:100%; display:inline-block;">
+                              <span style="color: #FFFFFF;font-size:18px; font-weight: bold; font-family:helvetica, sans-serif;white-space:nowrap;display:inline-block; text-decoration: none;line-height:44px; ">DONATE NOW</span>
+                              </a>
+                            </td>
+                          </tr>
+                          </table>
+                          <!--[if mso]>
+              </center>
+            </v:rect>
+          <![endif]-->
+                        </div>
+                      </td>
+                    </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!--button ends-->
+                </table>
+                </a>
+              </div>
+            </td>
+          </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <!--<![endif]-->
+    </table>
+    <!--[if (gte mso 9)|(IE)]>
+              </td>
+              </tr>
+              </table>
+              <![endif]-->
+  </td>
+</tr>
+<!-- callout ends -->
+<!--footer begins-->
+<tr>
+  <td align="center">
+    <!--[if (gte mso 9)|(IE)]>
+        <table width="640" align="center" style="border-spacing:0;">
+        <tr>
+        <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+          <![endif]-->
+    <table class="sn-outer1" cellspacing="0" cellpadding="0" border="0" align="center" style="border-spacing:0;margin:0 auto;width:100%;max-width:640px;">
+    <tr>
+      <td align="center" style="display: block;padding: 30px;">
+        <a href="#link" style="display: block;"><%=image_tag 'emails/logo.png', :style => 'width: 106px;display: block;' %></a>
+      </td>
+    </tr>
+    <!--button begins-->
+    <tr>
+      <td valign="bottom" align="center" height="44" style="height: 44px !important;padding-bottom: 30px;">
+        <table width="180" align="center" cellpadding="0" cellspacing="0" border="0" >
+        <tr>
+          <td valign="bottom" align="center" width="180" height="44" style="height: 44px !important;line-height:1px;margin-auto:0px;mso-line-height-rule:exactly;text-align: center;">
+            <div>
+              <!--[if mso]>
+                 <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#link" style="height:44px;v-text-anchor:middle;width:180px;" stroke="f" fillcolor="#329A94">
+                   <w:anchorlock/>
+                   <center>
+                   <![endif]-->
+              <table cellspacing="0" cellpadding="0" align="center" border="0">
+              <tr>
+                <td align="center" width="180" height="44" bgcolor="#329A94" style="font-size:18px; font-weight: bold; font-family: helvetica, sans-serif;color: #ffffff; display:inline-block;line-height:140%;mso-line-height-rule:exactly; text-decoration: none; " valign="middle">
+                  <a href="" style="font-size:18px; font-weight: bold; font-family: helvetica, sans-serif; text-decoration: none; line-height:44px; width:100%; display:inline-block;">
+                  <span style="color: #FFFFFF;font-size:18px; font-weight: bold; font-family:helvetica, sans-serif;white-space:nowrap;display:inline-block; text-decoration: none;line-height:44px; ">DONATE NOW</span>
+                  </a>
+                </td>
+              </tr>
+              </table>
+              <!--[if mso]>
+                 </center>
+               </v:rect>
+             <![endif]-->
+            </div>
+          </td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+    <!--button ends-->
+    <tr>
+      <td align="center">
+        <table align="center" cellspacing="0" cellpadding="0" border="0" width="268" style="border-spacing:0;margin:0 auto;max-width:268px;">
+        <tr>
+          <td align="center" style="padding-left:10px; padding-right:5px;">
+            <a href="#link" style="display:block;"><%=image_tag 'emails/2017-AWF-charity-1.png', :style => 'width: 96px;display: block;' %></a>
+          </td>
+          <td align="center" style="padding-left:5px; padding-right:5px;">
+            <a href="#link" style="display:block;"><%=image_tag 'emails/2017-AWF-charity-2.png', :style => 'width: 72px;display: block;' %></a>
+          </td>
+          <td align="center" style="padding-left:5px; padding-right:10px;">
+            <a href="#link" style="display:block;"><%=image_tag 'emails/2017-AWF-charity-3.png', :style => 'width: 60px;display: block;' %></a>
+          </td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding-top: 30px;">
+        <table align="center" cellspacing="0" cellpadding="0" border="0" width="162" style="border-spacing:0;margin:0 auto;max-width:162px;">
+        <tr>
+          <td align="center" style="padding-left:5px; padding-right:5px;">
+            <a href="#link" style="display:block;"><%=image_tag 'emails/fb.jpg', :style => 'width: 44px;display: block;' %></a>
+          </td>
+          <td align="center" style="padding-left:5px; padding-right:5px;">
+            <a href="#link" style="display:block;"><%=image_tag 'emails/tw.jpg', :style => 'width: 44px;display: block;' %></a>
+          </td>
+          <td align="center" style="padding-left:5px; padding-right:5px;">
+            <a href="#link" style="display:block;"><%=image_tag 'emails/ins.jpg', :style => 'width: 44px;display: block;' %></a>
+          </td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding: 20px 10px 0 10px;">
+        <!--[if (gte mso 9)|(IE)]>
+        <table width="600" align="center" style="border-spacing:0;">
+        <tr>
+        <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+          <![endif]-->
+        <table class="sn-outer2" cellspacing="0" cellpadding="0" border="0" align="center" style="border-spacing:0;margin:0 auto;width:100%;max-width:600px;">
+        <tr>
+          <td align="center" style="line-height: 135%;padding: 0 10px 20px 10px">
+            <span style="font-family: helvetica, sans-serif; font-size: 13px; color: #333; text-decoration: none; font-weight:bold;line-height:120%;">African Wildlife Foundation <br/></span>
+            <span class="mobile-links" style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;"><a style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;cursor:text;">
+            1100 New Jersey Ave SE &nbsp;&nbsp;|&nbsp;&nbsp;Suite 900 </a></span>
+            <!--[if !mso]><!-->
+            <div class="gmailNoHeight" style="display:none;width:0;overflow:hidden;float:left;max-height:0;">
+              <br style="display:none;" class="sn-appear"/>
+            </div>
+            <!--<![endif]-->
+            <span class="mobile-links" style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;"><a style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;cursor:text;">Washington, DC 20003</a><br/>
+            <a href="http://www.awf.org?utm_campaign=fy18holidayp2p&ms=XXXXXXX" style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;">www.awf.org&nbsp;&nbsp;|&nbsp;&nbsp;</a></span>
+            <span style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;" class="mobile-links"><a href="https://secure.awf.org/fy18fall?utm_campaign=fy18fall&ms=B18A10E10M&gs=%%Gift String Encrypted%%" style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;">Support Us</a></span>
+            <span style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;" class="sn-disappear"><a style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;" class="sn-disappear">&nbsp;&nbsp;|&nbsp;&nbsp;</a></span>
+            <!--[if !mso]><!-->
+            <div class="gmailNoHeight" style="display:none;width:0;overflow:hidden;float:left;max-height:0;">
+              <br style="display:none;" class="sn-appear"/>
+            </div>
+            <!--<![endif]-->
+            <span class="mobile-links" style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;"><a style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;cursor:text;" class="mobile-links">1-888-494-5354</a><br/></span>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="line-height: 135%;">
+            <span style="font-family: helvetica, Arial, sans-serif; font-size: 13px; color:#333; font-weight: normal; text-decoration: underline; line-height: 120%;mso-line-height-rule:exactly;" class="mobile-links"><a href="#link" style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: underline; line-height: 120%;mso-line-height-rule:exactly;" class="mobile-links">Privacy Policy</a></span><span style="font-family: helvetica, Arial, sans-serif; font-size: 13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;" class="mobile-links"><a href="#link" style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: none; line-height: 120%;mso-line-height-rule:exactly;" class="mobile-links">&nbsp;&nbsp;|&nbsp;&nbsp;</a></span><span style="font-family: helvetica, Arial, sans-serif; font-size: 13px; color:#333; font-weight: normal; text-decoration: underline; line-height: 120%;mso-line-height-rule:exactly;" class="mobile-links"><a href="#link" style="font-family: helvetica, Arial, sans-serif; font-size:13px; color:#333; font-weight: normal; text-decoration: underline; line-height: 120%;mso-line-height-rule:exactly;" class="mobile-links">Unsubscribe<br/><br/></a></span>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="padding: 20px 30px;">
+            <span style="font-family:helvetica, Arial, sans-serif; font-size:13px; color:#333 !important; font-weight: normal; text-decoration: none !important;">Please tell your friends about the threats facing Africa's wildlife by sharing on Facebook today.</span>
+          </td>
+        </tr>
+        <!--white border-->
+        <tr>
+          <td align="center">
+            <table width="90%" cellpadding="0" cellspacing="0" border="0" style="border-top:2px solid #D9D7D2;">
+            <tr>
+              <td height="1" style="width:90%;height:1px !important;line-height:0px;font-size:0px;margin-auto:0px;mso-line-height-rule:exactly;">
+                <span style="font-size:0;line-height:0;margin-auto:0px;mso-line-height-rule:exactly;">&nbsp;</span>
+              </td>
+            </tr>
+            </table>
+          </td>
+        </tr>
+        <!--white border-->
+        <tr>
+          <td align="center" style="padding: 20px 30px 40px 30px;">
+            <span style="font-family:helvetica, Arial, sans-serif; font-size:13px; color:#333 !important; font-weight: normal; text-decoration: none !important;" class="mobile-links"><a class="mobile-links" style="font-family:helvetica, Arial, sans-serif; font-size:13px; color:#333 !important; font-weight: normal; text-decoration: none !important;">
+            Photo(s) courtesy of Martin Harvey, Robyn Gianni, Alison Langevad, and Larry Traxler</a></span>
+          </td>
+        </tr>
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+              </td>
+              </tr>
+              </table>
+              <![endif]-->
+      </td>
+    </tr>
+    </table>
+    <!--[if (gte mso 9)|(IE)]>
+              </td>
+              </tr>
+              </table>
+              <![endif]-->
+  </td>
+</tr>
+<!--footer ends-->
+</table>

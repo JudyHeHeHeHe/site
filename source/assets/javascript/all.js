@@ -1,11 +1,11 @@
 import "all.scss";
 import Waypoints from 'waypoints';
-// import Inview from 'inview';
+import Inview from 'waypoints';
 import { TimelineMax, TweenMax, Linear } from 'gsap';
 // import "waypoints/lib/shortcuts/inview.min.js";
 // import ScrollMagic from 'scrollmagic'; 
 // import "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
-import Swiper from 'swiper';
+// import Swiper from 'swiper';
 
 
 $(function() {
@@ -43,31 +43,32 @@ $(function() {
   // Show and hide modals
   $('.each-project').each(function(el){
     $(this).on('click', function(){
-      $(this).next('[id^="modal_"]').removeAttr('class').addClass('modalIn');   
+      $(this).next('[id^="modal_"]').removeAttr('class').addClass('modalIn');  
+      $('body').addClass('position-fixed'); 
+      $('html').addClass('position-fixed'); 
     })
   })
 
   
   $('.modal-close').on('click', function(){
     $(this).closest('[id^="modal_"]').addClass('modalOut');
+     $('body').removeClass('position-fixed'); 
+     $('html').removeClass('position-fixed'); 
   })
     
-
   $('.menu-burger-area').on('click', function(){
-    $('body').toggleClass('menuOpen');
-
+    $('body').toggleClass('menuOpen position-fixed');
+    $('html').toggleClass('position-fixed');
   });
 
   $('.menu-burger-area').on('mouseover', function(){
 
     $('body').addClass('menuHover');
-
   });
 
-   $('.menu-burger-area').on('mouseout', function(){
+  $('.menu-burger-area').on('mouseout', function(){
 
     $('body').removeClass('menuHover');
-
   });
 
   // Show and hide hello
@@ -76,38 +77,20 @@ $(function() {
   }
   setTimeout(showHello, 1000);
 
-  $(document).on('click', 'a[href^="#"]', function(e) {
-    // target element id
-    var id = $(this).attr('href');
+  // $(document).on('click', 'a[href^="#"]', function(e) {
+  //   // target element id
+  //   var id = $(this).attr('href');
 
-    // target element
-    var $id = $(id);
-    if ($id.length === 0) {
-        return;
-    }
-
-    // prevent standard hash navigation (avoid blinking in IE)
-    e.preventDefault();
-
-    // top position relative to the document
-    var pos = $id.offset().top - $('header').height();
-
-    // animated top scrolling
-    $('body, html').animate({scrollTop: pos});
-  });
-
-  // function calculateGap() {
-  //   if (($(window).width() > 600)) {
-
-  //   } else {
-
+  //   // target element
+  //   var $id = $(id);
+  //   if ($id.length === 0) {
+  //       return;
   //   }
-  // }
+  //   e.preventDefault();
 
-  // calculateGap();
+  //   var pos = $id.offset().top - $('header').height();
 
-  // $(window).resize(function() {
-  //   calculateGap();
+  //   $('body, html').animate({scrollTop: pos});
   // });
 
 function removeClass(el, className){
@@ -116,41 +99,197 @@ function removeClass(el, className){
   }
 }
 
-  var greetingDown = $('#greeting').waypoint(function(direction) {
-    if (direction === 'down') {
-      $('body').addClass('greeting-active');
-    } else if(direction === 'up') {
-      removeClass($('body'), 'greeting-active');
-    }
-  }, {
-    offset: '-1%'
-  });
+var greetingDown = $('#greeting').waypoint(function(direction) {
+  if (direction === 'down') {
+    $('body').addClass('greeting-active');
+  } else if(direction === 'up') {
+    removeClass($('body'), 'greeting-active');
+  }
+}, {
+  offset: '-1%'
+});
 
-  var greetingUp = $('#greeting').waypoint(function(direction) {
-    if (direction === 'up') {
-      removeClass($('body'), 'greeting-active');
-    }
-  }, {
-    offset: '-30%'
-  });
+// var projectDown = $('.project-page-jumbo-container').waypoint(function(direction) {
+//   if (direction === 'down') {
+//     $('.project-page-jumbo-container').addClass('project-active');
+//   } else if(direction === 'up') {
+//     removeClass($('.project-page-jumbo-container'), 'project-active');
+//   }
+// }, {
+//   offset: '-1%'
+// });
 
-  var controller = new ScrollMagic.Controller();
+var greetingDown = $('main').waypoint(function(direction) {
+  if (direction === 'down') {
+    $('.scroll').addClass('scrollActive');
+    $('.intro').addClass('active');
+  } else if(direction === 'up') {
+    removeClass($('.scroll'), 'scrollActive');
+    removeClass($('.intro'), 'active');
+  }
+}, {
+  offset: '-1%'
+});
 
-  var homepageScene1 = new ScrollMagic.Scene({
-    // triggerElement: '#hello',
-    // offset: '0.1',
-    duration: '30%',
-    })
-    .setPin('#greeting')
-    // .setClassToggle('body', 'introOpen')
-    .addIndicators({
-        name:'home scene',
-        colorTrigger: 'black',
-        // indent: 200,
-        colorStart: 'pink',
-        colorEnd: 'pink'
+var footerHeight = $('footer').outerHeight();
+$(window).scroll(function() {
+  if($(window).scrollTop() + $(window).height() >= $(document).height() - (footerHeight * 0.8)) {
+    $('.footer-wrapper').addClass('active');
+    $('.scroll').addClass('scrollDisappear');
+  } else if ($(window).scrollTop() + $(window).height() < $(document).height() - (footerHeight / 2)){
+    removeClass($('.footer-wrapper'), 'active');
+    removeClass($('.scroll'), 'scrollDisappear');
+
+    // $('.footer-wrapper').removeClass('active');
+    // $('.scroll').removeClass('scrollDisappear');
+  }
+});
+
+var controller = new ScrollMagic.Controller();
+
+var homepageScene1 = new ScrollMagic.Scene({
+  duration: '30%',
   })
-  .addTo(controller);
+  .setPin('#greeting')
+.addTo(controller);
+
+// var homePageScene2 = new ScrollMagic.Scene({
+//   triggerElement: '#hello',
+//   triggerHook: 0.3
+// })
+// .setClassToggle('.intro', 'active')
+// .addIndicators()
+// .addTo(controller);
+
+var emailbgParallax = new ScrollMagic.Scene({
+  triggerElement: '.email-bg-container',
+  triggerHook: 1,
+  duration: '100%'
+})
+.setTween(TweenMax.from('.email-section-bg', 1, {y: '30%', ease:Power0.easeNone}))
+.addTo(controller);
+
+var projectbgParallax = new ScrollMagic.Scene({
+  triggerElement: '.project-bg-container',
+  triggerHook: 1,
+  duration: '100%'
+})
+.setTween(TweenMax.from('.project-section-bg', 1, {y: '30%', ease:Power0.easeNone}))
+.addTo(controller);
+
+var emailSectionScene1 = new ScrollMagic.Scene({
+  triggerElement: '.email-title-container',
+  triggerHook: 0.7,
+})
+.setClassToggle('.email-title-container', 'active')
+.addTo(controller);
+
+var emailSectionScene2 = new ScrollMagic.Scene({
+  triggerElement: '.esp',
+  triggerHook: 0.7,
+})
+.setClassToggle('.esp', 'active')
+.addTo(controller);
+
+var espParallax = new ScrollMagic.Scene({
+  triggerElement: '.esp',
+  triggerHook: 1,
+  duration: '100%'
+})
+.setTween(TweenMax.from('.esp-ul', 1, {y: '20%', ease:Power0.easeNone}))
+.addTo(controller);
+
+var projectSectionScene1 = new ScrollMagic.Scene({
+  triggerElement: '.project-header',
+  triggerHook: 0.7,
+})
+.setClassToggle('.project-header', 'active')
+.addTo(controller);
+
+var projectSectionScene2 = new ScrollMagic.Scene({
+  triggerElement: '.project-title-container',
+  triggerHook: 0.7,
+})
+.setClassToggle('.project-title-container', 'active')
+.addTo(controller);
+
+var projectSectionScene3 = new ScrollMagic.Scene({
+  triggerElement: '.project-example',
+  triggerHook: 0.7,
+})
+.setClassToggle('.project-example', 'active')
+.addTo(controller);
+
+var emailPageBgScene = new ScrollMagic.Scene({
+  triggerElement: '.email-container',
+  triggerHook: 0.1,
+  duration: '100%'
+})
+.setTween(TweenMax.from('.email-container', 1, {backgroundSize: '200%', ease:Power0.easeNone}))
+.setClassToggle('.email-page-title-container', 'active')
+// .addIndicators({name: "pin scene", colorEnd: "#758987"})
+.addTo(controller);
+
+var projectPageBgScene = new ScrollMagic.Scene({
+   triggerElement: '.project-page-jumbo-container',
+  triggerHook: 0.1,
+  duration: '100%'
+})
+.setClassToggle('.project-page-jumbo-container', 'active')
+.setTween(TweenMax.from('.project-bg', 1, {y: '10%', ease:Power0.easeNone}))
+.addTo(controller);
+
+var blocksScene = new ScrollMagic.Scene({
+  triggerElement: '.timeline-jumbo-container',
+  triggerHook: 0.7,
+  duration: $(".timeline-jumbo-container").height()
+})
+.setTween(TweenMax.to('.top-block', 1, {y: '100%', ease:Power0.easeNone}))
+.setClassToggle('.timeline-container', 'active')
+.addTo(controller);
+
+var before = new ScrollMagic.Scene({
+  triggerElement: '.before',
+  triggerHook: 0.7,
+})
+.setClassToggle('.before', 'active')
+.addTo(controller);
+
+var during = new ScrollMagic.Scene({
+  triggerElement: '.during',
+  triggerHook: 0.7,
+})
+.setClassToggle('.during', 'active')
+.addTo(controller);
+
+var after = new ScrollMagic.Scene({
+  triggerElement: '.after',
+  triggerHook: 0.7,
+})
+.setClassToggle('.after', 'active')
+.addTo(controller);
+
+
+var location = window.location.href;
+var keyWords = new Array('email', 'project', 'fun');
+var colors = new Array('#fcb7a8', '#f3c130', '#d8d8e8');
+
+for (var i = 0; i < keyWords.length; i++) {
+  if(location.indexOf(keyWords[i]) > -1) {
+    $('.menu-color').css('background-color', colors[i]);
+    $('.link-home').removeClass('active');
+    $('.link-' + keyWords[i]).addClass('active');
+  }
+}
+
+var blocksScene = new ScrollMagic.Scene({
+  triggerElement: '.timeline-jumbo-container',
+  triggerHook: 0.7,
+  duration: $(".timeline-jumbo-container").height()
+})
+.setTween(TweenMax.to('.top-block', 1, {y: '100%', ease:Power0.easeNone}))
+.setClassToggle('.timeline-container', 'active')
+.addTo(controller);
 
 
 
@@ -162,22 +301,7 @@ function removeClass(el, className){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 

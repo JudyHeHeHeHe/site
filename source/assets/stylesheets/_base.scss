@@ -1,6 +1,5 @@
-@import "~reset-css";
-@import "~breakpoint-sass/stylesheets/breakpoint";
-@import '~swiper/dist/css/swiper.css';
+
+
 
 $color-light-light-gray: #f3f3f5;
 $color-background-gray: #f8f8f8;
@@ -9,6 +8,7 @@ $color-dark-gray: #666666;
 $color-white: #ffffff;
 $color-red: #fc4309;
 $color-red-hover: #ff6600;
+
 // $color-grapefruit: #ff765c;
 $color-grapefruit: #ff5851;
 $color-black: #333;
@@ -28,22 +28,45 @@ $color-ins-hover: #8a3ab9;
 $color-wechat-hover: #7cb22e;
 
 // breakpoints
-$bp-xs: 380px;
-$bp-sm: 600px;
-$bp-md: 1024px;
-$bp-lg: 1400px;
+$breakpoints: (
+  'bp-xs':  380px,
+  'bp-sm': 600px,
+  'bp-md':  1024px,
+  'bp-lg': 1400px
+) !default;
 
-$bp-front-xs: 460px;
-$bp-sm-md: $bp-sm ($bp-md - 1);
-$bp-sm-lg: $bp-sm ($bp-lg - 1);
-$bp-md-lg: $bp-md ($bp-lg - 1);
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+ 
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+// $bp-xs: 380px;
+// $bp-sm: 600px;
+// $bp-md: 1024px;
+// $bp-lg: 1400px;
+
+// $bp-front-xs: 460px;
+// $bp-sm-md: $bp-sm ($bp-md - 1);
+// $bp-sm-lg: $bp-sm ($bp-lg - 1);
+// $bp-md-lg: $bp-md ($bp-lg - 1);
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900");
+
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i");
 
-$font-mon: 'Montserrat', sans-serif;
-$font-lib: 'Libre Baskerville', serif;
+$font-mon: "Montserrat", sans-serif;
+$font-lib: "Libre Baskerville", serif;
 
 // Centering: NOTE - requires absolute or relative positioning
 @mixin vertical-align($position: relative, $offset: 50%, $value: -50%) {
@@ -126,21 +149,26 @@ $font-lib: 'Libre Baskerville', serif;
     -webkit-box-pack: start;
     -moz-box-pack: start;
     -ms-flex-pack: start;
-  } @else if $value == flex-end {
+  }
+  @else if $value == flex-end {
     -webkit-box-pack: end;
     -moz-box-pack: end;
     -ms-flex-pack: end;
-  } @else if $value == space-between {
+  }
+  @else if $value == space-between {
     -webkit-box-pack: justify;
     -moz-box-pack: justify;
     -ms-flex-pack: justify;
-  } @else if $value == space-around {
+  }
+  @else if $value == space-around {
     -ms-flex-pack: distribute;
-  } @else {
+  }
+  @else {
     -webkit-box-pack: $value;
     -moz-box-pack: $value;
     -ms-flex-pack: $value;
   }
+
   -webkit-justify-content: $value;
   justify-content: $value;
 }
@@ -185,9 +213,9 @@ $font-lib: 'Libre Baskerville', serif;
 }
 
 @mixin transform($transforms) {
-     -moz-transform: $transforms;
-       -o-transform: $transforms;
-      -ms-transform: $transforms;
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
   -webkit-transform: $transforms;
-          transform: $transforms;
+  transform: $transforms;
 }

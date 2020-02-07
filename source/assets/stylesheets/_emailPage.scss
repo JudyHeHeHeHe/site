@@ -1,0 +1,205 @@
+.inner-container {
+  min-height: 600px;
+  position: relative;
+
+  @include breakpoint('bp-sm') {
+    height: 100vh;
+  }
+}
+
+.email-container {
+  height: 100vh;
+  background-size: 100%;
+  background-image: linear-gradient(to right, $color-light-light-gray 25%, $color-pink 25%);
+}
+
+.email-page-title-container {
+  position: absolute;
+  top: 275px;
+  margin: 0 30px;
+  opacity: 0;
+
+  @include transform(translateY(10%));
+  @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+
+  @include breakpoint('bp-sm') {
+    left: 15%;
+    margin: 0;
+    top: 52%;
+  }
+
+
+  @include breakpoint('bp-md') {
+    left: 18%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 210px;
+    width: 70%;
+    transform: translateY(-50%);
+  }
+
+
+  @media (max-height: 720px) and (max-width: 600px) {
+    top: 150px;
+  }
+
+  @media (max-height: 720px) and (max-width: 1024px) {
+    top: 20%;
+  }
+
+  @media (max-height: 720px) and (min-width: 1024px) {
+    top: 40%;
+  }
+
+  h2 {
+    color: $color-black;
+  }
+
+  p {
+    font: {
+      family: $font-lib;
+      style: italic;
+    };
+
+    @include breakpoint('bp-md') {
+      margin-top: auto;
+      padding: 0 20px;
+    }
+  }
+
+  h3 {
+    @include breakpoint('bp-md') {
+      margin-bottom: auto;
+      padding: 0 30px;
+    }
+  }
+}
+
+.email-page-title-container.active {
+  opacity: 1;
+
+  @include transform(translateY(0));
+
+  svg polyline {
+    animation: dash 0.5s linear forwards 0.3s;
+  }
+}
+
+.timeline-jumbo-container {
+  padding: 50px 30px;
+
+  @include breakpoint('bp-sm') {
+    padding: 80px 5% 80px 60px;
+  }
+
+
+  .timeline-container {
+    @include breakpoint('bp-sm') {
+      width: 46%;
+      display: inline-block;
+      padding-right: 30px;
+      float: left;
+    }
+  }
+
+  .before.active, .during.active, .after.active {
+    opacity: 1;
+
+    @include transform(translateY(0));
+
+    svg polyline {
+      animation: dash 0.5s linear forwards 0.3s;
+    }
+  }
+
+  .before, .during, .after {
+    opacity: 0;
+
+    @include transform(translateY(10%));
+    @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+
+    @include transform(translateY(0));
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+
+      @include breakpoint('bp-sm') {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  .dot {
+    color: $color-pink;
+  }
+
+  p.sub {
+    font: {
+      family: $font-lib;
+      style: italic;
+    };
+  }
+
+  .waves {
+    padding-bottom: 0;
+  }
+
+  .blocks {
+    display: none;
+
+    @include breakpoint('bp-sm') {
+      display: inline-block;
+      width: 208px;
+      margin-top: 250px;
+
+      @include breakpoint('bp-md') {
+        width: 242px;
+      }
+    }
+
+
+    .top-block {
+      width: 100px;
+      display: inline-block;
+      float: right;
+
+      @include breakpoint('bp-md') {
+        width: 120px;
+      }
+    }
+
+    .bottom-block {
+      width: 160px;
+      display: inline-block;
+      float: left;
+
+      @include breakpoint('bp-md') {
+        width: 180px;
+      }
+    }
+  }
+}
+
+.timeline-jumbo-container.active {
+  svg polyline {
+    animation: dash 0.5s linear forwards;
+  }
+}
+
+.swiper-jumbo-container {
+  padding: 50px 30px;
+
+  @include breakpoint('bp-sm') {
+    padding: 50px 0;
+    margin: 0 40px;
+  }
+}
+
+.swiper-slide {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

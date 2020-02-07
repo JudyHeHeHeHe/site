@@ -24,7 +24,7 @@
   }
 }
 
-@include breakpoint($bp-sm) {
+@include breakpoint('bp-sm') {
   @keyframes burgerslide {
     from {
       left: -15px;
@@ -50,15 +50,16 @@
   }
 }
 
+
 @keyframes dash {
   from {
     stroke-dashoffset: 100;
   }
+
   to {
     stroke-dashoffset: 0;
   }
 }
-
 
 @keyframes backgroundColor {
   from {
@@ -96,4 +97,90 @@
   }
 }
 
+@keyframes star1 {
+  to {
+    zoom: 10%;
+    opacity: 0;
+  }
 
+  from {
+    zoom: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes star2 {
+  to {
+    opacity: 0;
+  }
+
+  from {
+    opacity: 1;
+  }
+}
+
+@keyframes star3 {
+  0% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}

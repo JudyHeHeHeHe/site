@@ -1,0 +1,778 @@
+#greeting {
+  width: 100% !important;
+}
+
+.greeting-jumbo-container {
+  height: 100vh;
+
+  @include breakpoint('bp-sm') {
+    padding-top: 40px;
+  }
+}
+
+.logo-container {
+  z-index: 101;
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  animation: logoslidedown 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+
+  @include breakpoint('bp-sm') {
+    position: fixed;
+    left: 40px;
+    top: 10px;
+
+    @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+  }
+
+
+  p {
+    display: none;
+
+    @include breakpoint('bp-sm') {
+      display: inline-block;
+      color: $color-black;
+      vertical-align: bottom;
+      margin-left: 0.1em;
+      font: {
+        family: $font-lib;
+        weight: 400;
+        style: italic;
+        size: 0.8em;
+      };
+    }
+  }
+}
+
+.logo {
+  width: 95px;
+  height: 23px;
+  text-indent: -999px;
+  overflow: hidden;
+  text-align: left;
+  display: block;
+  background: {
+    image: url(../../assets/images/JudyHe.svg);
+    repeat: no-repeat;
+    position: center;
+  };
+
+  @include breakpoint('bp-sm') {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+}
+
+.greeting-container {
+  width: 100%;
+  margin: 0 auto;
+  background-size: 100%;
+  background-image: linear-gradient(to right, $color-grapefruit 50%, $color-light-light-gray 50%);
+  animation: backgroundColor 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+
+  @include transition(background-size, 0.8s, cubic-bezier(0.7, 0, 0.3, 1));
+}
+
+#hello {
+  width: 100%;
+  padding: 0 20px;
+
+  // z-index: 10;
+  display: none;
+  transition: all 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+
+  @include both-align(absolute, 50%, 50%, -50%);
+
+  @include breakpoint('bp-sm') {
+    max-width: 400px;
+  }
+
+
+  @include breakpoint('bp-md') {
+    max-width: 700px;
+  }
+
+
+  &.fin {
+    .path-1, .path-2, .path-3 {
+      stroke-dashoffset: 0;
+    }
+
+    .path-4 {
+      stroke-width: 18px;
+    }
+  }
+}
+
+.path {
+  fill: none;
+  stroke: $color-black;
+  stroke-width: 18px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.path-1 {
+  stroke-dasharray: 1850 2000;
+  stroke-dashoffset: 1851;
+
+  @include transition(all, 1.3s, linear);
+}
+
+.path-2 {
+  stroke-dasharray: 260 1000;
+  stroke-dashoffset: 261;
+
+  @include transition(all, 0.4s, linear, 1.4s);
+}
+
+.path-3 {
+  stroke-dasharray: 100 1000;
+  stroke-dashoffset: 101;
+
+  @include transition(all, 0.3s, linear, 1.9s);
+}
+
+.path-4 {
+  stroke-width: 0;
+  stroke: $color-grapefruit;
+
+  @include transition(all, 0.2s, linear, 2.3s);
+}
+
+.scroll {
+  // display: block;
+  position: fixed;
+  opacity: 0;
+  left: 35%;
+  bottom: 6%;
+  transform: rotate(-90deg);
+  animation: scrollslideup 0.8s cubic-bezier(0.7, 0, 0.3, 1) 3s forwards;
+  line-height: 10px;
+  font-size: 0.675em;
+  z-index: 1000;
+
+  // text-orientation: mixed;
+
+  @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+
+  span {
+    animation: bounce 2s 3s infinite;
+    position: absolute;
+    bottom: 0;
+  }
+
+  @include breakpoint('bp-sm') {
+    right: auto;
+    left: 60px;
+    line-height: 60px;
+  }
+}
+
+.scrollActive {
+  left: 20px;
+
+  @include breakpoint('bp-sm') {
+    left: 60px;
+  }
+}
+
+.scrollDisappear {
+  color: transparent;
+}
+
+.intro {
+  width: 100%;
+  position: absolute;
+  bottom: 7%;
+  left: -100%;
+  opacity: 0;
+  text-align: left;
+
+  @include transition(all, 0.8s, cubic-bezier(0.7, 0, 0.3, 1));
+
+  @include breakpoint('bp-sm') {
+    left: 10%;
+    width: 50%;
+  }
+
+
+  .headshot, p {
+    max-width: 250px;
+    margin-left: 0;
+
+    // transform: translateY(30px);
+
+    @include breakpoint('bp-sm') {
+      max-width: 300px;
+    }
+  }
+
+  .headshot {
+    width: 200px;
+
+    @include breakpoint('bp-sm') {
+      width: 250px;
+    }
+  }
+
+  p {
+    line-height: 1.3;
+    padding-top: 30px;
+    font: {
+      weight: 700;
+      size: 1em;
+    };
+
+    @include breakpoint('bp-sm') {
+      font-size: 1.2em;
+    }
+
+
+    .white {
+      color: $color-white;
+    }
+  }
+}
+
+.intro.active {
+  opacity: 1;
+  left: 10px;
+
+  @include breakpoint('bp-sm') {
+    left: 10%;
+  }
+
+
+  .headshot, p {
+    transform: translateY(0);
+  }
+}
+
+.bg-container {
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+
+  @include breakpoint('bp-md') {
+    height: 550px;
+  }
+}
+
+.bg {
+  display: block;
+  width: 100%;
+  height: 140%;
+  position: absolute;
+  bottom: 0;
+}
+
+// Email section begins
+
+.email-section-bg {
+  background: {
+    image: url(../../assets/images/email-transition.jpg);
+    position: center bottom;
+    repeat: no-repeat;
+    size: cover;
+  };
+}
+
+.email-title-container {
+  opacity: 0;
+
+  @include transform(translateY(10%));
+  @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+
+  h2, .dot {
+    color: $color-pink;
+  }
+
+  a:after, a:hover:before {
+    --cl: #fcb7a8;
+  }
+
+  @include breakpoint('bp-md') {
+    width: 40%;
+    float: left;
+    padding-right: 20px;
+  }
+}
+
+.esp {
+  width: 100%;
+  background-color: $color-black-background;
+  margin: 0 auto;
+  padding: 10%;
+  opacity: 0;
+
+  @include transform(translateX(100%));
+  @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+
+  @include breakpoint('bp-md') {
+    width: 35%;
+    margin: 28% 5% 13% 0;
+
+    //margin-top: 18%;
+    float: right;
+    padding: 5%;
+  }
+
+
+  ul {
+    width: 100%;
+    height: 100%;
+
+    @include flexbox;
+
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    @include breakpoint('bp-sm') {
+      justify-content: space-around;
+    }
+
+
+    li {
+      flex: 1 0 35%;
+      height: 90px;
+      max-width: 160px;
+
+      &:nth-child(-n+4) {
+        margin-bottom: 20px;
+      }
+
+      &:nth-child(odd) {
+        margin-right: 10px;
+      }
+
+      &:nth-child(even) {
+        margin-left: 10px;
+      }
+
+      &:last-child {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @include breakpoint('bp-sm') {
+        flex: 1 0 25%;
+        max-width: 180px;
+
+        &:nth-child(-n+4) {
+          margin-bottom: 40px;
+        }
+
+        &:nth-child(1) {
+          margin-right: 20px;
+        }
+
+        &:nth-child(2) {
+          margin-right: 20px;
+          margin-left: 20px;
+        }
+
+        &:nth-child(3) {
+          margin-right: 0;
+          margin-left: 20px;
+        }
+
+        &:nth-child(4) {
+          margin-right: 20px;
+          margin-left: 0;
+          margin-bottom: 0;
+        }
+
+        &:nth-child(5) {
+          margin-left: 20px;
+          margin-right: 0;
+        }
+      }
+
+
+      @include breakpoint('bp-md') {
+        flex: 1 0 30%;
+
+        &:nth-child(2) {
+          margin-right: 0;
+        }
+
+        &:nth-child(3) {
+          margin-right: 20px;
+          margin-left: 0;
+        }
+
+        &:nth-child(4) {
+          margin-right: 0;
+          margin-left: 20px;
+          margin-bottom: 20px;
+        }
+
+        &:nth-child(5) {
+          margin-right: 20px;
+        }
+
+        @include breakpoint('bp-lg') {
+          flex: 1 0 25%;
+
+          &:nth-child(2) {
+            margin-right: 20px;
+            margin-left: 20px;
+          }
+
+          &:nth-child(3) {
+            margin-right: 0;
+            margin-left: 20px;
+          }
+
+          &:nth-child(4) {
+            margin-right: 20px;
+            margin-left: 0;
+            margin-bottom: 0;
+          }
+
+          &:nth-child(5) {
+            margin-left: 20px;
+            margin-right: 0;
+          }
+        }
+      }
+
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+
+        @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      .litmus {
+        background: {
+          image: url(../../assets/images/litmus.png);
+          position: center;
+          repeat: no-repeat;
+          size: contain;
+        };
+      }
+
+      .eoa {
+        background: {
+          image: url(../../assets/images/EOA.png);
+          position: center;
+          repeat: no-repeat;
+          size: contain;
+        };
+      }
+
+      .ibm {
+        background: {
+          image: url(../../assets/images/ibm.png);
+          position: center;
+          repeat: no-repeat;
+          size: contain;
+        };
+      }
+
+      .blackbaud {
+        background: {
+          image: url(../../assets/images/blackbaud.svg);
+          position: center;
+          repeat: no-repeat;
+          size: contain;
+        };
+      }
+
+      .emma {
+        background: {
+          image: url(../../assets/images/emma.png);
+          position: center;
+          repeat: no-repeat;
+          size: contain;
+        };
+      }
+    }
+  }
+}
+
+.email-title-container:not(.waves).active, .esp.active {
+  opacity: 1;
+
+  @include transform(translateX(0));
+
+  svg polyline {
+    animation: dash 0.5s linear forwards 0.3s;
+  }
+}
+
+.interactive-email-header {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 30px 10px;
+  color: $color-black;
+}
+
+.star {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 30px 10px;
+}
+
+.star1 {
+  animation-name: star1;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 0.2s;
+  animation-direction: alternate;
+}
+
+.star2 {
+  animation-name: star2;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 0.3s;
+  animation-direction: alternate;
+}
+
+.star3 {
+  animation-name: star3;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 0.4s;
+  animation-direction: alternate;
+}
+
+// project section begins
+#project {
+  h2 {
+    color: $color-projects;
+  }
+
+  .dot {
+    color: $color-projects;
+  }
+
+  a:after, a:hover:before {
+    --cl: #f3c130;
+  }
+
+  .jumbo-container {
+    position: relative;
+  }
+}
+
+.project-jumbo-container {
+  padding-top: 120px;
+
+  @include breakpoint('bp-sm') {
+    padding-top: 150px;
+  }
+}
+
+.project-header {
+  position: absolute;
+  width: 100%;
+  padding: 0 10%;
+  top: 5%;
+  opacity: 0;
+  z-index: 2;
+
+  @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+  @include transform(translateY(10%));
+
+  @include breakpoint('bp-sm') {
+    top: 83px;
+  }
+
+
+  @include breakpoint('bp-md') {
+    padding: 0 0 0 18%;
+    top: 53px;
+  }
+}
+
+.project-header:not(.waves).active {
+  opacity: 1;
+
+  @include transform(translateY(0));
+
+  svg polyline {
+    animation: dash 0.5s linear forwards 0.3s;
+  }
+}
+
+.project-section-bg {
+  background: {
+    image: url(../../assets/images/project-transition.jpg);
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  };
+}
+
+.project-title-container {
+  opacity: 0;
+
+  @include transform(translateY(30px));
+  @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+  @include breakpoint('bp-md') {
+    width: 30%;
+    display: inline-block;
+    margin: 10% 5% 10% 0;
+    padding: 15px 0 15px 15px;
+    float: right;
+  }
+
+
+  @include breakpoint('bp-lg') {
+    width: 35%;
+  }
+}
+
+.project-title-container.active {
+  opacity: 1;
+
+  @include transform(translateY(0));
+}
+
+.project-example.active {
+  opacity: 1;
+
+  @include transform(translateX(0));
+}
+
+.project-example {
+  width: 100%;
+  text-align: right;
+  overflow: hidden;
+  margin-bottom: 10%;
+  opacity: 0;
+
+  @include transform(translateX(100%));
+  @include transition(all, 0.3s, cubic-bezier(0.7, 0, 0.3, 1));
+
+  @include breakpoint('bp-md') {
+    width: 40%;
+    display: inline-block;
+    padding-bottom: 0;
+    margin: 20% 0 10% 18%;
+
+    //margin-top; 10%;
+    float: left;
+    max-width: 700px;
+
+    @include transform(translateX(-100%));
+  }
+
+
+  p, a {
+    float: right;
+    text-align: right;
+    clear: both;
+  }
+
+  .section-link {
+    padding: 20px 0;
+    margin-right: 10%;
+
+    @include breakpoint('bp-md') {
+      margin-right: 0;
+    }
+  }
+}
+
+.example-img {
+  width: 100%;
+  height: 330px;
+  background: {
+    image: url(../../assets/images/projects/raise-the-barn.jpg);
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  };
+
+  @include breakpoint('bp-sm') {
+    height: 450px;
+  }
+
+
+  @include breakpoint('bp-md') {
+    height: 300px;
+  }
+}
+
+.example-title {
+  padding: 10px 10% 0 0;
+
+  @include breakpoint('bp-sm') {
+    font-size: 0.8125em;
+  }
+
+
+  @include breakpoint('bp-md') {
+    padding-right: 0;
+  }
+}
+
+.example-year {
+  font-weight: 400;
+  padding: 0 10% 0 0;
+
+  @include breakpoint('bp-sm') {
+    font-size: 0.8125em;
+  }
+
+
+  @include breakpoint('bp-md') {
+    padding-right: 0;
+  }
+}
+
+.project-page-jumbo-container.active {
+  .project-page-title-container {
+    opacity: 1;
+
+    @include transform(translateY(0));
+
+    svg polyline {
+      animation: dash 0.5s linear forwards 0.3s;
+    }
+  }
+}
+
+.greeting-active {
+  #greeting {
+    .greeting-container {
+      background-size: 200%;
+    }
+
+    .scroll {
+      color: $color-grapefruit;
+
+      @include breakpoint('bp-sm') {
+        color: $color-black;
+      }
+    }
+
+    #hello {
+      transform: translate(2%, -160%);
+
+      @include breakpoint('bp-sm') {
+        transform: translate(52%, -50%);
+        max-width: 50%;
+      }
+    }
+  }
+}
