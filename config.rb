@@ -19,6 +19,8 @@ end
 
 activate :directory_indexes
 
+set :index_file, "home.html"
+
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end

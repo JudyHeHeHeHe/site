@@ -19,8 +19,8 @@
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta property="og:url" content="https://judythewebdeveloper.com<%=current_page.url %>" />
-  <meta property="og:site_name" content="Judyisadeveloper"/>
+  <meta property="og:url" content="http://judyhe.xyz<%=current_page.url %>" />
+  <meta property="og:site_name" content="Judy is a web developer"/>
   <meta property="og:type" content="website"/>
 
   <% if current_page.data.meta_title %>
@@ -38,9 +38,9 @@
   <% end %>
 
   <% if current_page.data.image %>
-  <meta property="og:image" content="https://judythewebdeveloper.com<%=current_page.data.image %>">
+  <meta property="og:image" content="http://judyhe.xyz<%=current_page.data.image %>">
   <% else %>
-  <meta property="og:image" content="https://judythewebdeveloper.com<%=image_path " 2015-sanky-linkshare.jpg" %>" />
+  <meta property="og:image" content="http://judyhe.xyz<%=image_path " meta.jpg" %>" />
   <% end %>
 
   <%= favicon_tag "favicon.ico" %>
@@ -55,8 +55,8 @@
         <div class="menu-container">
           <ul class="menu-options">
             <li><%= link_to 'Home.', '/', :class => "links link-home active" %></li>
-            <li><%= link_to 'Emails.', '/emails.html', :class => "links link-email" %></li>
             <li><%= link_to 'Projects.', '/projects.html', :class => "links link-project" %></li>
+            <li><%= link_to 'Emails.', '/emails.html', :class => "links link-email" %></li>
             <li class="mobile-social-icons">
               <%= partial "partials/social-icons" %>
             </li>

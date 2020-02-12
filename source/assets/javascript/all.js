@@ -241,7 +241,7 @@ var projectPageBgScene = new ScrollMagic.Scene({
 
 var blocksScene = new ScrollMagic.Scene({
   triggerElement: '.timeline-jumbo-container',
-  triggerHook: 0.7,
+  triggerHook: 0.5,
   duration: $(".timeline-jumbo-container").height()
 })
 .setTween(TweenMax.to('.top-block', 1, {y: '100%', ease:Power0.easeNone}))
@@ -282,14 +282,6 @@ for (var i = 0; i < keyWords.length; i++) {
   }
 }
 
-var blocksScene = new ScrollMagic.Scene({
-  triggerElement: '.timeline-jumbo-container',
-  triggerHook: 0.7,
-  duration: $(".timeline-jumbo-container").height()
-})
-.setTween(TweenMax.to('.top-block', 1, {y: '100%', ease:Power0.easeNone}))
-.setClassToggle('.timeline-container', 'active')
-.addTo(controller);
 
 
 
