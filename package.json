@@ -37,7 +37,7 @@
     "reset-css": "^4.0.1",
     "sanitize.css": "^4.1.0",
     "scrollmagic": "^2.0.6",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "waypoints": "^4.0.1"
   }
 }
